@@ -177,6 +177,7 @@
 
 - (IBAction)cocaColaSliderAction:(id)sender {
     [self.sliderCocaCola setValue:((int)((self.sliderCocaCola.value * 10) / 5) * 0.5) animated:NO];
+    colaCount = self.sliderCocaCola.value;
     self.labelColaCounter.text = [NSString stringWithFormat:@"%0.1fl", self.sliderCocaCola.value];
 }
 
