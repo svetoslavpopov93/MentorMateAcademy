@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FBB256721AC481000096D78D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB256711AC481000096D78D /* main.m */; };
+		FBB256751AC481000096D78D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB256741AC481000096D78D /* AppDelegate.m */; };
+		FBB256781AC481000096D78D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB256771AC481000096D78D /* ViewController.m */; };
+		FBB2567B1AC481000096D78D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB256791AC481000096D78D /* Main.storyboard */; };
+		FBB2567D1AC481000096D78D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB2567C1AC481000096D78D /* Images.xcassets */; };
+		FBB256801AC481000096D78D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB2567E1AC481000096D78D /* LaunchScreen.xib */; };
+		FBB2568C1AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2568B1AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBB256861AC481000096D78D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBB256641AC481000096D78D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBB2566B1AC481000096D78D;
+			remoteInfo = HomeAsssignment_LunchPriceCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FBB2566C1AC481000096D78D /* HomeAsssignment_LunchPriceCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAsssignment_LunchPriceCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB256701AC481000096D78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBB256711AC481000096D78D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FBB256731AC481000096D78D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FBB256741AC481000096D78D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FBB256761AC481000096D78D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FBB256771AC481000096D78D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FBB2567A1AC481000096D78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBB2567C1AC481000096D78D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FBB2567F1AC481000096D78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FBB256851AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeAsssignment_LunchPriceCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB2568A1AC481000096D78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBB2568B1AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeAsssignment_LunchPriceCalculatorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBB256691AC481000096D78D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBB256821AC481000096D78D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBB256631AC481000096D78D = {
+			isa = PBXGroup;
+			children = (
+				FBB2566E1AC481000096D78D /* HomeAsssignment_LunchPriceCalculator */,
+				FBB256881AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests */,
+				FBB2566D1AC481000096D78D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBB2566D1AC481000096D78D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBB2566C1AC481000096D78D /* HomeAsssignment_LunchPriceCalculator.app */,
+				FBB256851AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBB2566E1AC481000096D78D /* HomeAsssignment_LunchPriceCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				FBB256731AC481000096D78D /* AppDelegate.h */,
+				FBB256741AC481000096D78D /* AppDelegate.m */,
+				FBB256761AC481000096D78D /* ViewController.h */,
+				FBB256771AC481000096D78D /* ViewController.m */,
+				FBB256791AC481000096D78D /* Main.storyboard */,
+				FBB2567C1AC481000096D78D /* Images.xcassets */,
+				FBB2567E1AC481000096D78D /* LaunchScreen.xib */,
+				FBB2566F1AC481000096D78D /* Supporting Files */,
+			);
+			path = HomeAsssignment_LunchPriceCalculator;
+			sourceTree = "<group>";
+		};
+		FBB2566F1AC481000096D78D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBB256701AC481000096D78D /* Info.plist */,
+				FBB256711AC481000096D78D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBB256881AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBB2568B1AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests.m */,
+				FBB256891AC481000096D78D /* Supporting Files */,
+			);
+			path = HomeAsssignment_LunchPriceCalculatorTests;
+			sourceTree = "<group>";
+		};
+		FBB256891AC481000096D78D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBB2568A1AC481000096D78D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBB2566B1AC481000096D78D /* HomeAsssignment_LunchPriceCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBB2568F1AC481000096D78D /* Build configuration list for PBXNativeTarget "HomeAsssignment_LunchPriceCalculator" */;
+			buildPhases = (
+				FBB256681AC481000096D78D /* Sources */,
+				FBB256691AC481000096D78D /* Frameworks */,
+				FBB2566A1AC481000096D78D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HomeAsssignment_LunchPriceCalculator;
+			productName = HomeAsssignment_LunchPriceCalculator;
+			productReference = FBB2566C1AC481000096D78D /* HomeAsssignment_LunchPriceCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBB256841AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBB256921AC481000096D78D /* Build configuration list for PBXNativeTarget "HomeAsssignment_LunchPriceCalculatorTests" */;
+			buildPhases = (
+				FBB256811AC481000096D78D /* Sources */,
+				FBB256821AC481000096D78D /* Frameworks */,
+				FBB256831AC481000096D78D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBB256871AC481000096D78D /* PBXTargetDependency */,
+			);
+			name = HomeAsssignment_LunchPriceCalculatorTests;
+			productName = HomeAsssignment_LunchPriceCalculatorTests;
+			productReference = FBB256851AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBB256641AC481000096D78D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = MentorMate;
+				TargetAttributes = {
+					FBB2566B1AC481000096D78D = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					FBB256841AC481000096D78D = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = FBB2566B1AC481000096D78D;
+					};
+				};
+			};
+			buildConfigurationList = FBB256671AC481000096D78D /* Build configuration list for PBXProject "HomeAsssignment_LunchPriceCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBB256631AC481000096D78D;
+			productRefGroup = FBB2566D1AC481000096D78D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBB2566B1AC481000096D78D /* HomeAsssignment_LunchPriceCalculator */,
+				FBB256841AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBB2566A1AC481000096D78D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBB2567B1AC481000096D78D /* Main.storyboard in Resources */,
+				FBB256801AC481000096D78D /* LaunchScreen.xib in Resources */,
+				FBB2567D1AC481000096D78D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBB256831AC481000096D78D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBB256681AC481000096D78D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBB256781AC481000096D78D /* ViewController.m in Sources */,
+				FBB256751AC481000096D78D /* AppDelegate.m in Sources */,
+				FBB256721AC481000096D78D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBB256811AC481000096D78D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBB2568C1AC481000096D78D /* HomeAsssignment_LunchPriceCalculatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBB256871AC481000096D78D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBB2566B1AC481000096D78D /* HomeAsssignment_LunchPriceCalculator */;
+			targetProxy = FBB256861AC481000096D78D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FBB256791AC481000096D78D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBB2567A1AC481000096D78D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBB2567E1AC481000096D78D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBB2567F1AC481000096D78D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBB2568D1AC481000096D78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBB2568E1AC481000096D78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBB256901AC481000096D78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HomeAsssignment_LunchPriceCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FBB256911AC481000096D78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HomeAsssignment_LunchPriceCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FBB256931AC481000096D78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HomeAsssignment_LunchPriceCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeAsssignment_LunchPriceCalculator.app/HomeAsssignment_LunchPriceCalculator";
+			};
+			name = Debug;
+		};
+		FBB256941AC481000096D78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HomeAsssignment_LunchPriceCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeAsssignment_LunchPriceCalculator.app/HomeAsssignment_LunchPriceCalculator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBB256671AC481000096D78D /* Build configuration list for PBXProject "HomeAsssignment_LunchPriceCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBB2568D1AC481000096D78D /* Debug */,
+				FBB2568E1AC481000096D78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBB2568F1AC481000096D78D /* Build configuration list for PBXNativeTarget "HomeAsssignment_LunchPriceCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBB256901AC481000096D78D /* Debug */,
+				FBB256911AC481000096D78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FBB256921AC481000096D78D /* Build configuration list for PBXNativeTarget "HomeAsssignment_LunchPriceCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBB256931AC481000096D78D /* Debug */,
+				FBB256941AC481000096D78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBB256641AC481000096D78D /* Project object */;
+}
