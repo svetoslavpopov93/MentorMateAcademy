@@ -185,5 +185,16 @@
     float totalPrice =[self calculateProducts];
     self.labelTotalPrice.text = [NSString stringWithFormat:@"%.2f %@", totalPrice, self.currentCurrency];
 }
+- (IBAction)didValidateOnInputEnd:(id)sender {
+    UITextField *current = (UITextField*)sender;
+    
+    if (current.text.integerValue > 10) {
+        current.text= @"10";
+    }
+    
+    if (current.text.integerValue < 0) {
+        current.text = @"0";
+    }
+}
 
 @end
