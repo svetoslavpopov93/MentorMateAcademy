@@ -42,6 +42,7 @@
     NSInteger desertCount;
     float colaCount;
     BOOL hasHomeDelivery;
+    float currencyMultiplier;
 }
 
 - (void)viewDidLoad {
@@ -67,7 +68,7 @@
 }
 
 - (float)calculateProducts{
-    float currencyMultiplier = 0;
+    currencyMultiplier = 0;
     
     if ([self.currentCurrency isEqualToString:@"USD"]) {
         currencyMultiplier = 1.075;
@@ -101,15 +102,42 @@
 }
 
 - (IBAction)currencyButtonActionUSD:(id)sender {
+    
+    if ([self.currentCurrency isEqualToString:@"USD"] == false) {
+        if ([self.currentCurrency isEqualToString:@"EUR"]) {
+            float currentResult = (self.labelTotalPrice.text.floatValue * 1.075);
+            self.labelTotalPrice.text = [NSString stringWithFormat:@"%0.2f", currentResult];
+        }
+        
+        else if([self.currentCurrency isEqualToString:@"BGN"]){
+            float currentResult = (self.labelTotalPrice.text.floatValue / 1.81);
+            self.labelTotalPrice.text = [NSString stringWithFormat:@"%0.2f", currentResult];
+        }
+    }
+    
     self.currentCurrency = @"USD";
     self.labelSoup.text = @"Soup - 2.15 USD";
     self.labelMainDish.text = @"Main Dish - 4.9 USD";
     self.labelDesert.text = @"Desert - 1.65 USD";
     self.labelCocaCola.text = @"CocaCola - 2.15 USD/liter";
     self.labelHomeDelivery.text = @"Home Delivery - 10.90 USD";
+    
 }
 
 - (IBAction)currencyButtonActionEUR:(id)sender {
+    
+    if ([self.currentCurrency isEqualToString:@"EUR"] == false) {
+        if ([self.currentCurrency isEqualToString:@"USD"]) {
+            float currentResult = (self.labelTotalPrice.text.floatValue / 1.075);
+            self.labelTotalPrice.text = [NSString stringWithFormat:@"%0.2f", currentResult];
+        }
+        
+        else if([self.currentCurrency isEqualToString:@"BGN"]){
+            float currentResult = (self.labelTotalPrice.text.floatValue / 1.95);
+            self.labelTotalPrice.text = [NSString stringWithFormat:@"%0.2f", currentResult];
+        }
+    }
+    
     self.currentCurrency = @"EUR";
     self.labelSoup.text = @"Soup - 2 EUR";
     self.labelMainDish.text = @"Main Dish - 4.5 EUR";
@@ -119,6 +147,18 @@
 }
 
 - (IBAction)currencyButtonActionBGN:(id)sender {
+    
+    if ([self.currentCurrency isEqualToString:@"BGN"] == false) {
+        if ([self.currentCurrency isEqualToString:@"USD"]) {
+            float currentResult = (self.labelTotalPrice.text.floatValue * 1.81);
+            self.labelTotalPrice.text = [NSString stringWithFormat:@"%0.2f", currentResult];
+        }
+    
+        else if([self.currentCurrency isEqualToString:@"EUR"]){
+            float currentResult = (self.labelTotalPrice.text.floatValue * 1.95);
+            self.labelTotalPrice.text = [NSString stringWithFormat:@"%0.2f", currentResult];
+    }
+}
     self.currentCurrency = @"BGN";
     self.labelSoup.text = @"Soup - 3.9 BGN";
     self.labelMainDish.text = @"Main Dish - 8.80 BGN";
@@ -182,9 +222,20 @@
 }
 
 - (IBAction)calculateButtonAction:(id)sender {
+    if ([self.currentCurrency isEqualToString:@"USD"]) {
+        currencyMultiplier = 1.075;
+    }
+    else if([self.currentCurrency isEqualToString:@"BGN"]){
+        currencyMultiplier = 1.95;
+    }
+    else{
+        currencyMultiplier = 1;
+    }
+    
     float totalPrice =[self calculateProducts];
-    self.labelTotalPrice.text = [NSString stringWithFormat:@"%.2f %@", totalPrice, self.currentCurrency];
+    self.labelTotalPrice.text = [NSString stringWithFormat:@"%.2f %@", (totalPrice * currencyMultiplier), self.currentCurrency];
 }
+
 - (IBAction)didValidateOnInputEnd:(id)sender {
     UITextField *current = (UITextField*)sender;
     

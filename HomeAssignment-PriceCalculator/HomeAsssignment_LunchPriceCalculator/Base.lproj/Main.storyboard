@@ -28,6 +28,19 @@
                                     <action selector="currencyButtonActionUSD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2pu-FQ-o9v"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkK-Gd-7Tl">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label=""/>
+                                <state key="normal" title="EUR">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="138" y="35" width="31" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="currencyButtonActionEUR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I2v-jS-s2P"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soup -" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sm-7E-cp1">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -208,19 +221,10 @@
                                     <rect key="frame" x="95" y="398" width="95" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73e-iq-rKg">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="289" width="58" height="34"/>
-                                </variation>
-                            </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="Wiz-VP-Vn1">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="230" y="291" width="69" height="31"/>
+                                    <rect key="frame" x="230" y="285" width="69" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="cocaColaSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fc3-GU-tok"/>
@@ -238,24 +242,21 @@
                                     <action selector="currencyButtonActionBGN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lGf-e3-NRd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkK-Gd-7Tl">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <accessibility key="accessibilityConfiguration" label=""/>
-                                <state key="normal" title="EUR">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73e-iq-rKg">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="138" y="35" width="31" height="30"/>
+                                    <rect key="frame" x="198" y="285" width="34" height="30"/>
                                 </variation>
-                                <connections>
-                                    <action selector="currencyButtonActionEUR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I2v-jS-s2P"/>
-                                </connections>
-                            </button>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="b6V-Yn-bct"/>
+                                <exclude reference="FkK-Gd-7Tl"/>
                                 <exclude reference="3sm-7E-cp1"/>
                                 <exclude reference="uTI-6u-bd6"/>
                                 <exclude reference="R49-Vo-BGn"/>
@@ -274,15 +275,15 @@
                                 <exclude reference="H33-Cl-msV"/>
                                 <exclude reference="BK3-AL-pHC"/>
                                 <exclude reference="iiS-1H-NSX"/>
-                                <exclude reference="73e-iq-rKg"/>
                                 <exclude reference="Wiz-VP-Vn1"/>
                                 <exclude reference="V7B-l0-cmW"/>
-                                <exclude reference="FkK-Gd-7Tl"/>
+                                <exclude reference="73e-iq-rKg"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="b6V-Yn-bct"/>
+                                <include reference="FkK-Gd-7Tl"/>
                                 <include reference="3sm-7E-cp1"/>
                                 <include reference="uTI-6u-bd6"/>
                                 <include reference="R49-Vo-BGn"/>
@@ -301,10 +302,9 @@
                                 <include reference="H33-Cl-msV"/>
                                 <include reference="BK3-AL-pHC"/>
                                 <include reference="iiS-1H-NSX"/>
-                                <include reference="73e-iq-rKg"/>
                                 <include reference="Wiz-VP-Vn1"/>
                                 <include reference="V7B-l0-cmW"/>
-                                <include reference="FkK-Gd-7Tl"/>
+                                <include reference="73e-iq-rKg"/>
                             </mask>
                         </variation>
                     </view>
