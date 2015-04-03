@@ -246,6 +246,18 @@
     if (current.text.integerValue < 0) {
         current.text = @"0";
     }
+    
+    if ([current isEqual:self.texfieldSoup]) {
+        soupCount = current.text.integerValue;
+    }
+    
+    if ([current isEqual:self.textfieldDesert]) {
+        desertCount = current.text.integerValue;
+    }
+    
+    if ([current isEqual:self.textfieldMainDish]) {
+        mainDishCount = current.text.integerValue;
+    }
 }
 
 @end
