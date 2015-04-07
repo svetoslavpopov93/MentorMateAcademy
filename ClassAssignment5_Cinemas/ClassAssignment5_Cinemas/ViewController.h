@@ -2,11 +2,12 @@
 //  ViewController.h
 //  ClassAssignment5_Cinemas
 //
-//  Created by Student17 on 4/6/15.
-//  Copyright (c) 2015 MentorMate. All rights reserved.
+//  Created by svetoslavpopov on 4/7/15.
+//  Copyright (c) 2015 svetoslavpopov. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "DataModelSingleton.h"
 
 @interface ViewController : UIViewController
 
