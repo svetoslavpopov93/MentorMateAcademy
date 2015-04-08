@@ -16,7 +16,7 @@
     DataModelSingleton *model = [DataModelSingleton sharedDataModel];
     [model didFillExampleUsers];
     
-    
+    NSLog(@"");
     
 }
 
@@ -24,7 +24,7 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)testButton:(id)sender {
+- (IBAction)buttonActionDirectionChooser:(id)sender {
     if([(UIButton*)sender isEqual:self.buttonSignIn]){
         UIViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
         [self.navigationController pushViewController: loginViewController animated: YES];
@@ -34,6 +34,10 @@
         [self.navigationController pushViewController:registerViewController animated:YES];
     }
     
+    
+}
+
+-(void)didFillExampleData{
     
 }
 

@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "Cinema.h"
+#import "Movie.h"
 
 @interface DataModelSingleton : NSObject
 
-@property(nonatomic, strong) NSMutableDictionary* users;
+@property(nonatomic, strong) NSMutableDictionary *users;
+@property(nonatomic, strong) NSMutableArray *cinemas;
+@property(nonatomic) int cinemaIndex;
+
 +(id)sharedDataModel;
-+(BOOL)didPerformUserCheckWithUsername: (NSString *)username andPassword: (NSString *)password;
+-(BOOL)didPerformUserCheckWithUsername: (NSString *)username andPassword: (NSString *)password;
 
 //-(id)init;
 

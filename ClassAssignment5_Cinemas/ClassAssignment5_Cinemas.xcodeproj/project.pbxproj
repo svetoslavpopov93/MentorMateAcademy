@@ -20,6 +20,12 @@
 		AEFE6D761AD414200072060C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFE6D751AD414200072060C /* User.m */; };
 		AEFE6D791AD41B6F0072060C /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFE6D781AD41B6F0072060C /* MainNavigationViewController.m */; };
 		AEFE6D7C1AD440510072060C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFE6D7B1AD440510072060C /* RegisterViewController.m */; };
+		AEFE6D801AD54AC10072060C /* cinema1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEFE6D7D1AD54AC10072060C /* cinema1.jpg */; };
+		AEFE6D811AD54AC10072060C /* cinema2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEFE6D7E1AD54AC10072060C /* cinema2.jpg */; };
+		AEFE6D821AD54AC10072060C /* cinema3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEFE6D7F1AD54AC10072060C /* cinema3.jpg */; };
+		AEFE6D861AD55B490072060C /* Cinema.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFE6D851AD55B490072060C /* Cinema.m */; };
+		AEFE6D891AD55BD30072060C /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFE6D881AD55BD30072060C /* Movie.m */; };
+		AEFE6D8C1AD569EB0072060C /* CinemaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFE6D8B1AD569EB0072060C /* CinemaViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +64,15 @@
 		AEFE6D781AD41B6F0072060C /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		AEFE6D7A1AD440510072060C /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		AEFE6D7B1AD440510072060C /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		AEFE6D7D1AD54AC10072060C /* cinema1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cinema1.jpg; path = ../../cinema1.jpg; sourceTree = "<group>"; };
+		AEFE6D7E1AD54AC10072060C /* cinema2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cinema2.jpg; path = ../../cinema2.jpg; sourceTree = "<group>"; };
+		AEFE6D7F1AD54AC10072060C /* cinema3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cinema3.jpg; path = ../../cinema3.jpg; sourceTree = "<group>"; };
+		AEFE6D841AD55B490072060C /* Cinema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinema.h; sourceTree = "<group>"; };
+		AEFE6D851AD55B490072060C /* Cinema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cinema.m; sourceTree = "<group>"; };
+		AEFE6D871AD55BD30072060C /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		AEFE6D881AD55BD30072060C /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		AEFE6D8A1AD569EB0072060C /* CinemaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinemaViewController.h; sourceTree = "<group>"; };
+		AEFE6D8B1AD569EB0072060C /* CinemaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CinemaViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +96,8 @@
 		AEFE6D331AD3ED130072060C = {
 			isa = PBXGroup;
 			children = (
+				AEFE6D8A1AD569EB0072060C /* CinemaViewController.h */,
+				AEFE6D8B1AD569EB0072060C /* CinemaViewController.m */,
 				AEFE6D3E1AD3ED130072060C /* ClassAssignment5_Cinemas */,
 				AEFE6D581AD3ED130072060C /* ClassAssignment5_CinemasTests */,
 				AEFE6D3D1AD3ED130072060C /* Products */,
@@ -99,26 +116,15 @@
 		AEFE6D3E1AD3ED130072060C /* ClassAssignment5_Cinemas */ = {
 			isa = PBXGroup;
 			children = (
+				AEFE6D8E1AD56A190072060C /* Models */,
+				AEFE6D831AD54ACB0072060C /* images */,
 				AEFE6D431AD3ED130072060C /* AppDelegate.h */,
 				AEFE6D441AD3ED130072060C /* AppDelegate.m */,
-				AEFE6D461AD3ED130072060C /* ViewController.h */,
-				AEFE6D471AD3ED130072060C /* ViewController.m */,
+				AEFE6D8D1AD56A020072060C /* ViewControllers */,
 				AEFE6D491AD3ED130072060C /* Main.storyboard */,
 				AEFE6D4C1AD3ED130072060C /* Images.xcassets */,
 				AEFE6D4E1AD3ED130072060C /* LaunchScreen.xib */,
 				AEFE6D3F1AD3ED130072060C /* Supporting Files */,
-				AEFE6D6B1AD3EFF20072060C /* LoginViewController.h */,
-				AEFE6D6C1AD3EFF20072060C /* LoginViewController.m */,
-				AEFE6D6E1AD3F19B0072060C /* CinemaListViewController.h */,
-				AEFE6D6F1AD3F19B0072060C /* CinemaListViewController.m */,
-				AEFE6D711AD3F4D70072060C /* DataModelSingleton.h */,
-				AEFE6D721AD3F4D70072060C /* DataModelSingleton.m */,
-				AEFE6D741AD414200072060C /* User.h */,
-				AEFE6D751AD414200072060C /* User.m */,
-				AEFE6D771AD41B6F0072060C /* MainNavigationViewController.h */,
-				AEFE6D781AD41B6F0072060C /* MainNavigationViewController.m */,
-				AEFE6D7A1AD440510072060C /* RegisterViewController.h */,
-				AEFE6D7B1AD440510072060C /* RegisterViewController.m */,
 			);
 			path = ClassAssignment5_Cinemas;
 			sourceTree = "<group>";
@@ -147,6 +153,48 @@
 				AEFE6D5A1AD3ED130072060C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEFE6D831AD54ACB0072060C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AEFE6D7D1AD54AC10072060C /* cinema1.jpg */,
+				AEFE6D7E1AD54AC10072060C /* cinema2.jpg */,
+				AEFE6D7F1AD54AC10072060C /* cinema3.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		AEFE6D8D1AD56A020072060C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AEFE6D461AD3ED130072060C /* ViewController.h */,
+				AEFE6D471AD3ED130072060C /* ViewController.m */,
+				AEFE6D6B1AD3EFF20072060C /* LoginViewController.h */,
+				AEFE6D6C1AD3EFF20072060C /* LoginViewController.m */,
+				AEFE6D6E1AD3F19B0072060C /* CinemaListViewController.h */,
+				AEFE6D6F1AD3F19B0072060C /* CinemaListViewController.m */,
+				AEFE6D771AD41B6F0072060C /* MainNavigationViewController.h */,
+				AEFE6D781AD41B6F0072060C /* MainNavigationViewController.m */,
+				AEFE6D7A1AD440510072060C /* RegisterViewController.h */,
+				AEFE6D7B1AD440510072060C /* RegisterViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AEFE6D8E1AD56A190072060C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AEFE6D741AD414200072060C /* User.h */,
+				AEFE6D751AD414200072060C /* User.m */,
+				AEFE6D841AD55B490072060C /* Cinema.h */,
+				AEFE6D851AD55B490072060C /* Cinema.m */,
+				AEFE6D871AD55BD30072060C /* Movie.h */,
+				AEFE6D881AD55BD30072060C /* Movie.m */,
+				AEFE6D711AD3F4D70072060C /* DataModelSingleton.h */,
+				AEFE6D721AD3F4D70072060C /* DataModelSingleton.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +277,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFE6D801AD54AC10072060C /* cinema1.jpg in Resources */,
 				AEFE6D4B1AD3ED130072060C /* Main.storyboard in Resources */,
 				AEFE6D501AD3ED130072060C /* LaunchScreen.xib in Resources */,
+				AEFE6D811AD54AC10072060C /* cinema2.jpg in Resources */,
+				AEFE6D821AD54AC10072060C /* cinema3.jpg in Resources */,
 				AEFE6D4D1AD3ED130072060C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,12 +300,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFE6D891AD55BD30072060C /* Movie.m in Sources */,
+				AEFE6D8C1AD569EB0072060C /* CinemaViewController.m in Sources */,
 				AEFE6D6D1AD3EFF20072060C /* LoginViewController.m in Sources */,
 				AEFE6D761AD414200072060C /* User.m in Sources */,
 				AEFE6D481AD3ED130072060C /* ViewController.m in Sources */,
 				AEFE6D701AD3F19B0072060C /* CinemaListViewController.m in Sources */,
 				AEFE6D7C1AD440510072060C /* RegisterViewController.m in Sources */,
 				AEFE6D451AD3ED130072060C /* AppDelegate.m in Sources */,
+				AEFE6D861AD55B490072060C /* Cinema.m in Sources */,
 				AEFE6D791AD41B6F0072060C /* MainNavigationViewController.m in Sources */,
 				AEFE6D421AD3ED130072060C /* main.m in Sources */,
 				AEFE6D731AD3F4D70072060C /* DataModelSingleton.m in Sources */,

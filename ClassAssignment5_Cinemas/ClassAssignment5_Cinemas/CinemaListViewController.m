@@ -10,28 +10,47 @@
 
 @interface CinemaListViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonFirstDetail;
+@property (weak, nonatomic) IBOutlet UIButton *buttonSecondDetail;
+@property (weak, nonatomic) IBOutlet UIButton *buttonThirdDetail;
+@property (weak, nonatomic) IBOutlet UILabel *labelFirstMovie;
+@property (weak, nonatomic) IBOutlet UILabel *labelSecondMovie;
+@property (weak, nonatomic) IBOutlet UILabel *labelThirdMovie;
+
 @end
 
-@implementation CinemaListViewController
+@implementation CinemaListViewController{
+    DataModelSingleton *model;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    model = [DataModelSingleton sharedDataModel];
+    
+    Cinema *first = [model.cinemas objectAtIndex:0];;
+    self.labelFirstMovie.text =first.name;
+    
+    Cinema *second = [model.cinemas objectAtIndex:1];
+    self.labelSecondMovie.text = second.name;
+
+    Cinema *third = [model.cinemas objectAtIndex:2];
+    self.labelThirdMovie.text = third.name;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)buttonActionDetails:(id)sender {
+    if ([(UIButton*)sender isEqual: self.buttonFirstDetail]) {
+        model.cinemaIndex = 0;
+    }
+    else if([(UIButton*)sender isEqual: self.buttonSecondDetail]){
+        model.cinemaIndex = 1;
+    }
+    else{
+        model.cinemaIndex = 2;
+    }
 }
-*/
 
 @end

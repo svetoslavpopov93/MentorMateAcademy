@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "DataModelSingleton.h"
+#import "Cinema.h"
+#import "Movie.h"
 
 @interface ViewController : UIViewController
 

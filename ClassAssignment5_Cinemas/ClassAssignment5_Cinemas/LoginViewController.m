@@ -9,19 +9,33 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *textfieldUsername;
+@property (weak, nonatomic) IBOutlet UITextField *textfieldPassword;
 
 @end
 
-@implementation LoginViewController
+@implementation LoginViewController{
+    DataModelSingleton *model;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    model = [DataModelSingleton sharedDataModel];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+- (IBAction)buttonActionLogin:(id)sender {
+    if([model didPerformUserCheckWithUsername:self.textfieldUsername.text andPassword:self.textfieldPassword.text]){
+        UIViewController *cinemaListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CinemaListViewController"];
+        
+        [self.navigationController pushViewController:cinemaListViewController animated:YES];
+    }
 }
 
 @end
