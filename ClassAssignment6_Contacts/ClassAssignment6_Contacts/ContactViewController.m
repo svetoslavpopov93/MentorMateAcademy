@@ -9,29 +9,32 @@
 #import "ContactViewController.h"
 
 @interface ContactViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *labelName;
+@property (weak, nonatomic) IBOutlet UILabel *labelNumber;
+@property (weak, nonatomic) IBOutlet UILabel *labelHomeNumber;
+@property (weak, nonatomic) IBOutlet UILabel *labelWorkNumber;
 
 @end
 
-@implementation ContactViewController
+@implementation ContactViewController{
+    ModelSingleton *model;
+    Contact *currentContact;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    model = [ModelSingleton dataModel];
+    currentContact = [model.contacts objectAtIndex:model.index];
+    
+    self.labelName = currentContact.name;
+    self.labelNumber = currentContact.number;
+    self.labelHomeNumber = currentContact.homeNumber;
+    self.labelWorkNumber = currentContact.workNumber;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

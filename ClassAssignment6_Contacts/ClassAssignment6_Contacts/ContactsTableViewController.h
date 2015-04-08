@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelSingleton.h"
 
 @interface ContactsTableViewController : UITableViewController
 

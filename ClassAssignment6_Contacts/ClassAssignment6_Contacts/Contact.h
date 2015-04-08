@@ -10,4 +10,11 @@
 
 @interface Contact : NSObject
 
+@property(nonatomic, strong)NSString *name;
+@property(nonatomic, strong)NSString *number;
+@property(nonatomic, strong)NSString *homeNumber;
+@property(nonatomic, strong)NSString *workNumber;
+
+-(id)initWithName: (NSString *)name PhoneNumber: (NSString *)phoneNumber HomeNumber: (NSString *)homeNumber AndWorkNumber: (NSString*)workNumber;
+
 @end

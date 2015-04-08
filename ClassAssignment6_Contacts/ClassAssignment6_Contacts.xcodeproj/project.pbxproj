@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB04DF091AD5B34F00E548C5 /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB04DF081AD5B34F00E548C5 /* pic.jpg */; };
 		FB2000CB1AD5A1210088B11F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2000CA1AD5A1210088B11F /* main.m */; };
 		FB2000CE1AD5A1210088B11F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2000CD1AD5A1210088B11F /* AppDelegate.m */; };
 		FB2000D11AD5A1210088B11F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2000D01AD5A1210088B11F /* ViewController.m */; };
@@ -14,6 +15,10 @@
 		FB2000D61AD5A1210088B11F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2000D51AD5A1210088B11F /* Images.xcassets */; };
 		FB2000D91AD5A1210088B11F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB2000D71AD5A1210088B11F /* LaunchScreen.xib */; };
 		FB2000E51AD5A1210088B11F /* ClassAssignment6_ContactsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2000E41AD5A1210088B11F /* ClassAssignment6_ContactsTests.m */; };
+		FB2000F01AD5A4560088B11F /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2000EF1AD5A4560088B11F /* ContactViewController.m */; };
+		FB2000F61AD5A6670088B11F /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2000F51AD5A6670088B11F /* ContactsTableViewController.m */; };
+		FB2000FA1AD5ACAD0088B11F /* ModelSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2000F91AD5ACAD0088B11F /* ModelSingleton.m */; };
+		FB2000FD1AD5AEAA0088B11F /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2000FC1AD5AEAA0088B11F /* Contact.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB04DF081AD5B34F00E548C5 /* pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic.jpg; sourceTree = "<group>"; };
 		FB2000C51AD5A1210088B11F /* ClassAssignment6_Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassAssignment6_Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2000C91AD5A1210088B11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB2000CA1AD5A1210088B11F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +46,14 @@
 		FB2000DE1AD5A1210088B11F /* ClassAssignment6_ContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassAssignment6_ContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2000E31AD5A1210088B11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB2000E41AD5A1210088B11F /* ClassAssignment6_ContactsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassAssignment6_ContactsTests.m; sourceTree = "<group>"; };
+		FB2000EE1AD5A4560088B11F /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		FB2000EF1AD5A4560088B11F /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		FB2000F41AD5A6670088B11F /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
+		FB2000F51AD5A6670088B11F /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
+		FB2000F81AD5ACAD0088B11F /* ModelSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelSingleton.h; sourceTree = "<group>"; };
+		FB2000F91AD5ACAD0088B11F /* ModelSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelSingleton.m; sourceTree = "<group>"; };
+		FB2000FB1AD5AEAA0088B11F /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		FB2000FC1AD5AEAA0088B11F /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,7 @@
 		FB2000C71AD5A1210088B11F /* ClassAssignment6_Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				FB04DF081AD5B34F00E548C5 /* pic.jpg */,
 				FB2000CC1AD5A1210088B11F /* AppDelegate.h */,
 				FB2000CD1AD5A1210088B11F /* AppDelegate.m */,
 				FB2000CF1AD5A1210088B11F /* ViewController.h */,
@@ -89,6 +104,14 @@
 				FB2000D51AD5A1210088B11F /* Images.xcassets */,
 				FB2000D71AD5A1210088B11F /* LaunchScreen.xib */,
 				FB2000C81AD5A1210088B11F /* Supporting Files */,
+				FB2000EE1AD5A4560088B11F /* ContactViewController.h */,
+				FB2000EF1AD5A4560088B11F /* ContactViewController.m */,
+				FB2000F41AD5A6670088B11F /* ContactsTableViewController.h */,
+				FB2000F51AD5A6670088B11F /* ContactsTableViewController.m */,
+				FB2000F81AD5ACAD0088B11F /* ModelSingleton.h */,
+				FB2000F91AD5ACAD0088B11F /* ModelSingleton.m */,
+				FB2000FB1AD5AEAA0088B11F /* Contact.h */,
+				FB2000FC1AD5AEAA0088B11F /* Contact.m */,
 			);
 			path = ClassAssignment6_Contacts;
 			sourceTree = "<group>";
@@ -201,6 +224,7 @@
 			files = (
 				FB2000D41AD5A1210088B11F /* Main.storyboard in Resources */,
 				FB2000D91AD5A1210088B11F /* LaunchScreen.xib in Resources */,
+				FB04DF091AD5B34F00E548C5 /* pic.jpg in Resources */,
 				FB2000D61AD5A1210088B11F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +244,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB2000D11AD5A1210088B11F /* ViewController.m in Sources */,
+				FB2000FA1AD5ACAD0088B11F /* ModelSingleton.m in Sources */,
+				FB2000F01AD5A4560088B11F /* ContactViewController.m in Sources */,
+				FB2000F61AD5A6670088B11F /* ContactsTableViewController.m in Sources */,
+				FB2000FD1AD5AEAA0088B11F /* Contact.m in Sources */,
 				FB2000CE1AD5A1210088B11F /* AppDelegate.m in Sources */,
 				FB2000CB1AD5A1210088B11F /* main.m in Sources */,
 			);
@@ -414,6 +442,7 @@
 				FB2000EA1AD5A1210088B11F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB2000EB1AD5A1210088B11F /* Build configuration list for PBXNativeTarget "ClassAssignment6_ContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +451,7 @@
 				FB2000ED1AD5A1210088B11F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

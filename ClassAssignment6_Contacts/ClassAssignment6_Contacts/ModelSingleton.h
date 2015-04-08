@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Contact.h"
 
 @interface ModelSingleton : NSObject
+
++(id)dataModel;
+@property(nonatomic, strong)NSMutableArray *contacts;
+@property(nonatomic)NSInteger index;
 
 @end
