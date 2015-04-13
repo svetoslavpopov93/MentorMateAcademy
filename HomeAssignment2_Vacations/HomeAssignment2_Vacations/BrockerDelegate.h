@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BrockerDelegate : NSObject
+@interface BrockerDelegate : NSObject<Brocker
 
 @end

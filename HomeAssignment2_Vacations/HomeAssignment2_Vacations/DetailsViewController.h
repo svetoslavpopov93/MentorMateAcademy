@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataModelSingleton.h"
 
-@interface DetailsViewController : UIViewController
+@interface DetailsViewController : UIViewController <BrokerDelegate>
 
 @end

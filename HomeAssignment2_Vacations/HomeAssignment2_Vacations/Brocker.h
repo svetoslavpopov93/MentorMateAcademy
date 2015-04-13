@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Vacation.h"
 
-@interface Brocker : NSObject
+@interface Brocker : NSObject<BrokerDelegate>
 
 @end

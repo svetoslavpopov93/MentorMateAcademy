@@ -7,7 +7,21 @@
 //
 
 #import "Brocker.h"
+#import "DataModelSingleton.h"
 
-@implementation Brocker
+@implementation Brocker{
+    DataModelSingleton
+}
+-(void)goOnVacation:(Vacation *)vacation{
+    NSLog(@"%@", vacation.name);
+}
 
+-(void)reviewVacation:(Vacation *)vacation{
+    
+}
+
+-(bool)isVacation:(Vacation *)vacation openForDate: (NSString*)day{
+    
+    return true;
+}
 @end

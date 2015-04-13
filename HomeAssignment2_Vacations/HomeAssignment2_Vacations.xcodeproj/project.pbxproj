@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		FBD8084D1ADBBD6800C6EDBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD8084C1ADBBD6800C6EDBC /* main.m */; };
 		FBD808501ADBBD6800C6EDBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD8084F1ADBBD6800C6EDBC /* AppDelegate.m */; };
-		FBD808531ADBBD6800C6EDBC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD808521ADBBD6800C6EDBC /* ViewController.m */; };
 		FBD808561ADBBD6800C6EDBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD808541ADBBD6800C6EDBC /* Main.storyboard */; };
 		FBD808581ADBBD6800C6EDBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD808571ADBBD6800C6EDBC /* Images.xcassets */; };
 		FBD8085B1ADBBD6800C6EDBC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD808591ADBBD6800C6EDBC /* LaunchScreen.xib */; };
 		FBD808671ADBBD6900C6EDBC /* HomeAssignment2_VacationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD808661ADBBD6900C6EDBC /* HomeAssignment2_VacationsTests.m */; };
+		FBD808721ADBBE4D00C6EDBC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD808711ADBBE4D00C6EDBC /* LoginViewController.m */; };
+		FBD808751ADBBEB200C6EDBC /* DataModelSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD808741ADBBEB200C6EDBC /* DataModelSingleton.m */; };
+		FBD808781ADBC0E200C6EDBC /* Vacation.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD808771ADBC0E200C6EDBC /* Vacation.m */; };
+		FBD8087A1ADBEC4600C6EDBC /* vacation.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBD808791ADBEC4600C6EDBC /* vacation.jpg */; };
+		FBD8087D1ADBEE5D00C6EDBC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD8087C1ADBEE5D00C6EDBC /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +36,21 @@
 		FBD8084C1ADBBD6800C6EDBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBD8084E1ADBBD6800C6EDBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBD8084F1ADBBD6800C6EDBC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FBD808511ADBBD6800C6EDBC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FBD808521ADBBD6800C6EDBC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FBD808551ADBBD6800C6EDBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBD808571ADBBD6800C6EDBC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FBD8085A1ADBBD6800C6EDBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FBD808601ADBBD6900C6EDBC /* HomeAssignment2_VacationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeAssignment2_VacationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD808651ADBBD6900C6EDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBD808661ADBBD6900C6EDBC /* HomeAssignment2_VacationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeAssignment2_VacationsTests.m; sourceTree = "<group>"; };
+		FBD808701ADBBE4D00C6EDBC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		FBD808711ADBBE4D00C6EDBC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FBD808731ADBBEB200C6EDBC /* DataModelSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelSingleton.h; sourceTree = "<group>"; };
+		FBD808741ADBBEB200C6EDBC /* DataModelSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelSingleton.m; sourceTree = "<group>"; };
+		FBD808761ADBC0E200C6EDBC /* Vacation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vacation.h; sourceTree = "<group>"; };
+		FBD808771ADBC0E200C6EDBC /* Vacation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vacation.m; sourceTree = "<group>"; };
+		FBD808791ADBEC4600C6EDBC /* vacation.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vacation.jpg; sourceTree = "<group>"; };
+		FBD8087B1ADBEE5D00C6EDBC /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		FBD8087C1ADBEE5D00C6EDBC /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +92,21 @@
 		FBD808491ADBBD6800C6EDBC /* HomeAssignment2_Vacations */ = {
 			isa = PBXGroup;
 			children = (
+				FBD808791ADBEC4600C6EDBC /* vacation.jpg */,
 				FBD8084E1ADBBD6800C6EDBC /* AppDelegate.h */,
 				FBD8084F1ADBBD6800C6EDBC /* AppDelegate.m */,
-				FBD808511ADBBD6800C6EDBC /* ViewController.h */,
-				FBD808521ADBBD6800C6EDBC /* ViewController.m */,
 				FBD808541ADBBD6800C6EDBC /* Main.storyboard */,
 				FBD808571ADBBD6800C6EDBC /* Images.xcassets */,
 				FBD808591ADBBD6800C6EDBC /* LaunchScreen.xib */,
 				FBD8084A1ADBBD6800C6EDBC /* Supporting Files */,
+				FBD808701ADBBE4D00C6EDBC /* LoginViewController.h */,
+				FBD808711ADBBE4D00C6EDBC /* LoginViewController.m */,
+				FBD808731ADBBEB200C6EDBC /* DataModelSingleton.h */,
+				FBD808741ADBBEB200C6EDBC /* DataModelSingleton.m */,
+				FBD808761ADBC0E200C6EDBC /* Vacation.h */,
+				FBD808771ADBC0E200C6EDBC /* Vacation.m */,
+				FBD8087B1ADBEE5D00C6EDBC /* DetailsViewController.h */,
+				FBD8087C1ADBEE5D00C6EDBC /* DetailsViewController.m */,
 			);
 			path = HomeAssignment2_Vacations;
 			sourceTree = "<group>";
@@ -199,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD8087A1ADBEC4600C6EDBC /* vacation.jpg in Resources */,
 				FBD808561ADBBD6800C6EDBC /* Main.storyboard in Resources */,
 				FBD8085B1ADBBD6800C6EDBC /* LaunchScreen.xib in Resources */,
 				FBD808581ADBBD6800C6EDBC /* Images.xcassets in Resources */,
@@ -219,9 +238,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBD808531ADBBD6800C6EDBC /* ViewController.m in Sources */,
 				FBD808501ADBBD6800C6EDBC /* AppDelegate.m in Sources */,
+				FBD808751ADBBEB200C6EDBC /* DataModelSingleton.m in Sources */,
 				FBD8084D1ADBBD6800C6EDBC /* main.m in Sources */,
+				FBD8087D1ADBEE5D00C6EDBC /* DetailsViewController.m in Sources */,
+				FBD808781ADBC0E200C6EDBC /* Vacation.m in Sources */,
+				FBD808721ADBBE4D00C6EDBC /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
