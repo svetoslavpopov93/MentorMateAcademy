@@ -22,8 +22,8 @@
 +(id)sharedDataModel;
 -(id)init;
 
--(void)addVacations:(NSMutableSet *)vacations;
--(void)removeVacations:(NSMutableSet *)vacations;
+-(void)addVacation:(Vacation *)vacation;
+-(void)removeVacation:(Vacation *)vacation;
 -(void)bookVacation: (Vacation *)vacation;
 -(void)unbookVacation: (Vacation *)vacation;
 -(void)generateVacation;

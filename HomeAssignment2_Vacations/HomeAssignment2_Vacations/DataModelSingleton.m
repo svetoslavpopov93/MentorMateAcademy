@@ -48,38 +48,74 @@ static DataModelSingleton *sharedDataModel;
     return self;
 }
 
--(void)addVacations:(NSMutableSet *)vacations{
-//    for (Vacation* vacation in vacations) {
-//        
-//        if (vacation.vacationType == 0) {
-//            latestMonastryIndex++;
-//        }
-//        else if(vacation.vacationType == 1){
-//            latestVilaIndex++;
-//        }
-//        else{
-//            latestHotelIndex++;
-//        }
-//        
-//        vacationIndex++;
-//        [self.vacations addObject:vacation];
-//    }
+-(void)addVacation:(Vacation *)vacation{
+    if (vacation.vacationType == 0) {
+        [self.monastryVacations addObject:vacation];
+        latestMonastryIndex++;
+    }
+    else if(vacation.vacationType == 1){
+        [self.vilaVacations addObject:vacation];
+        latestVilaIndex++;
+    }
+    else{
+        [self.hotelVacations addObject:vacation];
+        latestHotelIndex++;
+    }
 }
 
--(void)removeVacations:(NSMutableSet *)vacations{
-    for (Vacation* vacation in vacations) {
-        [self.vacations removeObjectAtIndex:[self.vacations indexOfObject:vacation]];
+-(void)removeVacation:(Vacation *)vacation{
+    if (vacation.vacationType == 0) {
+        [self.monastryVacations removeLastObject];
+        latestMonastryIndex--;
+    }
+    
+    else if(vacation.vacationType == 1){
+        [self.vilaVacations removeLastObject];
+        latestVilaIndex--;
+    }
+    
+    else{
+        [self.hotelVacations removeLastObject];
+        latestMonastryIndex--;
     }
 }
 
 -(void)bookVacation: (Vacation *)vacation{
     vacation.isBooked = true;
+    
+    if(vacation.vacationType == 0){
+        vacation.isBooked = YES;
+        [self.monastryVacations removeLastObject];
+    }
+    
+    else if (vacation.vacationType == 1){
+        vacation.isBooked = YES;
+        [self.vilaVacations removeLastObject];
+    }
+    
+    else{
+        vacation.isBooked = YES;
+        [self.hotelVacations removeLastObject];
+    }
+    
     [self.bookedVacations addObject:vacation];
 }
 
 -(void)unbookVacation: (Vacation *)vacation{
-    vacation.isBooked = false;
-    [self.bookedVacations removeObject:vacation];
+    vacation.isBooked = NO;
+    
+    if(vacation.vacationType == 0){
+        [self.monastryVacations addObject: [self.bookedVacations lastObject]];
+        [self.bookedVacations removeLastObject];
+    }
+    else if(vacation.vacationType == 1){
+        [self.vilaVacations addObject: [self.bookedVacations lastObject]];
+        [self.bookedVacations removeLastObject];
+    }
+    else {
+        [self.hotelVacations addObject: [self.bookedVacations lastObject]];
+        [self.bookedVacations removeLastObject];
+    }
 }
 
 -(void)generateVacation{

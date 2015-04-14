@@ -44,20 +44,39 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)buttonBookedVacation:(id)sender {
+    long bookedVacationsCount =[dataModel.bookedVacations count];
+    
+    if(bookedVacationsCount > 0){
+        UIViewController *bookedVacationsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BookedVacationViewController"];
+        [self.navigationController pushViewController:bookedVacationsVC animated:YES];
+    }
+}
 
 - (IBAction)buttonActionChoseVacation:(id)sender {
-    if ((UIButton*)sender == self.buttonMonastry) {
-        long len = dataModel.monastryVacations.count;
         Vacation *current = [[Vacation alloc] init];
+    
+        if ((UIButton*)sender == self.buttonMonastry) {
+            long len = dataModel.monastryVacations.count;
                              current = dataModel.monastryVacations[len-1];
-        dataModel.selectedVacation = current;
-        NSLog(@"");
-    }
+            dataModel.selectedVacation = current;
+        }
     
-    UIViewController *detailsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsViewController"];
+        else if((UIButton*)sender == self.buttonVila){
+            long len = dataModel.vilaVacations.count;
+            current = dataModel.vilaVacations[len-1];
+            dataModel.selectedVacation = current;
+        }
     
+        else{
+            long len = dataModel.hotelVacations.count;
+            current = dataModel.hotelVacations[len-1];
+            dataModel.selectedVacation = current;
+        }
     
-    [self.navigationController pushViewController:detailsViewController animated:YES];
+        UIViewController *detailsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsViewController"];
+    
+        [self.navigationController pushViewController:detailsViewController animated:YES];
 }
 
 -(void)generateRandomVacations{

@@ -1,17 +1,17 @@
 //
-//  DetailsViewController.m
+//  BookedVacationViewController.m
 //  HomeAssignment2_Vacations
 //
-//  Created by Student17 on 4/13/15.
+//  Created by svetoslavpopov on 4/14/15.
 //  Copyright (c) 2015 MentorMate. All rights reserved.
 //
 
-#import "DetailsViewController.h"
+#import "BookedVacationViewController.h"
 
-@interface DetailsViewController ()
+@interface BookedVacationViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelType;
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
-@property (weak, nonatomic) IBOutlet UITextView *textFieldInfo;
+@property (weak, nonatomic) IBOutlet UITextView *textviewInfo;
 @property (weak, nonatomic) IBOutlet UILabel *labelLocation;
 @property (weak, nonatomic) IBOutlet UILabel *labelPrice;
 @property (weak, nonatomic) IBOutlet UILabel *labelOpenDays;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation DetailsViewController{
+@implementation BookedVacationViewController{
     DataModelSingleton *dataModel;
 }
 
@@ -43,10 +43,10 @@
     for (int i = 0; i < dataModel.selectedVacation.openDays.count; i++) {
         [openDays appendString:[NSString stringWithFormat: @"%@, ", dataModel.selectedVacation.openDays[i]]];
     }
-
+    
     self.labelType.text = currentType;
     self.labelName.text = dataModel.selectedVacation.name;
-    self.textFieldInfo.text = dataModel.selectedVacation.info;
+    self.textviewInfo.text = dataModel.selectedVacation.info;
     self.labelLocation.text = dataModel.selectedVacation.location;
     self.labelOpenDays.text = openDays;
     self.labelPrice.text = [NSString stringWithFormat:@"$%0.2f",dataModel.selectedVacation.price];
@@ -57,12 +57,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-- (IBAction)buttonBookVacation:(id)sender {
-    [self goOnVacation:dataModel.selectedVacation];
-    
-    UIViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    [self.navigationController pushViewController:loginVC animated:YES];
+- (IBAction)buttonActionUnbook:(id)sender {
 }
+
 
 -(void)goOnVacation:(Vacation *)vacation{
     [dataModel bookVacation:dataModel.selectedVacation];

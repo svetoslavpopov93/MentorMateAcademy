@@ -16,20 +16,19 @@
 -(void)goOnVacation: (Vacation*)vacation;
 -(bool)isVacation:(Vacation *)vacation openForDate: (NSString*)day;
 -(void)reviewVacation: (Vacation*)vacation;
--(void)parseData: (Vacation*)vacation;
 @end
 
-enum type
+typedef enum
 {
     Monastry = 0,
     Vila = 1,
     Hotel = 2
-};
+} Types;
 
 @interface Vacation : NSObject
 
 @property (weak, nonatomic) id<BrokerDelegate> delegate;
-@property enum type *vacationType;
+@property (nonatomic) int vacationType;
 @property NSString *name;
 @property NSString *info;
 @property NSString *location;
@@ -39,6 +38,6 @@ enum type
 @property BOOL isBooked;
 
 -(id)init;
--(id)initWithVacationType: (enum type)vacationType Name: (NSString*)name Info: (NSString*)info Location: (NSString*)location OpenDays: (NSMutableArray*)openDays AndPrice: (float)price;
+-(id)initWithVacationType: (int)vacationType Name: (NSString*)name Info: (NSString*)info Location: (NSString*)location OpenDays: (NSMutableArray*)openDays AndPrice: (float)price;
 
 @end

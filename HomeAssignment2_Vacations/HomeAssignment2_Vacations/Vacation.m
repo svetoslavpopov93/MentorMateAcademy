@@ -24,12 +24,12 @@
     return self;
 }
 
--(id)initWithVacationType: (enum type)vacationType Name: (NSString*)name Info: (NSString*)info Location: (NSString*)location OpenDays: (NSMutableArray*)openDays AndPrice: (float)price{
+-(id)initWithVacationType: (int)vacationType Name: (NSString*)name Info: (NSString*)info Location: (NSString*)location OpenDays: (NSMutableArray*)openDays AndPrice: (float)price{
     
     self = [self init];
     
     if(self){
-        self.vacationType = &(vacationType);
+        self.vacationType = vacationType;
         self.name = name;
         self.info = info;
         self.location = location;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEDEE0BB1ADD4B88000356C5 /* BookedVacationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEE0BA1ADD4B88000356C5 /* BookedVacationViewController.m */; };
 		FBD8084D1ADBBD6800C6EDBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD8084C1ADBBD6800C6EDBC /* main.m */; };
 		FBD808501ADBBD6800C6EDBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD8084F1ADBBD6800C6EDBC /* AppDelegate.m */; };
 		FBD808561ADBBD6800C6EDBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD808541ADBBD6800C6EDBC /* Main.storyboard */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AEDEE0B91ADD4B88000356C5 /* BookedVacationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookedVacationViewController.h; sourceTree = "<group>"; };
+		AEDEE0BA1ADD4B88000356C5 /* BookedVacationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookedVacationViewController.m; sourceTree = "<group>"; };
 		FBD808471ADBBD6800C6EDBC /* HomeAssignment2_Vacations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignment2_Vacations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD8084B1ADBBD6800C6EDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBD8084C1ADBBD6800C6EDBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				FBD808771ADBC0E200C6EDBC /* Vacation.m */,
 				FBD8087B1ADBEE5D00C6EDBC /* DetailsViewController.h */,
 				FBD8087C1ADBEE5D00C6EDBC /* DetailsViewController.m */,
+				AEDEE0B91ADD4B88000356C5 /* BookedVacationViewController.h */,
+				AEDEE0BA1ADD4B88000356C5 /* BookedVacationViewController.m */,
 			);
 			path = HomeAssignment2_Vacations;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			files = (
 				FBD808501ADBBD6800C6EDBC /* AppDelegate.m in Sources */,
 				FBD808751ADBBEB200C6EDBC /* DataModelSingleton.m in Sources */,
+				AEDEE0BB1ADD4B88000356C5 /* BookedVacationViewController.m in Sources */,
 				FBD8084D1ADBBD6800C6EDBC /* main.m in Sources */,
 				FBD8087D1ADBEE5D00C6EDBC /* DetailsViewController.m in Sources */,
 				FBD808781ADBC0E200C6EDBC /* Vacation.m in Sources */,
@@ -436,6 +442,7 @@
 				FBD8086C1ADBBD6900C6EDBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FBD8086D1ADBBD6900C6EDBC /* Build configuration list for PBXNativeTarget "HomeAssignment2_VacationsTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +451,7 @@
 				FBD8086F1ADBBD6900C6EDBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
