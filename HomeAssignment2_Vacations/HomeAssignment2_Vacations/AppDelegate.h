@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataModelSingleton.h"
+#import "Vacation.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

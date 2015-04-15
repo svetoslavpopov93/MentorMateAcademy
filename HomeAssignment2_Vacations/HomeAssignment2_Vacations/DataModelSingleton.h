@@ -11,6 +11,7 @@
 
 @interface DataModelSingleton : NSObject
 
+@property int backgroundEntersCounter;
 @property NSMutableArray *vacations;
 @property NSMutableArray *monastryVacations;
 @property NSMutableArray *vilaVacations;
@@ -27,5 +28,7 @@
 -(void)bookVacation: (Vacation *)vacation;
 -(void)unbookVacation: (Vacation *)vacation;
 -(void)generateVacation;
+
+-(void)increasePrices: (int)index;
 
 @end

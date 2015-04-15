@@ -33,6 +33,7 @@ static DataModelSingleton *sharedDataModel;
     self = [super init];
     
     if (self) {
+        self.backgroundEntersCounter = 0;
         self.vacations = [[NSMutableArray alloc]init];
         self.monastryVacations = [[NSMutableArray alloc] init];
         self.vilaVacations = [[NSMutableArray alloc] init];
@@ -202,6 +203,40 @@ static DataModelSingleton *sharedDataModel;
     vacationIndex++;
     
     return hotelVacation;
+}
+
+-(void)increasePrices: (int)index{
+    Vacation *newVacation = [[Vacation alloc] init];
+    
+    for (int ind = 0; ind < index; ind++) {
+        for (int i = 0; i < (int)self.monastryVacations.count; i++) {
+            newVacation = self.monastryVacations[i];
+        
+            newVacation.price = (newVacation.price * 20) / 100 + newVacation.price;
+        
+            newVacation.price = [NSString stringWithFormat:@"%0.2f", newVacation.price].floatValue;
+            self.monastryVacations[i] = newVacation;
+        }
+        
+        
+        for (int i = 0; i < (int)self.vilaVacations.count; i++) {
+            newVacation = self.vilaVacations[i];
+        
+            newVacation.price = (newVacation.price * 20) / 100 + newVacation.price;
+        
+            newVacation.price = [NSString stringWithFormat:@"%0.2f", newVacation.price].    floatValue;
+            self.vilaVacations[i] = newVacation;
+        }
+        
+        for (int i = 0; i < (int)self.hotelVacations.count; i++) {
+            newVacation = self.hotelVacations[i];
+        
+            newVacation.price = (newVacation.price * 20) / 100 + newVacation.price;
+        
+            newVacation.price = [NSString stringWithFormat:@"%0.2f", newVacation.price].floatValue;
+            self.hotelVacations[i] = newVacation;
+        }
+    }
 }
 
 @end
