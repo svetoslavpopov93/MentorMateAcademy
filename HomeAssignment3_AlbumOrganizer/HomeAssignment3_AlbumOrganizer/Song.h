@@ -1,0 +1,17 @@
+//
+//  Song.h
+//  HomeAssignment3_AlbumOrganizer
+//
+//  Created by Student17 on 4/19/15.
+//  Copyright (c) 2015 MentorMate. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface Song : NSObject
+
+@property (nonatomic, strong) NSString* artistName;
+@property (nonatomic, strong) NSString* songTitle;
+@property (nonatomic) float length;
+
+@end
