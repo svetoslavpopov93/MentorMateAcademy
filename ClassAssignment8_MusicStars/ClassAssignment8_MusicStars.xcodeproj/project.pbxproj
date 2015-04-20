@@ -14,6 +14,11 @@
 		FB3822A11AE572F000EAE3A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3822A01AE572F000EAE3A4 /* Images.xcassets */; };
 		FB3822A41AE572F000EAE3A4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB3822A21AE572F000EAE3A4 /* LaunchScreen.xib */; };
 		FB3822B01AE572F000EAE3A4 /* ClassAssignment8_MusicStarsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3822AF1AE572F000EAE3A4 /* ClassAssignment8_MusicStarsTests.m */; };
+		FB3822BB1AE573ED00EAE3A4 /* MusicStarsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3822BA1AE573ED00EAE3A4 /* MusicStarsCollectionViewController.m */; };
+		FB3822BE1AE5751400EAE3A4 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3822BD1AE5751400EAE3A4 /* CustomCollectionViewCell.m */; };
+		FB3822C41AE57F9C00EAE3A4 /* ArtistDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3822C31AE57F9C00EAE3A4 /* ArtistDetailsViewController.m */; };
+		FB3822C61AE585B400EAE3A4 /* boy.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3822C51AE585B400EAE3A4 /* boy.png */; };
+		FB3822C91AE586CA00EAE3A4 /* MusicStar.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3822C81AE586CA00EAE3A4 /* MusicStar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,15 @@
 		FB3822A91AE572F000EAE3A4 /* ClassAssignment8_MusicStarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassAssignment8_MusicStarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3822AE1AE572F000EAE3A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB3822AF1AE572F000EAE3A4 /* ClassAssignment8_MusicStarsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassAssignment8_MusicStarsTests.m; sourceTree = "<group>"; };
+		FB3822B91AE573ED00EAE3A4 /* MusicStarsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicStarsCollectionViewController.h; sourceTree = "<group>"; };
+		FB3822BA1AE573ED00EAE3A4 /* MusicStarsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicStarsCollectionViewController.m; sourceTree = "<group>"; };
+		FB3822BC1AE5751400EAE3A4 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		FB3822BD1AE5751400EAE3A4 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		FB3822C21AE57F9C00EAE3A4 /* ArtistDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistDetailsViewController.h; sourceTree = "<group>"; };
+		FB3822C31AE57F9C00EAE3A4 /* ArtistDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistDetailsViewController.m; sourceTree = "<group>"; };
+		FB3822C51AE585B400EAE3A4 /* boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy.png; sourceTree = "<group>"; };
+		FB3822C71AE586CA00EAE3A4 /* MusicStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicStar.h; sourceTree = "<group>"; };
+		FB3822C81AE586CA00EAE3A4 /* MusicStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicStar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,7 @@
 		FB3822921AE572F000EAE3A4 /* ClassAssignment8_MusicStars */ = {
 			isa = PBXGroup;
 			children = (
+				FB3822C51AE585B400EAE3A4 /* boy.png */,
 				FB3822971AE572F000EAE3A4 /* AppDelegate.h */,
 				FB3822981AE572F000EAE3A4 /* AppDelegate.m */,
 				FB38229A1AE572F000EAE3A4 /* ViewController.h */,
@@ -89,6 +104,14 @@
 				FB3822A01AE572F000EAE3A4 /* Images.xcassets */,
 				FB3822A21AE572F000EAE3A4 /* LaunchScreen.xib */,
 				FB3822931AE572F000EAE3A4 /* Supporting Files */,
+				FB3822B91AE573ED00EAE3A4 /* MusicStarsCollectionViewController.h */,
+				FB3822BA1AE573ED00EAE3A4 /* MusicStarsCollectionViewController.m */,
+				FB3822BC1AE5751400EAE3A4 /* CustomCollectionViewCell.h */,
+				FB3822BD1AE5751400EAE3A4 /* CustomCollectionViewCell.m */,
+				FB3822C21AE57F9C00EAE3A4 /* ArtistDetailsViewController.h */,
+				FB3822C31AE57F9C00EAE3A4 /* ArtistDetailsViewController.m */,
+				FB3822C71AE586CA00EAE3A4 /* MusicStar.h */,
+				FB3822C81AE586CA00EAE3A4 /* MusicStar.m */,
 			);
 			path = ClassAssignment8_MusicStars;
 			sourceTree = "<group>";
@@ -199,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3822C61AE585B400EAE3A4 /* boy.png in Resources */,
 				FB38229F1AE572F000EAE3A4 /* Main.storyboard in Resources */,
 				FB3822A41AE572F000EAE3A4 /* LaunchScreen.xib in Resources */,
 				FB3822A11AE572F000EAE3A4 /* Images.xcassets in Resources */,
@@ -219,9 +243,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3822BB1AE573ED00EAE3A4 /* MusicStarsCollectionViewController.m in Sources */,
 				FB38229C1AE572F000EAE3A4 /* ViewController.m in Sources */,
 				FB3822991AE572F000EAE3A4 /* AppDelegate.m in Sources */,
 				FB3822961AE572F000EAE3A4 /* main.m in Sources */,
+				FB3822C41AE57F9C00EAE3A4 /* ArtistDetailsViewController.m in Sources */,
+				FB3822C91AE586CA00EAE3A4 /* MusicStar.m in Sources */,
+				FB3822BE1AE5751400EAE3A4 /* CustomCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
