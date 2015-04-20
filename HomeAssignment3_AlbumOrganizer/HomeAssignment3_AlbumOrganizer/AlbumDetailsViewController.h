@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataManagerSingleton.h"
 
 @interface AlbumDetailsViewController : UIViewController
+<UITableViewDataSource, UITableViewDelegate>{
+    NSMutableArray *songs;
+}
 
+@property(nonatomic, retain) NSMutableArray *songs;
 @end

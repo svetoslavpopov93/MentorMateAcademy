@@ -18,7 +18,7 @@
         self.albumTitle = [[NSString alloc] init];
         self.albumArtist = [[NSString alloc] init];
         self.numberOfSongs = 0;
-        self.songs = [[NSMutableDictionary alloc] init];
+        self.songs = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -33,6 +33,10 @@
     }
     
     return self;
+}
+
+-(void)addNewSong: (Song*)song{
+    [self.songs addObject:song];
 }
 
 @end

@@ -14,8 +14,9 @@
 @property (nonatomic, strong) NSMutableArray* albums;
 @property (nonatomic) int selectedAlbumIndex;
 
--(void)addNewAlbumWithTitle: (NSString*)title Artist: (NSString*)artist;
 +(id)initSharedDataManager;
+-(void)addNewAlbumWithTitle: (NSString*)title Artist: (NSString*)artist;
+-(void)addNewAlbum:(Album*)album;
 -(void)printAlbums;
 
 @end

@@ -23,9 +23,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"albumCellModel" bundle:nil]
          forCellReuseIdentifier: @"customCellID"];
     dataManager = [DataManagerSingleton initSharedDataManager];
-    [dataManager addNewAlbumWithTitle:@"Seek and Destroy" Artist:@"Metallica"];
-    [dataManager addNewAlbumWithTitle:@"Master of puppets" Artist:@"Metallica"];
-    [dataManager addNewAlbumWithTitle:@"Over the hills and far away" Artist:@"Nightwish"];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -73,6 +71,13 @@
     
     [self.navigationController pushViewController:detailsController animated:YES];
 }
+
+- (IBAction)buttonActionAddNewAlbum:(id)sender {
+    UIViewController *addAlbumViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"addNewAlbumVC"];
+    
+    [self.navigationController pushViewController:addAlbumViewController animated:YES];
+}
+
 
 /*
 // Override to support conditional editing of the table view.

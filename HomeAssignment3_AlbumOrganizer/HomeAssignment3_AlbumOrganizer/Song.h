@@ -14,4 +14,7 @@
 @property (nonatomic, strong) NSString* songTitle;
 @property (nonatomic) float length;
 
+-(id)initWithArtistName: (NSString*)artist SongTitle: (NSString*)title AndLength:(float)length;
+-(id)initWithArtistName: (NSString*)artist AndSongTitle: (NSString*)title;
+
 @end

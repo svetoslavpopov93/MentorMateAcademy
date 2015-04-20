@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Song.h"
 
 @interface Album : NSObject
 
@@ -15,8 +16,8 @@
 @property (nonatomic, strong) NSString* albumTitle;
 @property (nonatomic, strong) NSString* albumArtist;
 @property (nonatomic) int numberOfSongs;
-@property (nonatomic, strong) NSMutableDictionary* songs;
+@property (nonatomic, strong) NSMutableArray* songs;
 
 -(id)initWithTitle: (NSString*)title Artist: (NSString*)artist;
-
+-(void)addNewSong: (Song*)song;
 @end
