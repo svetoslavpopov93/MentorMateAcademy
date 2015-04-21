@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE294C591AE52A3B00A27373 /* AddNewAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE294C581AE52A3B00A27373 /* AddNewAlbumViewController.m */; };
+		AE294C5B1AE6329900A27373 /* default-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE294C5A1AE6329900A27373 /* default-cover.jpg */; };
 		FBCD61881AE4154F00138410 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCD61871AE4154F00138410 /* main.m */; };
 		FBCD618B1AE4154F00138410 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCD618A1AE4154F00138410 /* AppDelegate.m */; };
 		FBCD61911AE4154F00138410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCD618F1AE4154F00138410 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		AE294C571AE52A3B00A27373 /* AddNewAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewAlbumViewController.h; sourceTree = "<group>"; };
 		AE294C581AE52A3B00A27373 /* AddNewAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewAlbumViewController.m; sourceTree = "<group>"; };
+		AE294C5A1AE6329900A27373 /* default-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "default-cover.jpg"; sourceTree = "<group>"; };
 		FBCD61821AE4154F00138410 /* HomeAssignment3_AlbumOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignment3_AlbumOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCD61861AE4154F00138410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBCD61871AE4154F00138410 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		FBCD61841AE4154F00138410 /* HomeAssignment3_AlbumOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				AE294C5A1AE6329900A27373 /* default-cover.jpg */,
 				FBCD61AB1AE4157100138410 /* Album.h */,
 				FBCD61AC1AE4157100138410 /* Album.m */,
 				FBCD61AD1AE4157100138410 /* DataManagerSingleton.h */,
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE294C5B1AE6329900A27373 /* default-cover.jpg in Resources */,
 				FBCD61911AE4154F00138410 /* Main.storyboard in Resources */,
 				FBCD61BD1AE4186E00138410 /* albumCellModel.xib in Resources */,
 				FBCD61961AE4154F00138410 /* LaunchScreen.xib in Resources */,

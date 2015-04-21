@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         self.albumCover = [[UIImage alloc] init];
+        self.albumCover = [UIImage imageNamed:@"default-cover.jpg"];
         self.albumTitle = [[NSString alloc] init];
         self.albumArtist = [[NSString alloc] init];
         self.numberOfSongs = 0;
@@ -37,6 +38,29 @@
 
 -(void)addNewSong: (Song*)song{
     [self.songs addObject:song];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    self = [self init];
+    
+    if (self) {
+        self.albumCover = [aDecoder decodeObjectForKey:@"albumCover"];
+        self.albumTitle = [aDecoder decodeObjectForKey:@"albumTitle"];
+        self.albumArtist = [aDecoder decodeObjectForKey:@"albumArtist"];
+        self.numberOfSongs = [aDecoder decodeIntForKey:@"numberOfSongs"];
+        NSMutableArray *songsArray = [aDecoder decodeObjectForKey:@"songs"];
+        self.songs = [[NSMutableArray alloc] initWithArray:songsArray copyItems:YES];
+    }
+    
+    return self;
+}
+
+-(void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:self.albumCover forKey:@"albumCover"];
+    [aCoder encodeObject:self.albumTitle forKey:@"albumTitle"];
+    [aCoder encodeObject:self.albumArtist forKey:@"albumArtist"];
+    [aCoder encodeInt:self.numberOfSongs forKey:@"numberOfSongs"];
+    [aCoder encodeObject:self.songs forKey:@"songs"];
 }
 
 @end

@@ -28,9 +28,9 @@ static DataManagerSingleton* sharedDataManager;
     
     if (self) {
         self.albums = [[NSMutableArray alloc] init];
-        [self addNewAlbumWithTitle:@"Seek and Destroy" Artist:@"Metallica"];
-        [self addNewAlbumWithTitle:@"Master of puppets" Artist:@"Metallica"];
-        [self addNewAlbumWithTitle:@"Over the hills and far away" Artist:@"Nightwish"];
+//        [self addNewAlbumWithTitle:@"Seek and Destroy" Artist:@"Metallica"];
+//        [self addNewAlbumWithTitle:@"Master of puppets" Artist:@"Metallica"];
+//        [self addNewAlbumWithTitle:@"Over the hills and far away" Artist:@"Nightwish"];
     }
     
     return self;

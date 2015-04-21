@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "Song.h"
 
-@interface Album : NSObject
+@interface Album : NSObject<NSCoding>
 
 @property (nonatomic, strong) UIImage* albumCover;
 @property (nonatomic, strong) NSString* albumTitle;

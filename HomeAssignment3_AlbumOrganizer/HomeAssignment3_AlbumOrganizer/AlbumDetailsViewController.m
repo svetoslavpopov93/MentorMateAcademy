@@ -9,6 +9,11 @@
 #import "AlbumDetailsViewController.h"
 
 @interface AlbumDetailsViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageVIewAlbumCover;
+@property (weak, nonatomic) IBOutlet UILabel *labelAlbumTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelAlbumAuthor;
+@property (weak, nonatomic) IBOutlet UILabel *labelAlbumSongsCount;
+@property (weak, nonatomic) IBOutlet UITableView *tableVIewSongs;
 
 @end
 
@@ -24,6 +29,12 @@
     songs = [[NSMutableArray alloc] init];
     currentAlbum = dataManager.albums[dataManager.selectedAlbumIndex];
     songs = currentAlbum.songs;
+    
+    self.imageVIewAlbumCover.image = currentAlbum.albumCover;
+    self.labelAlbumTitle.text = currentAlbum.albumTitle;
+    self.labelAlbumAuthor.text = currentAlbum.albumArtist;
+    self.labelAlbumSongsCount.text = [NSString stringWithFormat:@"%ld",currentAlbum.songs.count];
+    self.tableVIewSongs.allowsSelection = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +60,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    
     Song *curentSong = currentAlbum.songs[indexPath.row];
     
     cell.textLabel.text = curentSong.artistName;

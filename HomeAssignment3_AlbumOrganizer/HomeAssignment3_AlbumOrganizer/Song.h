@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Song : NSObject
+@interface Song : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSString* artistName;
 @property (nonatomic, strong) NSString* songTitle;

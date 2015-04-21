@@ -44,4 +44,34 @@
     
     return self;
 }
+
+-(void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:self.artistName forKey:@"artistName"];
+    [aCoder encodeObject:self.songTitle forKey:@"songTitle"];
+    [aCoder encodeFloat:self.length forKey:@"length"];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    self = [self init];
+    
+    if (self) {
+        self.artistName = [aDecoder decodeObjectForKey:@"artistName"];
+        self.songTitle = [aDecoder decodeObjectForKey:@"songTitle"];
+        self.length = [aDecoder decodeFloatForKey:@"length"];
+    }
+    
+    return self;
+}
+
+-(id)copyWithZone:(NSZone *)zone{
+    Song *copy = [[Song allocWithZone:zone] init];
+    
+    if (copy) {
+        copy.artistName = self.artistName;
+        copy.songTitle = self.songTitle;
+        copy.length = self.length;
+    }
+    
+    return copy;
+}
 @end
