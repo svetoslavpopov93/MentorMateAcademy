@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE294C591AE52A3B00A27373 /* AddNewAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE294C581AE52A3B00A27373 /* AddNewAlbumViewController.m */; };
 		AE294C5B1AE6329900A27373 /* default-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE294C5A1AE6329900A27373 /* default-cover.jpg */; };
+		AE892ECE1AE7CCC400D7631D /* AddNewSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE892ECD1AE7CCC400D7631D /* AddNewSongViewController.m */; };
 		FBCD61881AE4154F00138410 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCD61871AE4154F00138410 /* main.m */; };
 		FBCD618B1AE4154F00138410 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCD618A1AE4154F00138410 /* AppDelegate.m */; };
 		FBCD61911AE4154F00138410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCD618F1AE4154F00138410 /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 		AE294C571AE52A3B00A27373 /* AddNewAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewAlbumViewController.h; sourceTree = "<group>"; };
 		AE294C581AE52A3B00A27373 /* AddNewAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewAlbumViewController.m; sourceTree = "<group>"; };
 		AE294C5A1AE6329900A27373 /* default-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "default-cover.jpg"; sourceTree = "<group>"; };
+		AE892ECC1AE7CCC400D7631D /* AddNewSongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewSongViewController.h; sourceTree = "<group>"; };
+		AE892ECD1AE7CCC400D7631D /* AddNewSongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewSongViewController.m; sourceTree = "<group>"; };
 		FBCD61821AE4154F00138410 /* HomeAssignment3_AlbumOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignment3_AlbumOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCD61861AE4154F00138410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBCD61871AE4154F00138410 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				FBCD61C21AE4226600138410 /* AlbumDetailsViewController.m */,
 				AE294C571AE52A3B00A27373 /* AddNewAlbumViewController.h */,
 				AE294C581AE52A3B00A27373 /* AddNewAlbumViewController.m */,
+				AE892ECC1AE7CCC400D7631D /* AddNewSongViewController.h */,
+				AE892ECD1AE7CCC400D7631D /* AddNewSongViewController.m */,
 			);
 			path = HomeAssignment3_AlbumOrganizer;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				FBCD61B61AE4164900138410 /* AlbumsTableViewController.m in Sources */,
 				AE294C591AE52A3B00A27373 /* AddNewAlbumViewController.m in Sources */,
 				FBCD61881AE4154F00138410 /* main.m in Sources */,
+				AE892ECE1AE7CCC400D7631D /* AddNewSongViewController.m in Sources */,
 				FBCD61C31AE4226600138410 /* AlbumDetailsViewController.m in Sources */,
 				FBCD61C01AE418A600138410 /* customCell.m in Sources */,
 				FBCD61B11AE4157100138410 /* Album.m in Sources */,
