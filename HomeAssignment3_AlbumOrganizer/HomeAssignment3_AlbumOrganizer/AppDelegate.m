@@ -29,6 +29,7 @@
             DataManagerSingleton *dataManger = [DataManagerSingleton initSharedDataManager];
             dataManger.albums = [[NSMutableArray alloc] initWithArray:[savedData objectForKey:@"albums"]];
         }
+        
     }
     
     // Override point for customization after application launch.

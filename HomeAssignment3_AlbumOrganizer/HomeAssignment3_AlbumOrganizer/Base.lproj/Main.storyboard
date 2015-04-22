@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--All Albums-->
         <scene sceneID="wCF-h2-Jc0">
             <objects>
                 <tableViewController storyboardIdentifier="albumsTVC" id="vWw-Zy-fvi" customClass="AlbumsTableViewController" sceneMemberID="viewController">
@@ -25,8 +25,8 @@
                             <outlet property="delegate" destination="vWw-Zy-fvi" id="8gP-if-0bh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="lk9-Tr-LXM">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="lff-cp-nKM">
+                    <navigationItem key="navigationItem" title="All Albums" id="lk9-Tr-LXM">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="lff-cp-nKM">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ixf-we-ikd">
                                 <rect key="frame" x="-23" y="-15" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

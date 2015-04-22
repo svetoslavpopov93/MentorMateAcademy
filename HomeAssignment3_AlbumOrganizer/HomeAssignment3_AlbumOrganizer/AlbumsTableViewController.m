@@ -60,7 +60,7 @@
     cell.labelAlbumTitle.text = currentAlbum.albumTitle;
     cell.labelAlbumArtist.text = currentAlbum.albumArtist;
     cell.songsCount.text = [NSString stringWithFormat: @"%ld",currentAlbum.songs.count ];
-    
+    cell.albumCover.image = currentAlbum.albumCover;
     return cell;
     
 }

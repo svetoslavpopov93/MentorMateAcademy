@@ -44,7 +44,7 @@
     self = [self init];
     
     if (self) {
-        self.albumCover = [aDecoder decodeObjectForKey:@"albumCover"];
+        //self.albumCover = [UIImage imageWithData:[aDecoder decodeObjectForKey:@"albumCover"]];
         self.albumTitle = [aDecoder decodeObjectForKey:@"albumTitle"];
         self.albumArtist = [aDecoder decodeObjectForKey:@"albumArtist"];
         self.numberOfSongs = [aDecoder decodeIntForKey:@"numberOfSongs"];
@@ -56,7 +56,7 @@
 }
 
 -(void)encodeWithCoder:(NSCoder *)aCoder{
-    [aCoder encodeObject:self.albumCover forKey:@"albumCover"];
+    [aCoder encodeObject: UIImageJPEGRepresentation(self.albumCover, 1.0) forKey:@"albumCover"];
     [aCoder encodeObject:self.albumTitle forKey:@"albumTitle"];
     [aCoder encodeObject:self.albumArtist forKey:@"albumArtist"];
     [aCoder encodeInt:self.numberOfSongs forKey:@"numberOfSongs"];
