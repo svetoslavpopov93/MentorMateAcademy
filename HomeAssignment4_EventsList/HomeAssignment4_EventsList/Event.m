@@ -26,7 +26,6 @@
     return self;
 }
 
-// The method "pulls" the encoded data, decodes it into valid values and
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super init];
     
@@ -35,7 +34,8 @@
         _eventCover = [UIImage imageWithData:[aDecoder decodeObjectForKey:@"eventCover"]];
         _relatedPerson = [aDecoder decodeObjectForKey:@"relatedPerson"];
         _hours = [aDecoder decodeFloatForKey:@"hours"];
-        
+        _eventInfo = [aDecoder decodeObjectForKey:@"eventInfo"];
+        _eventDate = [aDecoder decodeObjectForKey:@"eventDate"];
     }
     
     return self;
@@ -46,7 +46,7 @@
     NSData *eventCoverDataRepresentation = UIImagePNGRepresentation(self.eventCover);
     [aCoder encodeObject:eventCoverDataRepresentation forKey:@"eventCover"];
     [aCoder encodeObject:self.relatedPerson forKey:@"relatedPerson"];
-    [aCoder encodeFloat:*(self.hours) forKey:@"hours"];
+    [aCoder encodeFloat:self.hours forKey:@"hours"];
     [aCoder encodeObject:self.eventInfo forKey:@"eventInfo"];
     [aCoder encodeObject:self.eventDate forKey:@"eventDate"];
 }
@@ -72,7 +72,7 @@
     if(self){
         self.eventLabel = eventLabel;
         self.relatedPerson = relatedPerson;
-        self.hours = &(hours);
+        self.hours = hours;
         self.eventInfo = eventInfo;
         self.eventDate = eventDate;
     }

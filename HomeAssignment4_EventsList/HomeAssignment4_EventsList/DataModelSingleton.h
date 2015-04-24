@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Event.h"
 
 @interface DataModelSingleton : NSObject
 +(id)initSharedDataModel;
+-(void)fillExampleEvents;
 
 @property (nonatomic, strong) NSMutableArray *events;
+@property (nonatomic, strong) NSMutableDictionary *days;
 
 @end
