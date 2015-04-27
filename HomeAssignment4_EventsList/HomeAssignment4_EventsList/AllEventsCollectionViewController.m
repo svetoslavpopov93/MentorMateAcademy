@@ -12,6 +12,7 @@
     DataModelSingleton *dataModel;
     BOOL twoElementsModeSelected;
 }
+@property (weak, nonatomic) IBOutlet CustomCollectionViewCell *customCell;
 
 @end
 
@@ -32,15 +33,13 @@ static NSString * const reuseIdentifier = @"Cell";
     [super didReceiveMemoryWarning];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//}
+
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -56,22 +55,25 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"customCell" forIndexPath:indexPath];
     
-    long currentIndex = 0;
+    CGRect frame = [cell frame];
+    frame.size.width = 150;
+    [cell setFrame:frame];
+    
     if (twoElementsModeSelected) {
-        currentIndex = (indexPath.section * 2) + indexPath.row;
+        //cell.frame.size.width = 170;
+        //cell.layer.frame = CGRectMake(10, 10, 170, 200); //CGSizeMake(110, 200);
     }
     else{
-        currentIndex = (indexPath.section * 3) + indexPath.row;
+        
     }
-    if(currentIndex < dataModel.events.count){
-        Event *selectedEvent = dataModel.events[currentIndex];
+    
+        Event *selectedEvent = dataModel.events[indexPath.row];
         
         cell.labelEventTitle.text = selectedEvent.eventLabel;
         cell.labelRelatedPerson.text = selectedEvent.relatedPerson;
         cell.labelInfo.text = selectedEvent.eventInfo;
         cell.imageEventCover.image = selectedEvent.eventCover;
         cell.labelHours.text = [NSString stringWithFormat: @"%0.1f", selectedEvent.hours];
-    }
     
     return cell;
 }
@@ -100,12 +102,22 @@ static NSString * const reuseIdentifier = @"Cell";
 */
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
+    
+    CustomCollectionViewCell *currentCell = (CustomCollectionViewCell*)sender;
+    NSLog(@"%@", currentCell.labelEventTitle.text);
+	return YES;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+    CustomCollectionViewCell *currentCell = (CustomCollectionViewCell*)sender;
+    NSLog(@"%@", currentCell.labelEventTitle.text);
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    dataModel.selectedEvent = dataModel.events[indexPath.row];
+    UIViewController *detailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsVC"];
+    [self.navigationController pushViewController:detailsVC animated:YES];
+}
 
 @end

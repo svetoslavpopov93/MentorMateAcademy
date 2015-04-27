@@ -15,5 +15,5 @@
 
 @property (nonatomic, strong) NSMutableArray *events;
 @property (nonatomic, strong) NSMutableDictionary *days;
-
+@property (nonatomic, strong) Event *selectedEvent;
 @end

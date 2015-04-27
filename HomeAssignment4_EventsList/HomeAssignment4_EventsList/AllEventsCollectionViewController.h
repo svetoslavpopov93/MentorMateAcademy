@@ -10,6 +10,7 @@
 #import "CustomCollectionViewCell.h"
 #import "DataModelSingleton.h"
 #import "Event.h"
+#import "EventDetailsViewController.h"
 
 @interface AllEventsCollectionViewController : UICollectionViewController
 

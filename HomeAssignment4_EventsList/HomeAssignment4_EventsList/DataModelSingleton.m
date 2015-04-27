@@ -17,6 +17,7 @@ static DataModelSingleton *sharedDataModel;
     
     if (self) {
         self.events = [[NSMutableArray alloc] init];
+        self.selectedEvent = [[Event alloc] init];
     }
     
     return self;

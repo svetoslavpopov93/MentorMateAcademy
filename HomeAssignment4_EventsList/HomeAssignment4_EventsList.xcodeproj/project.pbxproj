@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE9C15C51AEE4756005694FB /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C15C41AEE4756005694FB /* EventDetailsViewController.m */; };
 		AEC274DD1AE8D04000FE469D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC274DC1AE8D04000FE469D /* main.m */; };
 		AEC274E01AE8D04000FE469D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC274DF1AE8D04000FE469D /* AppDelegate.m */; };
 		AEC274E61AE8D04000FE469D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEC274E41AE8D04000FE469D /* Main.storyboard */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE9C15C31AEE4756005694FB /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		AE9C15C41AEE4756005694FB /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		AEC274D71AE8D04000FE469D /* HomeAssignment4_EventsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignment4_EventsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC274DB1AE8D04000FE469D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEC274DC1AE8D04000FE469D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				AEC275071AE8D62600FE469D /* CustomCollectionViewCell.m */,
 				AEC275091AE8E5B200FE469D /* DataModelSingleton.h */,
 				AEC2750A1AE8E5B200FE469D /* DataModelSingleton.m */,
+				AE9C15C31AEE4756005694FB /* EventDetailsViewController.h */,
+				AE9C15C41AEE4756005694FB /* EventDetailsViewController.m */,
 			);
 			path = HomeAssignment4_EventsList;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			files = (
 				AEC275021AE8D08200FE469D /* Event.m in Sources */,
 				AEC274E01AE8D04000FE469D /* AppDelegate.m in Sources */,
+				AE9C15C51AEE4756005694FB /* EventDetailsViewController.m in Sources */,
 				AEC274DD1AE8D04000FE469D /* main.m in Sources */,
 				AEC275051AE8D33B00FE469D /* AllEventsCollectionViewController.m in Sources */,
 				AEC275081AE8D62600FE469D /* CustomCollectionViewCell.m in Sources */,
@@ -436,6 +442,7 @@
 				AEC274FC1AE8D04000FE469D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEC274FD1AE8D04000FE469D /* Build configuration list for PBXNativeTarget "HomeAssignment4_EventsListTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +451,7 @@
 				AEC274FF1AE8D04000FE469D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
