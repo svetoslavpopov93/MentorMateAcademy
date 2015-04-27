@@ -14,6 +14,9 @@
 		FBB6719C1AEEB0F900B74B83 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB6719B1AEEB0F900B74B83 /* Images.xcassets */; };
 		FBB6719F1AEEB0F900B74B83 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB6719D1AEEB0F900B74B83 /* LaunchScreen.xib */; };
 		FBB671AB1AEEB0F900B74B83 /* ClassAssignment10_UserInterfaceInspectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB671AA1AEEB0F900B74B83 /* ClassAssignment10_UserInterfaceInspectorTests.m */; };
+		FBB671B61AEEB4AE00B74B83 /* ControllersListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB671B51AEEB4AE00B74B83 /* ControllersListTableViewController.m */; };
+		FBB671B91AEEB6FA00B74B83 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB671B81AEEB6FA00B74B83 /* DatePickerViewController.m */; };
+		FBB671BC1AEEB92700B74B83 /* SegmentControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB671BB1AEEB92700B74B83 /* SegmentControlViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		FBB671A41AEEB0F900B74B83 /* ClassAssignment10_UserInterfaceInspectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassAssignment10_UserInterfaceInspectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB671A91AEEB0F900B74B83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBB671AA1AEEB0F900B74B83 /* ClassAssignment10_UserInterfaceInspectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassAssignment10_UserInterfaceInspectorTests.m; sourceTree = "<group>"; };
+		FBB671B41AEEB4AE00B74B83 /* ControllersListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllersListTableViewController.h; sourceTree = "<group>"; };
+		FBB671B51AEEB4AE00B74B83 /* ControllersListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllersListTableViewController.m; sourceTree = "<group>"; };
+		FBB671B71AEEB6FA00B74B83 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
+		FBB671B81AEEB6FA00B74B83 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
+		FBB671BA1AEEB92700B74B83 /* SegmentControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentControlViewController.h; sourceTree = "<group>"; };
+		FBB671BB1AEEB92700B74B83 /* SegmentControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentControlViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +98,12 @@
 				FBB6719B1AEEB0F900B74B83 /* Images.xcassets */,
 				FBB6719D1AEEB0F900B74B83 /* LaunchScreen.xib */,
 				FBB6718E1AEEB0F900B74B83 /* Supporting Files */,
+				FBB671B41AEEB4AE00B74B83 /* ControllersListTableViewController.h */,
+				FBB671B51AEEB4AE00B74B83 /* ControllersListTableViewController.m */,
+				FBB671B71AEEB6FA00B74B83 /* DatePickerViewController.h */,
+				FBB671B81AEEB6FA00B74B83 /* DatePickerViewController.m */,
+				FBB671BA1AEEB92700B74B83 /* SegmentControlViewController.h */,
+				FBB671BB1AEEB92700B74B83 /* SegmentControlViewController.m */,
 			);
 			path = ClassAssignment10_UserInterfaceInspector;
 			sourceTree = "<group>";
@@ -220,7 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB671971AEEB0F900B74B83 /* ViewController.m in Sources */,
+				FBB671B61AEEB4AE00B74B83 /* ControllersListTableViewController.m in Sources */,
+				FBB671BC1AEEB92700B74B83 /* SegmentControlViewController.m in Sources */,
 				FBB671941AEEB0F900B74B83 /* AppDelegate.m in Sources */,
+				FBB671B91AEEB6FA00B74B83 /* DatePickerViewController.m in Sources */,
 				FBB671911AEEB0F900B74B83 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

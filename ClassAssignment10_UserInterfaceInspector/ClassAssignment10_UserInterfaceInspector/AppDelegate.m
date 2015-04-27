@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self applyControllerStyles];
+    
     return YES;
 }
 
@@ -42,4 +45,21 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(void)applyControllerStyles{
+    // Date Picker controller styles
+    [UIDatePicker appearance].backgroundColor = [UIColor purpleColor];
+    [UIDatePicker appearance].tintColor = [UIColor yellowColor];
+    [[UIDatePicker appearance] setTintColor:[UIColor yellowColor]];
+    
+    //    [[UIDatePicker appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Chalkduster" size:26.0],NSFontAttributeName,[UIColor blackColor], NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    
+    // Segment controller styles
+    [UISegmentedControl appearance].backgroundColor = [UIColor redColor];
+    [UISegmentedControl appearance].tintColor = [UIColor greenColor];
+    
+    [[UISegmentedControl appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Chalkduster" size:26.0],NSFontAttributeName,[UIColor blackColor], NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    
+    // Stepper styles
+    [UIStepper appearance].backgroundColor = [UIColor redColor];
+}
 @end
