@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelEventDate;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewEventCover;
 @property (weak, nonatomic) IBOutlet UITextView *textViewEventInfo;
+@property (weak, nonatomic) IBOutlet UIView *viewInnerView;
 
 @end
 
@@ -29,6 +30,12 @@
     self.labelEventDate.text = [NSString stringWithFormat:@"%@", dataModel.selectedEvent.eventDate];
     self.imageViewEventCover.image = dataModel.selectedEvent.eventCover;
     self.textViewEventInfo.text = dataModel.selectedEvent.eventInfo;
+    
+//    NSDictionary *elementsDict = NSDictionaryOfVariableBindings(_labelEventDate, _labelRelatedPerson, _labelEventDate, _imageViewEventCover, _textViewEventInfo, _viewInnerView);
+//    [NSLayoutConstraint constraintsWithVisualFormat:@"|-(==20)-[imageViewEventCover(==50)]-(==20)-|" options: NSLayoutFormatAlignAllCenterX metrics:nil views:@{@"imageViewEventCover":self.imageViewEventCover}];
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[_imageViewEventCover]-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:elementsDict]];
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[_imageViewEventCover(>=100)]-|" options:NSLayoutAttributeRightMargin metrics:nil views:elementsDict]];
+    
 }
 
 - (void)didReceiveMemoryWarning {

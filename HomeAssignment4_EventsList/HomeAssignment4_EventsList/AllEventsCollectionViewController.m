@@ -12,7 +12,9 @@
     DataModelSingleton *dataModel;
     BOOL twoElementsModeSelected;
 }
+@property (strong, nonatomic) IBOutlet UICollectionView *collectonViewAllEvents;
 @property (weak, nonatomic) IBOutlet CustomCollectionViewCell *customCell;
+@property (nonatomic) CGFloat ratioForCellWidth;
 
 @end
 
@@ -25,14 +27,22 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
+    self.ratioForCellWidth = 0.31;
     dataModel = [DataModelSingleton initSharedDataModel];
-    twoElementsModeSelected = true;
+    twoElementsModeSelected = false;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setToolbarHidden:NO animated:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [self.navigationController setToolbarHidden:YES animated:YES];
+}
 
 #pragma mark - Navigation
 
@@ -55,9 +65,6 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"customCell" forIndexPath:indexPath];
     
-    CGRect frame = [cell frame];
-    frame.size.width = 150;
-    [cell setFrame:frame];
     
     if (twoElementsModeSelected) {
         //cell.frame.size.width = 170;
@@ -66,7 +73,6 @@ static NSString * const reuseIdentifier = @"Cell";
     else{
         
     }
-    
         Event *selectedEvent = dataModel.events[indexPath.row];
         
         cell.labelEventTitle.text = selectedEvent.eventLabel;
@@ -78,17 +84,29 @@ static NSString * const reuseIdentifier = @"Cell";
     return cell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(CGRectGetWidth(collectionView.frame) * self.ratioForCellWidth, 175);
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    // Do view manipulation here.
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [self.collectonViewAllEvents reloadData];
+}
+
+//- (void)updateCollectionViewLayoutWithSize:(CGSize)size {
+//    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+//    
+//    layout.itemSize = (size.width < size.height) ? CGSizeMake(180, 160) : CGSizeMake(320, 180);
+//    [layout invalidateLayout];
+//}
 #pragma mark <UICollectionViewDelegate>
 
-
-// Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
 }
 
 
-
-// Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
@@ -119,5 +137,27 @@ static NSString * const reuseIdentifier = @"Cell";
     UIViewController *detailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsVC"];
     [self.navigationController pushViewController:detailsVC animated:YES];
 }
+
+#pragma mark Bottom and Navigation toolbars
+
+- (IBAction)buttonActionChangeColumnMode:(id)sender {
+    
+    if (twoElementsModeSelected) {
+        self.ratioForCellWidth = 0.31;
+        twoElementsModeSelected = false;
+    }
+    else{
+        self.ratioForCellWidth = 0.47;
+        twoElementsModeSelected = true;
+    }
+    
+    [self.collectonViewAllEvents reloadData];
+    NSLog(@"reloaded");
+}
+
+- (IBAction)buttonActionAddNewEvent:(id)sender {
+    NSLog(@"Add event button clicked!");
+}
+
 
 @end

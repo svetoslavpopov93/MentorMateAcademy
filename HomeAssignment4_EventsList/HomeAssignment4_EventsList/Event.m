@@ -16,7 +16,7 @@
     
     if (self) {
         self.eventLabel = [[NSString alloc] init];
-        self.eventCover = [[UIImage alloc] init];
+        self.eventCover = [UIImage imageNamed:@"cover.png"];
         self.relatedPerson = [[NSString alloc] init];
         self.hours = 0;
         self.eventInfo = [[NSString alloc] init];
