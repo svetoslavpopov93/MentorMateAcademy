@@ -85,7 +85,7 @@ static DataModelSingleton *sharedDataModel;
     
     NSMutableArray *current = [self.days objectForKey:dt];
     
-    [current addObject:@"adaddad "];
+    [current addObject:event];
     NSLog(@"Event added!");
 }
 

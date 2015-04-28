@@ -12,6 +12,7 @@
 @interface DataModelSingleton : NSObject
 +(id)initSharedDataModel;
 -(void)fillExampleEvents;
+-(void)addEvent:(Event*)event forDate: (NSDate*)date;
 
 @property (nonatomic, strong) NSMutableArray *events;
 @property (nonatomic, strong) NSMutableDictionary *days;

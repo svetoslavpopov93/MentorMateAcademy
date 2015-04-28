@@ -11,6 +11,7 @@
 @interface AllEventsCollectionViewController (){
     DataModelSingleton *dataModel;
     BOOL twoElementsModeSelected;
+    NSArray *allDays;
 }
 @property (strong, nonatomic) IBOutlet UICollectionView *collectonViewAllEvents;
 @property (weak, nonatomic) IBOutlet CustomCollectionViewCell *customCell;
@@ -26,9 +27,12 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [super viewDidLoad];
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    dataModel = [DataModelSingleton initSharedDataModel];
+    
+    allDays = [[NSArray alloc] init];
+    allDays = dataModel.days.allKeys;
     
     self.ratioForCellWidth = 0.31;
-    dataModel = [DataModelSingleton initSharedDataModel];
     twoElementsModeSelected = false;
 }
 
@@ -54,12 +58,14 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return allDays.count;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return dataModel.events.count;
+    NSMutableArray *elementsInCurrentSection = dataModel.days[allDays[section]];
+    
+    return elementsInCurrentSection.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -73,7 +79,9 @@ static NSString * const reuseIdentifier = @"Cell";
     else{
         
     }
-        Event *selectedEvent = dataModel.events[indexPath.row];
+    NSMutableArray *currentSectionEvents = dataModel.days[allDays[indexPath.section]];
+    
+        Event *selectedEvent = currentSectionEvents[indexPath.row];
         
         cell.labelEventTitle.text = selectedEvent.eventLabel;
         cell.labelRelatedPerson.text = selectedEvent.relatedPerson;
@@ -156,7 +164,10 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (IBAction)buttonActionAddNewEvent:(id)sender {
-    NSLog(@"Add event button clicked!");
+    
+    UIViewController *addEventVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addEventVC"];
+    [self.navigationController pushViewController:addEventVC animated:YES];
+    
 }
 
 

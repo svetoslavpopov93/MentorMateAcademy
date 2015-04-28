@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
+#import "DataModelSingleton.h"
 
 @interface AddNewEventViewController : UIViewController
 
