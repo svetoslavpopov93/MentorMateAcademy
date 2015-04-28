@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3DW-cB-xOv">
-                                <rect key="frame" x="93" y="432" width="415" height="160"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3DW-cB-xOv">
+                                <rect key="frame" x="26" y="442" width="548" height="138"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="228" id="BtN-rh-0fe"/>
@@ -59,66 +59,16 @@
                                     <rect key="frame" x="93" y="431" width="615" height="361"/>
                                 </variation>
                             </textView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KW7-d9-p8I">
-                                <rect key="frame" x="27" y="56" width="546" height="37"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="labelRelatedPerson" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-47-wLm">
-                                        <rect key="frame" x="287" y="8" width="251" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="287" y="8" width="251" height="18"/>
-                                        </variation>
-                                        <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="387" y="8" width="351" height="18"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="187" y="8" width="151" height="18"/>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="labelEventTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPk-yI-7sh">
-                                        <rect key="frame" x="10" y="11" width="247" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="10" y="11" width="247" height="18"/>
-                                        </variation>
-                                        <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="8" y="11" width="347" height="18"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="10" y="11" width="147" height="18"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Oer-47-wLm" firstAttribute="leading" secondItem="xPk-yI-7sh" secondAttribute="trailing" constant="30" id="JXK-fG-T9d">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="32"/>
-                                    </constraint>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="JXK-fG-T9d"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="27" y="30" width="546" height="37"/>
-                                </variation>
-                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="27" y="52" width="746" height="37"/>
-                                </variation>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-FF-71z">
-                                <rect key="frame" x="93" y="151" width="415" height="267"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-FF-71z">
+                                <rect key="frame" x="91" y="115" width="418" height="287"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4UM-FF-71z" secondAttribute="height" multiplier="368:243" id="Kgx-lx-BvU"/>
                                     <constraint firstAttribute="height" constant="150" id="X7M-iW-TWo">
                                         <variation key="heightClass=compact-widthClass=regular" constant="228"/>
                                     </constraint>
+                                    <constraint firstAttribute="width" secondItem="4UM-FF-71z" secondAttribute="height" multiplier="418:287" id="jc9-bh-ikT"/>
                                     <constraint firstAttribute="width" secondItem="4UM-FF-71z" secondAttribute="height" multiplier="355:228" id="sYx-QP-D9m"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="418" id="tbL-rd-A1s"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -153,8 +103,11 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="labelEventDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8K-5H-yC0">
-                                <rect key="frame" x="26" y="109" width="548" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelEventDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8K-5H-yC0">
+                                <rect key="frame" x="26" y="86" width="548" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cro-02-ufT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -165,26 +118,99 @@
                                     <rect key="frame" x="36" y="107" width="748" height="21"/>
                                 </variation>
                             </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KW7-d9-p8I">
+                                <rect key="frame" x="26" y="39" width="548" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="labelRelatedPerson" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-47-wLm">
+                                        <rect key="frame" x="291" y="8" width="249" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="287" y="8" width="251" height="18"/>
+                                        </variation>
+                                        <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="387" y="8" width="351" height="18"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="187" y="8" width="151" height="18"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelEventTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPk-yI-7sh">
+                                        <rect key="frame" x="10" y="8" width="249" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="10" y="11" width="247" height="18"/>
+                                        </variation>
+                                        <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="8" y="11" width="347" height="18"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="10" y="11" width="147" height="18"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="xPk-yI-7sh" firstAttribute="top" secondItem="KW7-d9-p8I" secondAttribute="top" constant="8" id="3Z4-ZQ-pFH"/>
+                                    <constraint firstItem="Oer-47-wLm" firstAttribute="leading" secondItem="xPk-yI-7sh" secondAttribute="trailing" constant="30" id="5Se-ZX-cqc"/>
+                                    <constraint firstAttribute="height" constant="30" id="6hH-t9-GyJ"/>
+                                    <constraint firstItem="Oer-47-wLm" firstAttribute="width" secondItem="xPk-yI-7sh" secondAttribute="width" id="Abc-az-K8r"/>
+                                    <constraint firstItem="Oer-47-wLm" firstAttribute="leading" secondItem="xPk-yI-7sh" secondAttribute="trailing" constant="30" id="JXK-fG-T9d">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="32"/>
+                                    </constraint>
+                                    <constraint firstItem="Oer-47-wLm" firstAttribute="top" secondItem="KW7-d9-p8I" secondAttribute="top" constant="8" id="fwa-gx-nL1"/>
+                                    <constraint firstItem="xPk-yI-7sh" firstAttribute="leading" secondItem="KW7-d9-p8I" secondAttribute="leading" constant="10" id="mnw-5x-oP0"/>
+                                    <constraint firstAttribute="bottom" secondItem="xPk-yI-7sh" secondAttribute="bottom" constant="4" id="she-hg-ajA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oer-47-wLm" secondAttribute="trailing" constant="10" id="u1P-lt-mbN"/>
+                                    <constraint firstAttribute="bottom" secondItem="Oer-47-wLm" secondAttribute="bottom" constant="4" id="yYQ-ba-jNo"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JXK-fG-T9d"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="27" y="30" width="546" height="37"/>
+                                </variation>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="27" y="52" width="746" height="37"/>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3DW-cB-xOv" firstAttribute="top" secondItem="O8K-5H-yC0" secondAttribute="bottom" constant="49" id="19D-cH-3LH"/>
                             <constraint firstItem="3DW-cB-xOv" firstAttribute="leading" secondItem="4UM-FF-71z" secondAttribute="trailing" constant="8" id="3Q3-IK-80U"/>
+                            <constraint firstItem="O8K-5H-yC0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="4GO-YS-0be"/>
+                            <constraint firstItem="3DW-cB-xOv" firstAttribute="top" secondItem="4UM-FF-71z" secondAttribute="bottom" constant="40" id="LvQ-jZ-m4b"/>
                             <constraint firstItem="KW7-d9-p8I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Lx1-c7-sT6">
                                 <variation key="heightClass=compact-widthClass=regular" constant="8"/>
                             </constraint>
                             <constraint firstItem="4UM-FF-71z" firstAttribute="top" secondItem="O8K-5H-yC0" secondAttribute="bottom" constant="10" id="PjJ-GB-gOX">
                                 <variation key="heightClass=compact-widthClass=regular" constant="49"/>
                             </constraint>
+                            <constraint firstItem="3DW-cB-xOv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Q2m-Ho-Tsy"/>
+                            <constraint firstItem="4UM-FF-71z" firstAttribute="top" secondItem="O8K-5H-yC0" secondAttribute="bottom" constant="8" id="Qss-iB-4IL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KW7-d9-p8I" secondAttribute="trailing" constant="10" id="Z3i-pO-Wya"/>
+                            <constraint firstItem="O8K-5H-yC0" firstAttribute="top" secondItem="KW7-d9-p8I" secondAttribute="bottom" constant="16" id="bp8-Fc-nKs"/>
+                            <constraint firstAttribute="centerX" secondItem="4UM-FF-71z" secondAttribute="centerX" id="cgd-ae-e2v"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3DW-cB-xOv" secondAttribute="trailing" constant="-5" id="et4-nL-dBu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3DW-cB-xOv" secondAttribute="bottom" constant="20" id="fMC-Pc-v1g"/>
                             <constraint firstItem="4UM-FF-71z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="grg-cs-nCX">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="KW7-d9-p8I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="lYN-xy-qLz"/>
                             <constraint firstItem="4UM-FF-71z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="omd-SS-DXr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="O8K-5H-yC0" secondAttribute="trailing" constant="10" id="pbR-WT-nep"/>
+                            <constraint firstItem="KW7-d9-p8I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="swK-Ha-Sra"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3DW-cB-xOv" secondAttribute="trailing" constant="10" id="vNZ-bS-woQ"/>
                             <constraint firstItem="4UM-FF-71z" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="wvF-c5-E8w">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3DW-cB-xOv" secondAttribute="bottom" constant="20" id="xQM-Ep-VAa"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -235,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="1494"/>
+            <point key="canvasLocation" x="840" y="1581"/>
         </scene>
         <!--Add New Event View Controller-->
         <scene sceneID="uIh-2Q-SG0">

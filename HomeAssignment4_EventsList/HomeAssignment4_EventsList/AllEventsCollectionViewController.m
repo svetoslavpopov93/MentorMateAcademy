@@ -70,15 +70,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"customCell" forIndexPath:indexPath];
-    
-    
-    if (twoElementsModeSelected) {
-        //cell.frame.size.width = 170;
-        //cell.layer.frame = CGRectMake(10, 10, 170, 200); //CGSizeMake(110, 200);
-    }
-    else{
-        
-    }
+   
     NSMutableArray *currentSectionEvents = dataModel.days[allDays[indexPath.section]];
     
         Event *selectedEvent = currentSectionEvents[indexPath.row];
@@ -102,12 +94,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectonViewAllEvents reloadData];
 }
 
-//- (void)updateCollectionViewLayoutWithSize:(CGSize)size {
-//    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-//    
-//    layout.itemSize = (size.width < size.height) ? CGSizeMake(180, 160) : CGSizeMake(320, 180);
-//    [layout invalidateLayout];
-//}
 #pragma mark <UICollectionViewDelegate>
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -119,13 +105,6 @@ static NSString * const reuseIdentifier = @"Cell";
     return YES;
 }
 
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-*/
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
     
@@ -140,8 +119,9 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
-    dataModel.selectedEvent = dataModel.events[indexPath.row];
+    NSMutableArray *currentSection = dataModel.days[allDays[indexPath.section]];
+    
+    dataModel.selectedEvent = currentSection[indexPath.row];
     UIViewController *detailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsVC"];
     [self.navigationController pushViewController:detailsVC animated:YES];
 }
