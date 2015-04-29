@@ -35,7 +35,7 @@
     
     // Uncomment the next line of code to enter example users on the app's launch.
     // IMPORTANT: After the application is started once, it will save its data to a local file. After the first launching of the application it must be commented again. Otherwise it will add additional elements
-    //[dataModel fillExampleEvents];
+    [dataModel fillExampleEvents];
     
     return YES;
 }

@@ -110,18 +110,9 @@
 				AEC274DA1AE8D04000FE469D /* Supporting Files */,
 				AEC275001AE8D08200FE469D /* Event.h */,
 				AEC275011AE8D08200FE469D /* Event.m */,
-				AEC275031AE8D33B00FE469D /* AllEventsCollectionViewController.h */,
-				AEC275041AE8D33B00FE469D /* AllEventsCollectionViewController.m */,
-				AEC275061AE8D62600FE469D /* CustomCollectionViewCell.h */,
-				AEC275071AE8D62600FE469D /* CustomCollectionViewCell.m */,
-				AEC275091AE8E5B200FE469D /* DataModelSingleton.h */,
-				AEC2750A1AE8E5B200FE469D /* DataModelSingleton.m */,
-				AE9C15C31AEE4756005694FB /* EventDetailsViewController.h */,
-				AE9C15C41AEE4756005694FB /* EventDetailsViewController.m */,
-				AE5189C61AEFC5E40032639E /* AddNewEventViewController.h */,
-				AE5189C71AEFC5E40032639E /* AddNewEventViewController.m */,
-				AEFE85B91AF0F6D800E574D7 /* EventHeaderReusableView.h */,
-				AEFE85BA1AF0F6D800E574D7 /* EventHeaderReusableView.m */,
+				FB639B821AF13206005C20FC /* Models */,
+				FB639B831AF1322B005C20FC /* Views */,
+				FB639B811AF131F2005C20FC /* Controllers */,
 			);
 			path = HomeAssignment4_EventsList;
 			sourceTree = "<group>";
@@ -150,6 +141,39 @@
 				AEC274F51AE8D04000FE469D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB639B811AF131F2005C20FC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AEC275031AE8D33B00FE469D /* AllEventsCollectionViewController.h */,
+				AEC275041AE8D33B00FE469D /* AllEventsCollectionViewController.m */,
+				AE9C15C31AEE4756005694FB /* EventDetailsViewController.h */,
+				AE9C15C41AEE4756005694FB /* EventDetailsViewController.m */,
+				AE5189C61AEFC5E40032639E /* AddNewEventViewController.h */,
+				AE5189C71AEFC5E40032639E /* AddNewEventViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FB639B821AF13206005C20FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AEC275091AE8E5B200FE469D /* DataModelSingleton.h */,
+				AEC2750A1AE8E5B200FE469D /* DataModelSingleton.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FB639B831AF1322B005C20FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AEC275061AE8D62600FE469D /* CustomCollectionViewCell.h */,
+				AEC275071AE8D62600FE469D /* CustomCollectionViewCell.m */,
+				AEFE85B91AF0F6D800E574D7 /* EventHeaderReusableView.h */,
+				AEFE85BA1AF0F6D800E574D7 /* EventHeaderReusableView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

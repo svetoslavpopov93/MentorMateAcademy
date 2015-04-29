@@ -49,7 +49,9 @@ static NSString * const reuseHeaderIdentifier = @"eventHeader";
     [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
-
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return allDays.count;
+}
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     EventHeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
@@ -59,14 +61,6 @@ static NSString * const reuseHeaderIdentifier = @"eventHeader";
     
     return headerView;
 }
-
-
-#pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return allDays.count;
-}
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSMutableArray *elementsInCurrentSection = dataModel.days[allDays[section]];
@@ -100,8 +94,6 @@ static NSString * const reuseHeaderIdentifier = @"eventHeader";
     [self.collectonViewAllEvents reloadData];
 }
 
-#pragma mark <UICollectionViewDelegate>
-
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
 }
@@ -132,16 +124,17 @@ static NSString * const reuseHeaderIdentifier = @"eventHeader";
     [self.navigationController pushViewController:detailsVC animated:YES];
 }
 
-#pragma mark Bottom and Navigation toolbars
-
 - (IBAction)buttonActionChangeColumnMode:(id)sender {
+    UIBarButtonItem *barBtn = sender;
     
     if (twoElementsModeSelected) {
         self.ratioForCellWidth = 0.31;
+        barBtn.title = @"3 Column Mode";
         twoElementsModeSelected = false;
     }
     else{
         self.ratioForCellWidth = 0.47;
+        barBtn.title = @"2 Column Mode";
         twoElementsModeSelected = true;
     }
     

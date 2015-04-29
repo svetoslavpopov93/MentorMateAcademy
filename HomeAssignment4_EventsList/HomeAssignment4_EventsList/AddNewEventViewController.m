@@ -28,13 +28,19 @@
     dataModel = [DataModelSingleton initSharedDataModel];
     
     
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Done"
+                                   style:UIBarButtonItemStyleDone
+                                   target:self
+                                   action:@selector(doneButtonPressed)];
+    self.navigationItem.rightBarButtonItem = doneButton;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)buttonActionCreate:(id)sender {
+-(void)doneButtonPressed{
     NSString* hours = self.labelTFHours.text;
     
     [dataModel addEvent:[[Event alloc] initWithEventLabel:self.textFieldEventTitle.text relatedPerson:self.textFieldRelatedPerson.text hours:hours.floatValue eventInfo:self.textFieldEventInfo.text eventDate:self.datePicker.date] forDate: self.datePicker.date];
@@ -58,6 +64,11 @@
     NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:@"appData"];
     
     [NSKeyedArchiver archiveRootObject:dataDict toFile:filePath];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 @end
