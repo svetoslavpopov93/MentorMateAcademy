@@ -20,6 +20,7 @@
 		AEC275081AE8D62600FE469D /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC275071AE8D62600FE469D /* CustomCollectionViewCell.m */; };
 		AEC2750B1AE8E5B200FE469D /* DataModelSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC2750A1AE8E5B200FE469D /* DataModelSingleton.m */; };
 		AEC2750D1AE910D200FE469D /* cover.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC2750C1AE910D200FE469D /* cover.png */; };
+		AEFE85BB1AF0F6D800E574D7 /* EventHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFE85BA1AF0F6D800E574D7 /* EventHeaderReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		AEC275091AE8E5B200FE469D /* DataModelSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelSingleton.h; sourceTree = "<group>"; };
 		AEC2750A1AE8E5B200FE469D /* DataModelSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelSingleton.m; sourceTree = "<group>"; };
 		AEC2750C1AE910D200FE469D /* cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover.png; sourceTree = "<group>"; };
+		AEFE85B91AF0F6D800E574D7 /* EventHeaderReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderReusableView.h; sourceTree = "<group>"; };
+		AEFE85BA1AF0F6D800E574D7 /* EventHeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderReusableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				AE9C15C41AEE4756005694FB /* EventDetailsViewController.m */,
 				AE5189C61AEFC5E40032639E /* AddNewEventViewController.h */,
 				AE5189C71AEFC5E40032639E /* AddNewEventViewController.m */,
+				AEFE85B91AF0F6D800E574D7 /* EventHeaderReusableView.h */,
+				AEFE85BA1AF0F6D800E574D7 /* EventHeaderReusableView.m */,
 			);
 			path = HomeAssignment4_EventsList;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				AEC275051AE8D33B00FE469D /* AllEventsCollectionViewController.m in Sources */,
 				AEC275081AE8D62600FE469D /* CustomCollectionViewCell.m in Sources */,
 				AEC2750B1AE8E5B200FE469D /* DataModelSingleton.m in Sources */,
+				AEFE85BB1AF0F6D800E574D7 /* EventHeaderReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

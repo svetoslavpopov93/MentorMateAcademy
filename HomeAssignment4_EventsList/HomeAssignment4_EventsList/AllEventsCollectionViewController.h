@@ -11,7 +11,7 @@
 #import "DataModelSingleton.h"
 #import "Event.h"
 #import "EventDetailsViewController.h"
+#import "EventHeaderReusableView.h"
 
 @interface AllEventsCollectionViewController : UICollectionViewController
-
 @end

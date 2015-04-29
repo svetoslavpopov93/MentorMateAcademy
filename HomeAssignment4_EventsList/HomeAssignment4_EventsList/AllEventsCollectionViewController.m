@@ -22,6 +22,7 @@
 @implementation AllEventsCollectionViewController
 
 static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseHeaderIdentifier = @"eventHeader";
 
 - (void)viewDidLoad {
     
@@ -48,11 +49,16 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//}
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    EventHeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
+                                           UICollectionElementKindSectionHeader withReuseIdentifier:reuseHeaderIdentifier forIndexPath:indexPath];
+    
+    headerView.labelSectionHeaderTitle.text = allDays[indexPath.section];
+    
+    return headerView;
+}
 
 
 #pragma mark <UICollectionViewDataSource>
@@ -85,7 +91,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(CGRectGetWidth(collectionView.frame) * self.ratioForCellWidth, 175);
+    return CGSizeMake(CGRectGetWidth(collectionView.frame) * self.ratioForCellWidth, 205);
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
