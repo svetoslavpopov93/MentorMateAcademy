@@ -11,6 +11,6 @@
 #import "DataModelSingleton.h"
 #import "AppDelegate.h"
 
-@interface AddNewEventViewController : UIViewController <UITextFieldDelegate>
+@interface AddNewEventViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate>
 
 @end

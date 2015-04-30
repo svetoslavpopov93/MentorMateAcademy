@@ -41,14 +41,23 @@
 }
 
 -(void)doneButtonPressed{
-    NSString* hours = self.labelTFHours.text;
+    if( [self validateInputStrings] ){
+     
+        NSString* hours = self.labelTFHours.text;
     
-    [dataModel addEvent:[[Event alloc] initWithEventLabel:self.textFieldEventTitle.text relatedPerson:self.textFieldRelatedPerson.text hours:hours.floatValue eventInfo:self.textFieldEventInfo.text eventDate:self.datePicker.date] forDate: self.datePicker.date];
+        [dataModel addEvent:[[Event alloc] initWithEventLabel:self.textFieldEventTitle.text relatedPerson:self.textFieldRelatedPerson.text hours:hours.floatValue eventInfo:self.textFieldEventInfo.text eventDate:self.datePicker.date] forDate: self.datePicker.date];
     
-    UIViewController *allEventsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"allEventsVC"];
-    [self.navigationController pushViewController:allEventsVC animated:YES];
+        UIViewController *allEventsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"allEventsVC"];
+        [self.navigationController pushViewController:allEventsVC animated:YES];
     
-    [self saveData];
+        [self saveData];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid input!"
+                                                        message:@"Please make sure that all fields are fill!" delegate:self cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 - (void) saveData {
@@ -69,6 +78,28 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return NO;
+}
+
+-(BOOL)validateInputStrings {
+    
+//    NSString *trimmedString = [string stringByTrimmingCharactersInSet:
+//                               [NSCharacterSet whitespaceCharacterSet]];
+    
+    if ( [[self.textFieldEventTitle.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString: @""] ) {
+        return NO;
+    }
+    else if( [[self.textFieldRelatedPerson.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString: @""] ){
+        return NO;
+    }
+    else if( [[self.textFieldHours.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString: @""] ){
+        return NO;
+    }
+    else if( [[self.textFieldEventInfo.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString: @""] ){
+        return NO;
+    }
+    else{
+        return YES;
+    }
 }
 
 @end
