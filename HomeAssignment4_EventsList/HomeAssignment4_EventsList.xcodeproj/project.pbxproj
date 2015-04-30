@@ -101,15 +101,13 @@
 		AEC274D91AE8D04000FE469D /* HomeAssignment4_EventsList */ = {
 			isa = PBXGroup;
 			children = (
-				AEC2750C1AE910D200FE469D /* cover.png */,
+				AEE13ABA1AF267D0001D6E78 /* Additional files */,
 				AEC274DE1AE8D04000FE469D /* AppDelegate.h */,
 				AEC274DF1AE8D04000FE469D /* AppDelegate.m */,
 				AEC274E41AE8D04000FE469D /* Main.storyboard */,
 				AEC274E71AE8D04000FE469D /* Images.xcassets */,
 				AEC274E91AE8D04000FE469D /* LaunchScreen.xib */,
 				AEC274DA1AE8D04000FE469D /* Supporting Files */,
-				AEC275001AE8D08200FE469D /* Event.h */,
-				AEC275011AE8D08200FE469D /* Event.m */,
 				FB639B821AF13206005C20FC /* Models */,
 				FB639B831AF1322B005C20FC /* Views */,
 				FB639B811AF131F2005C20FC /* Controllers */,
@@ -143,6 +141,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AEE13ABA1AF267D0001D6E78 /* Additional files */ = {
+			isa = PBXGroup;
+			children = (
+				AEC2750C1AE910D200FE469D /* cover.png */,
+			);
+			name = "Additional files";
+			sourceTree = "<group>";
+		};
 		FB639B811AF131F2005C20FC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +165,8 @@
 		FB639B821AF13206005C20FC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AEC275001AE8D08200FE469D /* Event.h */,
+				AEC275011AE8D08200FE469D /* Event.m */,
 				AEC275091AE8E5B200FE469D /* DataModelSingleton.h */,
 				AEC2750A1AE8E5B200FE469D /* DataModelSingleton.m */,
 			);

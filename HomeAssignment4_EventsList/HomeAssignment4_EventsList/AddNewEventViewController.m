@@ -40,26 +40,7 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)doneButtonPressed{
-    if( [self validateInputStrings] ){
-     
-        NSString* hours = self.labelTFHours.text;
-    
-        [dataModel addEvent:[[Event alloc] initWithEventLabel:self.textFieldEventTitle.text relatedPerson:self.textFieldRelatedPerson.text hours:hours.floatValue eventInfo:self.textFieldEventInfo.text eventDate:self.datePicker.date] forDate: self.datePicker.date];
-    
-        UIViewController *allEventsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"allEventsVC"];
-        [self.navigationController pushViewController:allEventsVC animated:YES];
-    
-        [self saveData];
-    }
-    else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid input!"
-                                                        message:@"Please make sure that all fields are fill!" delegate:self cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-    }
-}
-
+#pragma mark Private methods
 - (void) saveData {
     NSMutableDictionary *dataDict = [[NSMutableDictionary alloc] init];
     DataModelSingleton *dataManager = [DataModelSingleton initSharedDataModel];
@@ -99,6 +80,27 @@
     }
     else{
         return YES;
+    }
+}
+
+#pragma mark Button action methods
+-(void)doneButtonPressed{
+    if( [self validateInputStrings] ){
+        
+        NSString* hours = self.labelTFHours.text;
+        
+        [dataModel addEvent:[[Event alloc] initWithEventLabel:self.textFieldEventTitle.text relatedPerson:self.textFieldRelatedPerson.text hours:hours.floatValue eventInfo:self.textFieldEventInfo.text eventDate:self.datePicker.date] forDate: self.datePicker.date];
+        
+        UIViewController *allEventsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"allEventsVC"];
+        [self.navigationController pushViewController:allEventsVC animated:YES];
+        
+        [self saveData];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid input!"
+                                                        message:@"Please make sure that all fields are fill!" delegate:self cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
     }
 }
 

@@ -153,8 +153,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Fl-a3-y90">
                                 <rect key="frame" x="24" y="81" width="552" height="41"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="labelEventDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8K-5H-yC0">
-                                        <rect key="frame" x="8" y="10" width="536" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelEventDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8K-5H-yC0">
+                                        <rect key="frame" x="8" y="9" width="536" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="rtJ-6W-0uZ"/>
                                         </constraints>
@@ -375,8 +375,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event info:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKN-ph-3Xi">
-                                        <rect key="frame" x="8" y="4" width="82" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event info:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKN-ph-3Xi">
+                                        <rect key="frame" x="10" y="4" width="248" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -421,8 +421,8 @@
                                     <constraint firstItem="2w4-WO-E6y" firstAttribute="leading" secondItem="IQL-Uf-Da5" secondAttribute="leading" constant="8" id="vrE-E7-hPY"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zrz-Kr-EEt">
-                                <rect key="frame" x="140" y="378" width="320" height="162"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zrz-Kr-EEt">
+                                <rect key="frame" x="140" y="210" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="451933933.58184999">
                                     <!--2015-04-28 17:12:13 +0000-->
                                 </date>
@@ -464,6 +464,7 @@
                             <constraint firstItem="IQL-Uf-Da5" firstAttribute="top" secondItem="Xa1-Kl-yGg" secondAttribute="bottom" constant="10" id="hed-r4-Jfm"/>
                             <constraint firstItem="Xa1-Kl-yGg" firstAttribute="width" secondItem="IQL-Uf-Da5" secondAttribute="width" id="hmS-Y7-jZ8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xa1-Kl-yGg" secondAttribute="trailing" constant="10" id="osn-te-ddU"/>
+                            <constraint firstItem="zrz-Kr-EEt" firstAttribute="top" secondItem="HoS-jG-XJx" secondAttribute="bottom" constant="20" id="ptJ-h0-Lkm"/>
                             <constraint firstItem="HoS-jG-XJx" firstAttribute="leading" secondItem="Klw-wI-PJC" secondAttribute="leadingMargin" constant="10" id="vpY-uP-waj"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="zrz-Kr-EEt" secondAttribute="trailing" constant="10" id="wAI-bg-ahg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jOd-Xc-5Ld" secondAttribute="trailing" constant="10" id="wMv-mU-h5N"/>

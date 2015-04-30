@@ -23,34 +23,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     DataModelSingleton *dataModel = [DataModelSingleton initSharedDataModel];
     
     self.labelEventTitle.text = dataModel.selectedEvent.eventLabel;
     self.labelRelatedPerson.text = dataModel.selectedEvent.relatedPerson;
-    self.labelEventDate.text = [NSString stringWithFormat:@"%@", dataModel.selectedEvent.eventDate];
+    NSDateFormatter *mmddccyy = [[NSDateFormatter alloc] init];
+    mmddccyy.timeStyle = NSDateFormatterNoStyle;
+    mmddccyy.dateFormat = @"dd/MM/yyyy";
+    NSString *dateString = [mmddccyy stringFromDate:dataModel.selectedEvent.eventDate];
+    
+    self.labelEventDate.text = dateString;
     self.imageViewEventCover.image = dataModel.selectedEvent.eventCover;
     self.textViewEventInfo.text = dataModel.selectedEvent.eventInfo;
-    
-//    NSDictionary *elementsDict = NSDictionaryOfVariableBindings(_labelEventDate, _labelRelatedPerson, _labelEventDate, _imageViewEventCover, _textViewEventInfo, _viewInnerView);
-//    [NSLayoutConstraint constraintsWithVisualFormat:@"|-(==20)-[imageViewEventCover(==50)]-(==20)-|" options: NSLayoutFormatAlignAllCenterX metrics:nil views:@{@"imageViewEventCover":self.imageViewEventCover}];
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[_imageViewEventCover]-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:elementsDict]];
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[_imageViewEventCover(>=100)]-|" options:NSLayoutAttributeRightMargin metrics:nil views:elementsDict]];
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

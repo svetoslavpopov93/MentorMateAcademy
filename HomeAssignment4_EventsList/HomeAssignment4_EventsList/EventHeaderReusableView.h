@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface EventHeaderReusableView : UICollectionReusableView
+
 @property (weak, nonatomic) IBOutlet UILabel *labelSectionHeaderTitle;
 @property(strong, nonatomic) NSString *headerText;
+
 @end

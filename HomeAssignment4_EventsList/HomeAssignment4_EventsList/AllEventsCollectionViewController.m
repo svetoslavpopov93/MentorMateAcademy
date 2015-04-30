@@ -13,6 +13,7 @@
     BOOL twoElementsModeSelected;
     NSArray *allDays;
 }
+
 @property (strong, nonatomic) IBOutlet UICollectionView *collectonViewAllEvents;
 @property (weak, nonatomic) IBOutlet CustomCollectionViewCell *customCell;
 @property (nonatomic) CGFloat ratioForCellWidth;
@@ -49,8 +50,31 @@ static NSString * const reuseHeaderIdentifier = @"eventHeader";
     [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
+#pragma mark Collection view methods
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return allDays.count;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSMutableArray *elementsInCurrentSection = dataModel.days[allDays[section]];
+    
+    return elementsInCurrentSection.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"customCell" forIndexPath:indexPath];
+    
+    NSMutableArray *currentSectionEvents = dataModel.days[allDays[indexPath.section]];
+    
+    Event *selectedEvent = currentSectionEvents[indexPath.row];
+    
+    cell.labelEventTitle.text = selectedEvent.eventLabel;
+    cell.labelRelatedPerson.text = selectedEvent.relatedPerson;
+    cell.labelInfo.text = selectedEvent.eventInfo;
+    cell.imageEventCover.image = selectedEvent.eventCover;
+    cell.labelHours.text = [NSString stringWithFormat: @"%0.1f", selectedEvent.hours];
+    
+    return cell;
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
@@ -62,58 +86,17 @@ static NSString * const reuseHeaderIdentifier = @"eventHeader";
     return headerView;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSMutableArray *elementsInCurrentSection = dataModel.days[allDays[section]];
-    
-    return elementsInCurrentSection.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"customCell" forIndexPath:indexPath];
-   
-    NSMutableArray *currentSectionEvents = dataModel.days[allDays[indexPath.section]];
-    
-        Event *selectedEvent = currentSectionEvents[indexPath.row];
-        
-        cell.labelEventTitle.text = selectedEvent.eventLabel;
-        cell.labelRelatedPerson.text = selectedEvent.relatedPerson;
-        cell.labelInfo.text = selectedEvent.eventInfo;
-        cell.imageEventCover.image = selectedEvent.eventCover;
-        cell.labelHours.text = [NSString stringWithFormat: @"%0.1f", selectedEvent.hours];
-    
-    return cell;
-}
-
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(CGRectGetWidth(collectionView.frame) * self.ratioForCellWidth, 205);
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    // Do view manipulation here.
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [self.collectonViewAllEvents reloadData];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
-}
-
-
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-    
-    CustomCollectionViewCell *currentCell = (CustomCollectionViewCell*)sender;
-    NSLog(@"%@", currentCell.labelEventTitle.text);
-	return YES;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-    CustomCollectionViewCell *currentCell = (CustomCollectionViewCell*)sender;
-    NSLog(@"%@", currentCell.labelEventTitle.text);
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -123,6 +106,8 @@ static NSString * const reuseHeaderIdentifier = @"eventHeader";
     UIViewController *detailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsVC"];
     [self.navigationController pushViewController:detailsVC animated:YES];
 }
+
+#pragma mark Button action methods
 
 - (IBAction)buttonActionChangeColumnMode:(id)sender {
     UIBarButtonItem *barBtn = sender;

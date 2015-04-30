@@ -48,12 +48,12 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     [self saveData];
 }
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-}
+//
+//- (void)applicationWillEnterForeground:(UIApplication *)application {
+//}
+//
+//- (void)applicationDidBecomeActive:(UIApplication *)application {
+//}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveData];

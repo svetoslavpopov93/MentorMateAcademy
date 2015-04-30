@@ -14,4 +14,5 @@
 #import "EventHeaderReusableView.h"
 
 @interface AllEventsCollectionViewController : UICollectionViewController
+
 @end

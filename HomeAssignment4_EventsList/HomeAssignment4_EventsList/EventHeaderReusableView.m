@@ -9,6 +9,7 @@
 #import "EventHeaderReusableView.h"
 
 @implementation EventHeaderReusableView
+
 - (instancetype)init
 {
     self = [super init];
@@ -19,4 +20,5 @@
     
     return self;
 }
+
 @end

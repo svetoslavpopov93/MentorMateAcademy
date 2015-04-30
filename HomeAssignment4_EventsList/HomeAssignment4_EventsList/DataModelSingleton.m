@@ -34,7 +34,10 @@ static DataModelSingleton *sharedDataModel;
     }
 }
 
+#pragma mark Public methods
+/// The method adds few example events. To enable him, go to AppDelegate.m and uncomment the method call
 -(void)fillExampleEvents{
+    
     NSDateFormatter *mmddccyy = [[NSDateFormatter alloc] init];
     mmddccyy.timeStyle = NSDateFormatterNoStyle;
     mmddccyy.dateFormat = @"dd/MM/yyyy";
@@ -60,15 +63,6 @@ static DataModelSingleton *sharedDataModel;
     date = [mmddccyy dateFromString:@"11/11/2015"];
     [self addEvent:[[Event alloc] initWithEventLabel:@"Rammstein" relatedPerson:@"Svetoslav" hours:2 eventInfo:@"Sdadadkmadla" eventDate:date] forDate:date];
     
-    NSLog(@"");
-//    [self.days objectForKey:[NSString stringWithFormat:@"%@", d]];
-//    [self.events addObject:[[Event alloc] initWithEventLabel:@"Metallica live in Sofia" relatedPerson:@"Ivan" hours:5 eventInfo:@"Music event of the year" eventDate:d]];
-//    [self.events addObject:[[Event alloc] initWithEventLabel:@"Bon Jovi live in Sofia" relatedPerson:@"Kiro" hours:3 eventInfo:@"First live preformance in Bulgaria" eventDate:d]];
-//    [self.events addObject:[[Event alloc] initWithEventLabel:@"Levski - CSKA" relatedPerson:@"Stoian" hours:2 eventInfo:@"Sofia derby." eventDate:d]];
-//    [self.events addObject:[[Event alloc] initWithEventLabel:@"Mobcon" relatedPerson:@"Dimitar" hours:3 eventInfo:@"Mobile conference" eventDate:d]];
-//    [self.events addObject:[[Event alloc] initWithEventLabel:@"Hackaton" relatedPerson:@"Mitko" hours:4 eventInfo:@"Hackaton at its finest. Right here. Right now!" eventDate:d]];
-//    [self.events addObject:[[Event alloc] initWithEventLabel:@"Slavi's Tour" relatedPerson:@"Slavi Trifonov" hours:4 eventInfo:@"Slavi and Ku-Ku band's tour" eventDate:d]];
-//    [self.events addObject:[[Event alloc] initWithEventLabel:@"Let me explain" relatedPerson:@"Kevin Hart" hours:4 eventInfo:@"The best stan-alone comedy show!" eventDate:d]];
 }
 
 -(void)addEvent:(Event*)event forDate: (NSDate*)date{

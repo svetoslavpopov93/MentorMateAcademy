@@ -17,6 +17,7 @@
 @property (nonatomic) float hours;
 @property (nonatomic, strong) NSString *eventInfo;
 @property (nonatomic, strong)NSDate *eventDate;
+
 -(id)initWithEventLabel: (NSString* )eventLabel relatedPerson: (NSString*)relatedPerson hours: (float)hours eventInfo: (NSString *)eventInfo eventDate: (NSDate *)eventDate;
 
 @end
