@@ -9,11 +9,18 @@
 #import "DatePickerViewController.h"
 
 @interface DatePickerViewController ()
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UILabel *labelDate;
 
 @end
 
 @implementation DatePickerViewController
 - (IBAction)datePicker:(id)sender {
+    
+    UIDatePicker *date = (UIDatePicker*)sender;
+    
+    self.labelDate.text = [NSString stringWithFormat:@"%@", date.date];
+    
 }
 
 - (void)viewDidLoad {
@@ -24,6 +31,8 @@
                                                     [UIColor greenColor], NSForegroundColorAttributeName,
                                                     nil]
                                           forState:UIControlStateNormal];
+    self.datePicker.datePickerMode = UIDatePickerModeDate;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,18 +41,8 @@
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 5;
+    return 4;
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{

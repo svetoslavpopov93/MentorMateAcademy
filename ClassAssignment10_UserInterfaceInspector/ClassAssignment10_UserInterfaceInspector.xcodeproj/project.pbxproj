@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE87EFFE1AFCD92B00C13978 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87EFFD1AFCD92B00C13978 /* PickerViewController.m */; };
+		AE87F0011AFCFCC100C13978 /* ActivityIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87F0001AFCFCC100C13978 /* ActivityIndicatorViewController.m */; };
 		FBB671911AEEB0F900B74B83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB671901AEEB0F900B74B83 /* main.m */; };
 		FBB671941AEEB0F900B74B83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB671931AEEB0F900B74B83 /* AppDelegate.m */; };
 		FBB671971AEEB0F900B74B83 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB671961AEEB0F900B74B83 /* ViewController.m */; };
@@ -30,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE87EFFC1AFCD92B00C13978 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		AE87EFFD1AFCD92B00C13978 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		AE87EFFF1AFCFCC100C13978 /* ActivityIndicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorViewController.h; sourceTree = "<group>"; };
+		AE87F0001AFCFCC100C13978 /* ActivityIndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorViewController.m; sourceTree = "<group>"; };
 		FBB6718B1AEEB0F900B74B83 /* ClassAssignment10_UserInterfaceInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassAssignment10_UserInterfaceInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB6718F1AEEB0F900B74B83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBB671901AEEB0F900B74B83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +110,10 @@
 				FBB671B81AEEB6FA00B74B83 /* DatePickerViewController.m */,
 				FBB671BA1AEEB92700B74B83 /* SegmentControlViewController.h */,
 				FBB671BB1AEEB92700B74B83 /* SegmentControlViewController.m */,
+				AE87EFFC1AFCD92B00C13978 /* PickerViewController.h */,
+				AE87EFFD1AFCD92B00C13978 /* PickerViewController.m */,
+				AE87EFFF1AFCFCC100C13978 /* ActivityIndicatorViewController.h */,
+				AE87F0001AFCFCC100C13978 /* ActivityIndicatorViewController.m */,
 			);
 			path = ClassAssignment10_UserInterfaceInspector;
 			sourceTree = "<group>";
@@ -239,7 +249,9 @@
 				FBB671BC1AEEB92700B74B83 /* SegmentControlViewController.m in Sources */,
 				FBB671941AEEB0F900B74B83 /* AppDelegate.m in Sources */,
 				FBB671B91AEEB6FA00B74B83 /* DatePickerViewController.m in Sources */,
+				AE87EFFE1AFCD92B00C13978 /* PickerViewController.m in Sources */,
 				FBB671911AEEB0F900B74B83 /* main.m in Sources */,
+				AE87F0011AFCFCC100C13978 /* ActivityIndicatorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +444,7 @@
 				FBB671B01AEEB0F900B74B83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FBB671B11AEEB0F900B74B83 /* Build configuration list for PBXNativeTarget "ClassAssignment10_UserInterfaceInspectorTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +453,7 @@
 				FBB671B31AEEB0F900B74B83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
