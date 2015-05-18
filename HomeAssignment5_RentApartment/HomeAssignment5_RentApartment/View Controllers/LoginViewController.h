@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "User.h"
+#import "StateManager.h"
 
 @interface LoginViewController : UIViewController
 
