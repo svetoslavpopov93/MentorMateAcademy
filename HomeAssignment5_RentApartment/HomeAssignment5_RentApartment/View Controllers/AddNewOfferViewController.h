@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "Apartment.h"
+#import "StateManager.h"
 
 @interface AddNewOfferViewController : UIViewController
 

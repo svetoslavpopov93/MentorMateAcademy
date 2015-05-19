@@ -24,6 +24,7 @@
 		AE0E72C71B0661430081801B /* ApartmentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E72C61B0661430081801B /* ApartmentCollectionViewCell.m */; };
 		AE0E72CA1B06673E0081801B /* AddNewOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E72C91B06673E0081801B /* AddNewOfferViewController.m */; };
 		AE0E72CD1B09FD8E0081801B /* Apartment.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E72CC1B09FD8E0081801B /* Apartment.m */; };
+		AE24D64E1B0B7FD200D259B8 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24D64D1B0B7FD200D259B8 /* CommentsViewController.m */; };
 		AED402BB1B0A044400D91919 /* apartment.png in Resources */ = {isa = PBXBuildFile; fileRef = AED402BA1B0A044400D91919 /* apartment.png */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,8 @@
 		AE0E72C91B06673E0081801B /* AddNewOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddNewOfferViewController.m; path = "View Controllers/AddNewOfferViewController.m"; sourceTree = "<group>"; };
 		AE0E72CB1B09FD8E0081801B /* Apartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Apartment.h; path = Models/Apartment.h; sourceTree = "<group>"; };
 		AE0E72CC1B09FD8E0081801B /* Apartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Apartment.m; path = Models/Apartment.m; sourceTree = "<group>"; };
+		AE24D64C1B0B7FD200D259B8 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentsViewController.h; path = "View Controllers/CommentsViewController.h"; sourceTree = "<group>"; };
+		AE24D64D1B0B7FD200D259B8 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentsViewController.m; path = "View Controllers/CommentsViewController.m"; sourceTree = "<group>"; };
 		AED402BA1B0A044400D91919 /* apartment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apartment.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +185,8 @@
 				AE0E72C61B0661430081801B /* ApartmentCollectionViewCell.m */,
 				AE0E72C81B06673E0081801B /* AddNewOfferViewController.h */,
 				AE0E72C91B06673E0081801B /* AddNewOfferViewController.m */,
+				AE24D64C1B0B7FD200D259B8 /* CommentsViewController.h */,
+				AE24D64D1B0B7FD200D259B8 /* CommentsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				AE0E72B21B0497930081801B /* LoginViewController.m in Sources */,
 				AE0E72CD1B09FD8E0081801B /* Apartment.m in Sources */,
 				AE0E72851B047C2B0081801B /* HomeAssignment5_RentApartment.xcdatamodeld in Sources */,
+				AE24D64E1B0B7FD200D259B8 /* CommentsViewController.m in Sources */,
 				AE0E72B51B0497C20081801B /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

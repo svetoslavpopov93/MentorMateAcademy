@@ -12,6 +12,6 @@
 #import "ApartmentCollectionViewCell.h"
 #import "Apartment.h"
 
-@interface AllApartmentsCollectionViewController : UICollectionViewController
+@interface AllApartmentsCollectionViewController : UICollectionViewController<NSFetchedResultsControllerDelegate>
 
 @end

@@ -23,13 +23,14 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
     self.clearsSelectionOnViewWillAppear = NO	;
+    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(userDidClickAddNewOfferButton)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
     self.appDelegate = [[UIApplication sharedApplication] delegate];
     [[self fetchedResultsController] performFetch:nil];
+
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 }
@@ -82,7 +83,6 @@ static NSString * const reuseIdentifier = @"Cell";
     return 1;
 }
 
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
     id cellInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
@@ -126,11 +126,16 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Clicked!");
+    Apartment *current = [_fetchedResultsController objectAtIndexPath:indexPath];
+    [[StateManager sharedStateManager] setCurrentApartment:current];
+    
+    UIViewController *detailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsVC"];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:detailsVC];
+    [self.navigationController presentViewController:nc animated:YES completion:nil];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
-    
+    [self.collectionView reloadData];
 }
 
 @end

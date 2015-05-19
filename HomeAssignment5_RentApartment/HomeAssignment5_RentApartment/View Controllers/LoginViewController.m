@@ -28,6 +28,8 @@
     UIBarButtonItem *registerButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(userDidClickOnRegisterButton)];
     
     self.navigationItem.rightBarButtonItem = registerButton;
+    self.textFieldUsername.delegate = self;
+    self.textFieldPassword.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,10 +77,17 @@
 
 #pragma mark Input management 
 
+// Dismisses the keyboard when user hits the "Return" key
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
 //Checks if the data of all text fields is valid and it is not an empty string
 -(BOOL)allInputFieldsDidPassValidation{
-    if ([self inputDidPassValidationCheckForEmptyString:self.textFieldUsername.text]
-        && [self inputDidPassValidationCheckForEmptyString:self.textFieldPassword.text]) {
+    if ([self inputDidPassValidationCheckString:self.textFieldUsername.text]
+        && [self inputDidPassValidationCheckString:self.textFieldPassword.text]) {
         
         return YES;
     }
@@ -89,7 +98,7 @@
 }
 
 // Check if the string is empty or only with white spaces
--(BOOL)inputDidPassValidationCheckForEmptyString: (NSString*)inputString{
+-(BOOL)inputDidPassValidationCheckString: (NSString*)inputString{
     NSString *trimmed = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     if ([trimmed isEqualToString:@""]) {

@@ -31,10 +31,6 @@
         self.city = [[NSString alloc] init];
         self.apartmentType = [[NSString alloc] init];
         
-        
-        
-        
-        
         self.imageViewImage = self.image;
         self.labelTitle.text = self.title;
         self.labelPrice.text = self.price;

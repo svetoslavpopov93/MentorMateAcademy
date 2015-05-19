@@ -56,6 +56,7 @@
         [newApartment setValue:self.textFieldDetails.text forKey:@"details"];
         [newApartment setValue:UIImagePNGRepresentation(self.imageViewImage.image) forKey:@"image"];
         [newApartment setValue:[NSNumber numberWithFloat:[self.textFieldPrice.text floatValue]] forKey:@"price"];
+        [newApartment setValue:[[StateManager sharedStateManager] currentUser] forKey:@"owner"];
         [newApartment setValue:self.textFieldTitle.text forKey:@"title"];
         
         //        // After the context saving the returned data is checked and if the saving fails an alert is shown.
@@ -67,7 +68,7 @@
             NSLog(@"Saving apartment failed!");
         }
         else{
-             UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Registration successful!" message:nil delegate:self cancelButtonTitle:@"Continue" otherButtonTitles: nil];
+             UIAlertView *successAlertView = [[UIAlertView alloc] initWithTitle:@"Apartment added!" message:nil delegate:self cancelButtonTitle:@"Continue" otherButtonTitles: nil];
             
             [successAlertView show];
                         
@@ -86,12 +87,12 @@
 
 //Checks if the data of all text fields is valid and it is not an empty string
 -(BOOL)allInputFieldsDidPassValidation{
-    if ( [self inputDidPassValidationCheck:self.textFieldTitle.text]
-        && [self inputDidPassValidationCheck:self.textFieldApartmentType.text]
-        && [self inputDidPassValidationCheck:self.textFieldCity.text]
-        && [self inputDidPassValidationCheck:self.textFieldCityQuarter.text]
-        && [self inputDidPassValidationCheck:self.textFieldDetails.text]
-        && [self inputDidPassValidationCheck:self.textFieldPrice.text] ) {
+    if ( [self inputDidPassValidationCheckForEmptyString:self.textFieldTitle.text]
+        && [self inputDidPassValidationCheckForEmptyString:self.textFieldApartmentType.text]
+        && [self inputDidPassValidationCheckForEmptyString:self.textFieldCity.text]
+        && [self inputDidPassValidationCheckForEmptyString:self.textFieldCityQuarter.text]
+        && [self inputDidPassValidationCheckForEmptyString:self.textFieldDetails.text]
+        && [self inputDidPassValidationCheckForEmptyStringAndIfNumber:self.textFieldPrice.text] ) {
         
         return YES;
     }
@@ -102,10 +103,26 @@
 }
 
 // Check if the string is empty or only with white spaces
--(BOOL)inputDidPassValidationCheck: (NSString*)inputString{
+-(BOOL)inputDidPassValidationCheckForEmptyString: (NSString*)inputString{
     NSString *trimmed = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     if ([trimmed isEqualToString:@""]) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
+
+// Check if the input string is number, empty string or if he contains only white spaces
+-(BOOL)inputDidPassValidationCheckForEmptyStringAndIfNumber: (NSString*)inputString{
+    NSString *trimmed = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    BOOL trimmedInputIsNumber =[[NSScanner scannerWithString:trimmed] scanFloat:nil];
+    
+    if ([trimmed isEqualToString:@""]) {
+        return NO;
+    }
+    else if(!trimmedInputIsNumber){
         return NO;
     }
     else{

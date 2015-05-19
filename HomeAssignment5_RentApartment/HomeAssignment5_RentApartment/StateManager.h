@@ -11,7 +11,8 @@
 
 @interface StateManager : NSObject
 
-@property(nonatomic, strong) User *currentUser;
+@property(nonatomic, strong) User *currentUser; // Represents the logged user
+@property(nonatomic, strong) Apartment *currentApartment; // Represents the selected apartment
 
 +(id)sharedStateManager;
 

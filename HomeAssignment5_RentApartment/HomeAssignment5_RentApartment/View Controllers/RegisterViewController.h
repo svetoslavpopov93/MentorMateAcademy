@@ -10,6 +10,6 @@
 #import "AppDelegate.h"
 #import "User.h"
 
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : UIViewController <UITextFieldDelegate>
 
 @end

@@ -89,12 +89,12 @@
 
 //Checks if the data of all text fields is valid and it is not an empty string
 -(BOOL)allInputFieldsDidPassValidation{
-    if ( [self inputDidPassValidationCheck:self.textFieldFirstName.text]
-        && [self inputDidPassValidationCheck:self.textFieldLastName.text]
-        && [self inputDidPassValidationCheck:self.textFieldNickName.text]
-        && [self inputDidPassValidationCheck:self.textFieldAddress.text]
-        && [self inputDidPassValidationCheck:self.textFieldAge.text]
-        && [self inputDidPassValidationCheck:self.textFieldPassword.text] ) {
+    if ( [self inputDidPassValidationCheckForEmptyString:self.textFieldFirstName.text]
+        && [self inputDidPassValidationCheckForEmptyString:self.textFieldLastName.text]
+        && [self inputDidPassValidationCheckForEmptyString:self.textFieldNickName.text]
+        && [self inputDidPassValidationCheckForEmptyString:self.textFieldAddress.text]
+        && [self inputDidPassValidationCheckForEmptyStringAndIfNumber:self.textFieldAge.text]
+        && [self inputDidPassValidationCheckForEmptyString:self.textFieldPassword.text] ) {
         
         return YES;
     }
@@ -105,10 +105,27 @@
 }
 
 // Check if the string is empty or only with white spaces
--(BOOL)inputDidPassValidationCheck: (NSString*)inputString{
+-(BOOL)inputDidPassValidationCheckForEmptyString: (NSString*)inputString{
     NSString *trimmed = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    BOOL trimmedInputIsNumber =[[NSScanner scannerWithString:trimmed] scanFloat:nil];
     
     if ([trimmed isEqualToString:@""]) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
+
+// Check if the input string is number, empty string or if he contains only white spaces
+-(BOOL)inputDidPassValidationCheckForEmptyStringAndIfNumber: (NSString*)inputString{
+    NSString *trimmed = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    BOOL trimmedInputIsNumber =[[NSScanner scannerWithString:trimmed] scanFloat:nil];
+    
+    if ([trimmed isEqualToString:@""]) {
+        return NO;
+    }
+    else if(!trimmedInputIsNumber){
         return NO;
     }
     else{

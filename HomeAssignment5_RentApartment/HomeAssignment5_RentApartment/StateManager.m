@@ -25,7 +25,6 @@ static StateManager *sharedManager;
 
 -(id)init{
     self = [super init];
-    
     return self;
 }
 

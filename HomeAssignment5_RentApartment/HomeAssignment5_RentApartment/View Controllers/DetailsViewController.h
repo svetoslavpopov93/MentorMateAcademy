@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Apartment.h"
+#import "StateManager.h"
+#import "User.h"
 
 @interface DetailsViewController : UIViewController
 

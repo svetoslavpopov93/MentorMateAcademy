@@ -11,6 +11,6 @@
 #import "User.h"
 #import "StateManager.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
 
 @end
