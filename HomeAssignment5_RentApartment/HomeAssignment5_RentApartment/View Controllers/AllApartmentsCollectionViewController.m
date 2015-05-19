@@ -8,7 +8,12 @@
 
 #import "AllApartmentsCollectionViewController.h"
 
-@interface AllApartmentsCollectionViewController ()
+@interface AllApartmentsCollectionViewController () <NSFetchedResultsControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *textFieldUsername;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldPassword;
+@property (nonatomic, strong) AppDelegate *appDelegate;
+@property (nonatomic, strong) NSFetchedResultsController* fetchedResultsController;
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldUsername;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPassword;
@@ -44,6 +49,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 #pragma mark Navigation actions
+<<<<<<< HEAD
 
 -(void)userDidClickAddNewOfferButton{
     UIViewController *addNewOfferVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addNewOfferVC"];
@@ -51,6 +57,15 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.navigationController presentViewController:navController animated:YES completion:nil];
 }
 
+=======
+
+-(void)userDidClickAddNewOfferButton{
+    UIViewController *addNewOfferVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addNewOfferVC"];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addNewOfferVC];
+    [self.navigationController presentViewController:navController animated:YES completion:nil];
+}
+
+>>>>>>> 61a92742d35055ff482e27738e293446bd3fd9f0
 #pragma mark Core Data interactions
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -129,5 +144,12 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"Clicked!");
 }
+<<<<<<< HEAD
+=======
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    
+}
+>>>>>>> 61a92742d35055ff482e27738e293446bd3fd9f0
 
 @end
