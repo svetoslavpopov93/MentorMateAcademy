@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StateManager.h"
+#import "AppDelegate.h"
+#import "ApartmentCollectionViewCell.h"
+#import "Apartment.h"
 
 @interface AllApartmentsCollectionViewController : UICollectionViewController
 

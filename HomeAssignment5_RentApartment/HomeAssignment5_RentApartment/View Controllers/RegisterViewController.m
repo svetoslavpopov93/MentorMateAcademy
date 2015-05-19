@@ -24,8 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector (userDidClickCancelButton)];
+    
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(userDidClickDoneButton)];
     
+    self.navigationItem.leftBarButtonItem = cancelButton;
     self.navigationItem.rightBarButtonItem = doneButton;
     
 }
@@ -34,11 +37,20 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark Navigation Buttons
+
+-(void)userDidClickCancelButton{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void)userDidClickDoneButton{
+    
+    // Checking all input fields for empty string or string with white space only
     if ([self allInputFieldsDidPassValidation]) {
         
         AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
         
+        // Configuring the saving request from the input values
         NSManagedObjectContext *context = appDelegate.managedObjectContext;
         User *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
         [newUser setValue:self.textFieldFirstName.text forKey:@"firstName"];
@@ -49,6 +61,8 @@
         [newUser setValue:self.textFieldNickName.text forKey:@"nickName"];
         [newUser setValue:self.textFieldPassword.text forKey:@"password"];
         
+        // After the context saving the returned data is checked and if the saving fails an alert is shown.
+        // If the saving is successfull, the application is returned to the login screen
         NSError *error;
         if (![context save:&error]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to save!" message:@"Please make sure that the input is correct!" delegate:self cancelButtonTitle:@"Try again" otherButtonTitles:nil];
@@ -71,7 +85,9 @@
         [invalidInputAlert show];
     }
 }
+#pragma mark Input management
 
+//Checks if the data of all text fields is valid and it is not an empty string
 -(BOOL)allInputFieldsDidPassValidation{
     if ( [self inputDidPassValidationCheck:self.textFieldFirstName.text]
         && [self inputDidPassValidationCheck:self.textFieldLastName.text]
@@ -88,6 +104,7 @@
     }
 }
 
+// Check if the string is empty or only with white spaces
 -(BOOL)inputDidPassValidationCheck: (NSString*)inputString{
     NSString *trimmed = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     

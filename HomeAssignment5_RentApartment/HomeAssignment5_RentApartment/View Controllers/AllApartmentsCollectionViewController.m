@@ -10,6 +10,11 @@
 
 @interface AllApartmentsCollectionViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *textFieldUsername;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldPassword;
+@property (nonatomic, strong) AppDelegate *appDelegate;
+@property (nonatomic, strong) NSFetchedResultsController* fetchedResultsController;
+
 @end
 
 @implementation AllApartmentsCollectionViewController
@@ -18,81 +23,111 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = NO	;
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(userDidClickAddNewOfferButton)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    self.appDelegate = [[UIApplication sharedApplication] delegate];
+    [[self fetchedResultsController] performFetch:nil];
     
-    // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.collectionView reloadData];
 }
-*/
+
+#pragma mark Navigation actions
+
+-(void)userDidClickAddNewOfferButton{
+    UIViewController *addNewOfferVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addNewOfferVC"];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addNewOfferVC];
+    [self.navigationController presentViewController:navController animated:YES completion:nil];
+}
+
+#pragma mark Core Data interactions
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSManagedObjectContext *context = [self.appDelegate managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Apartment"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    
+    [fetchRequest setFetchBatchSize:20];
+    
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context
+                                                                      sectionNameKeyPath:nil
+                                                                               cacheName:nil];
+    
+    _fetchedResultsController.delegate = self;
+    return _fetchedResultsController;
+}
 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
+
+    id cellInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    long numberOfCells = [cellInfo numberOfObjects];
+    return numberOfCells;
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    ApartmentCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"apartmentCell" forIndexPath:indexPath];
     
     // Configure the cell
+    Apartment *info = [_fetchedResultsController objectAtIndexPath:indexPath];
     
+    cell.imageViewImage.image = [UIImage imageWithData:info.image];
+    cell.labelApartmentType.text = info.apartmentType;
+    cell.labelCity.text = info.city;
+    cell.labelCityQuarter.text = info.cityQuarter;
+    cell.labelDetails.text = info.details;
+    cell.labelPrice.text = [NSString stringWithFormat:@"$%02.f",[info.price floatValue]];
+    cell.labelTitle.text = info.title;
+
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
-*/
 
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
 	return NO;
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
+    return YES;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
 }
-*/
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"Clicked!");
+}
 
 @end
