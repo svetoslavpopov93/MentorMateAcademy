@@ -54,14 +54,9 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (IBAction)userDidClickSearchButton:(id)sender {
-    UITableViewController *tableViewController = [[UITableViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc]
-                                   initWithRootViewController:tableViewController];
     
-    UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:nav];
-    popover.delegate = self;
-    popover.popoverContentSize = CGSizeMake(320, 497);
-    [popover presentPopoverFromRect:CGRectMake(20, 20, 30, 30) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    
+    
 }
 
 #pragma mark Core Data interactions
