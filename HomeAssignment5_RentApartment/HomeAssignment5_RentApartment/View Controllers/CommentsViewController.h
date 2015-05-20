@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "StateManager.h"
 #import "Apartment.h"
+#import "CommentCellTableViewCell.h"
 
 @interface CommentsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 

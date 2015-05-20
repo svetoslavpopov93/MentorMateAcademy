@@ -18,31 +18,4 @@
 @synthesize labelDetails = _labelDetails;
 @synthesize labelPrice = _labelPrice;
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.image = [[UIImageView alloc] init];
-        self.title = [[NSString alloc] init];
-        self.title = [[NSString alloc] init];
-        self.price = [[NSString alloc] init];
-        self.details = [[NSString alloc] init];
-        self.cityQuarter = [[NSString alloc] init];
-        self.city = [[NSString alloc] init];
-        self.apartmentType = [[NSString alloc] init];
-        
-        self.imageViewImage = self.image;
-        self.labelTitle.text = self.title;
-        self.labelPrice.text = self.price;
-        self.labelDetails.text = self.details;
-        self.labelCityQuarter.text = self.cityQuarter;
-        self.labelCity.text = self.city;
-        self.labelApartmentType.text = self.apartmentType;
-        
-    }
-    return self;
-}
-
-
-
 @end

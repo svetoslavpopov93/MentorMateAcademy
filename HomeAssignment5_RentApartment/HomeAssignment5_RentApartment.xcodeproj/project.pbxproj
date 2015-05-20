@@ -25,6 +25,7 @@
 		AE0E72CA1B06673E0081801B /* AddNewOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E72C91B06673E0081801B /* AddNewOfferViewController.m */; };
 		AE0E72CD1B09FD8E0081801B /* Apartment.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E72CC1B09FD8E0081801B /* Apartment.m */; };
 		AE24D64E1B0B7FD200D259B8 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24D64D1B0B7FD200D259B8 /* CommentsViewController.m */; };
+		AE24D6511B0C762E00D259B8 /* CommentCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24D6501B0C762E00D259B8 /* CommentCellTableViewCell.m */; };
 		AED402BB1B0A044400D91919 /* apartment.png in Resources */ = {isa = PBXBuildFile; fileRef = AED402BA1B0A044400D91919 /* apartment.png */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,8 @@
 		AE0E72CC1B09FD8E0081801B /* Apartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Apartment.m; path = Models/Apartment.m; sourceTree = "<group>"; };
 		AE24D64C1B0B7FD200D259B8 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentsViewController.h; path = "View Controllers/CommentsViewController.h"; sourceTree = "<group>"; };
 		AE24D64D1B0B7FD200D259B8 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentsViewController.m; path = "View Controllers/CommentsViewController.m"; sourceTree = "<group>"; };
+		AE24D64F1B0C762E00D259B8 /* CommentCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentCellTableViewCell.h; path = "View Controllers/CommentCellTableViewCell.h"; sourceTree = "<group>"; };
+		AE24D6501B0C762E00D259B8 /* CommentCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentCellTableViewCell.m; path = "View Controllers/CommentCellTableViewCell.m"; sourceTree = "<group>"; };
 		AED402BA1B0A044400D91919 /* apartment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apartment.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +190,8 @@
 				AE0E72C91B06673E0081801B /* AddNewOfferViewController.m */,
 				AE24D64C1B0B7FD200D259B8 /* CommentsViewController.h */,
 				AE24D64D1B0B7FD200D259B8 /* CommentsViewController.m */,
+				AE24D64F1B0C762E00D259B8 /* CommentCellTableViewCell.h */,
+				AE24D6501B0C762E00D259B8 /* CommentCellTableViewCell.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				AE0E72C71B0661430081801B /* ApartmentCollectionViewCell.m in Sources */,
 				AE0E72C41B0653BE0081801B /* StateManager.m in Sources */,
 				AE0E72BE1B0498210081801B /* AllApartmentsCollectionViewController.m in Sources */,
+				AE24D6511B0C762E00D259B8 /* CommentCellTableViewCell.m in Sources */,
 				AE0E72AB1B048CDC0081801B /* Comment.m in Sources */,
 				AE0E727F1B047C2B0081801B /* main.m in Sources */,
 				AE0E72B21B0497930081801B /* LoginViewController.m in Sources */,

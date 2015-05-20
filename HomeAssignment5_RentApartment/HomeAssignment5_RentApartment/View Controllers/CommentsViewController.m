@@ -70,14 +70,21 @@
 #pragma mark UITableView delegate
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"someId"];
+    CommentCellTableViewCell *cell = [self.tableViewComments dequeueReusableCellWithIdentifier:@"commentCell"];
     NSError *error;
     [_fetchedResultsController performFetch:&error];
     
     Comment *info = [_fetchedResultsController objectAtIndexPath:indexPath];
     User *user = info.author;
     
-    cell.detailTextLabel.text = user.nickName;
+    cell.labelAuthor.text = user.nickName;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd MMM yyyy HH:mm "];
+    NSString *dateStr = [dateFormatter stringFromDate:info.date];
+    //[dateFormatter dateFromString: dateStr];
+    
+    cell.labelDate.text = dateStr;
+    cell.textFieldText.text = info.text;
     
     return cell;
 }

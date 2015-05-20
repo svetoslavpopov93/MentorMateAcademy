@@ -18,12 +18,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelDetails;
 @property (weak, nonatomic) IBOutlet UILabel *labelPrice;
 
-@property (strong, nonatomic) UIImageView *image;
-@property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *apartmentType;
-@property (strong, nonatomic) NSString *city;
-@property (strong, nonatomic) NSString *cityQuarter;
-@property (strong, nonatomic) NSString *details;
-@property (strong, nonatomic) NSString *price;
-
 @end
