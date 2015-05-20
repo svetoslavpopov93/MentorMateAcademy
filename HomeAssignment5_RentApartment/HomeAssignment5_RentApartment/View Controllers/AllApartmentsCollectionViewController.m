@@ -27,7 +27,9 @@ static NSString * const reuseIdentifier = @"Cell";
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(userDidClickAddNewOfferButton)];
     self.navigationItem.rightBarButtonItem = addButton;
-    
+
+    [self.navigationController setToolbarHidden:NO];
+
     self.appDelegate = [[UIApplication sharedApplication] delegate];
     [[self fetchedResultsController] performFetch:nil];
 
@@ -49,6 +51,17 @@ static NSString * const reuseIdentifier = @"Cell";
     UIViewController *addNewOfferVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addNewOfferVC"];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addNewOfferVC];
     [self.navigationController presentViewController:navController animated:YES completion:nil];
+}
+
+- (IBAction)userDidClickSearchButton:(id)sender {
+    UITableViewController *tableViewController = [[UITableViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc]
+                                   initWithRootViewController:tableViewController];
+    
+    UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:nav];
+    popover.delegate = self;
+    popover.popoverContentSize = CGSizeMake(320, 497);
+    [popover presentPopoverFromRect:CGRectMake(20, 20, 30, 30) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 #pragma mark Core Data interactions

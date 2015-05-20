@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldInput;
 @property (nonatomic, strong) AppDelegate *appDelegate;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, strong) UIBarButtonItem *searchButton;
 
 @end
 
@@ -26,8 +25,6 @@
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(userDidClickBackButton)];
     self.navigationItem.leftBarButtonItem = backButton;
-    self.searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(userDidClickSearchButton)];
-    self.navigationItem.rightBarButtonItem = self.searchButton;
     
     self.appDelegate = [[UIApplication sharedApplication] delegate];
     [[self fetchedResultsController] performFetch:nil];
@@ -106,12 +103,6 @@
 
 
 #pragma mark User iteractions
-
--(void)userDidClickSearchButton{
-    
-    // TODO
-    
-}
 
 -(void)userDidClickBackButton{
     [self dismissViewControllerAnimated:YES completion:nil];
