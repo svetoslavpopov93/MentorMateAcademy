@@ -107,7 +107,6 @@
 // Check if the string is empty or only with white spaces
 -(BOOL)inputDidPassValidationCheckForEmptyString: (NSString*)inputString{
     NSString *trimmed = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    BOOL trimmedInputIsNumber =[[NSScanner scannerWithString:trimmed] scanFloat:nil];
     
     if ([trimmed isEqualToString:@""]) {
         return NO;

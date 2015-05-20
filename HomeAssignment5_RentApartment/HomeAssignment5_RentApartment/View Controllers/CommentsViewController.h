@@ -14,8 +14,8 @@
 #import "Apartment.h"
 #import "CommentCellTableViewCell.h"
 
-@interface CommentsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+@interface CommentsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIPopoverControllerDelegate>
 
-
+@property (nonatomic, strong) UIPopoverController *popController;
 
 @end

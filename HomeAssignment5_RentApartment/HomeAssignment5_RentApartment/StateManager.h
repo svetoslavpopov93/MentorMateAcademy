@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#include <stdlib.h>
+#import "AppDelegate.h"
+#import "Apartment.h"
 
 @interface StateManager : NSObject
 
@@ -15,5 +18,6 @@
 @property(nonatomic, strong) Apartment *currentApartment; // Represents the selected apartment
 
 +(id)sharedStateManager;
+-(void)activateRandomFunctionalityGenerator;
 
 @end
