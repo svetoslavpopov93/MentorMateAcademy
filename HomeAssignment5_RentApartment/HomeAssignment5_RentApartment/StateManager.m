@@ -44,13 +44,16 @@ static StateManager *sharedManager;
 }
 
 -(void)generateRandomAction{
-    int number = 0 + rand() % (3 - 0);
+    int number = 0 + rand() % (4 - 0);
     
     switch (number) {
         case 1:
             [self addRandomApartment];
             break;
         case 2:
+            [self addRandomApartment];
+            break;
+        case 3:
             [self deleteRandomApartment];
         default:
             [self editRandomApartment];
