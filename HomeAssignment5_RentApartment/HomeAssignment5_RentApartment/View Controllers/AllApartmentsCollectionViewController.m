@@ -17,23 +17,29 @@
 
 @end
 
-@implementation AllApartmentsCollectionViewController
+@implementation AllApartmentsCollectionViewController{
+    StateManager *stateMan;
+}
 
 static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = NO	;
     
+    // Setting the add button at the navigation toolbar
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(userDidClickAddNewOfferButton)];
     self.navigationItem.rightBarButtonItem = addButton;
-
     [self.navigationController setToolbarHidden:NO];
-
-    self.appDelegate = [[UIApplication sharedApplication] delegate];
-    [[self fetchedResultsController] performFetch:nil];
-
     
+    // Declaring the appDelegate as a separate variable for easier later use
+    self.appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    // Declaring the StateManager singleton as a separate variable for easier later use
+    stateMan = [StateManager sharedStateManager];
+    stateMan.delegate = self;
+    [stateMan.fetchedResultsController performFetch:nil];
+
+    self.clearsSelectionOnViewWillAppear = NO;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 }
 
@@ -53,38 +59,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.navigationController presentViewController:navController animated:YES completion:nil];
 }
 
-- (IBAction)userDidClickSearchButton:(id)sender {
-    
-    
-    
-}
-
-#pragma mark Core Data interactions
-
-- (NSFetchedResultsController *)fetchedResultsController {
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-    
-    NSManagedObjectContext *context = [self.appDelegate managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Apartment"
-                                              inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:NO];
-    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
-    
-    [fetchRequest setFetchBatchSize:20];
-    
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context
-                                                                      sectionNameKeyPath:nil
-                                                                               cacheName:nil];
-    
-    _fetchedResultsController.delegate = self;
-    return _fetchedResultsController;
-}
-
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -92,8 +66,8 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-
-    id cellInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    
+    id cellInfo = [[stateMan.fetchedResultsController sections] objectAtIndex:section];
     long numberOfCells = [cellInfo numberOfObjects];
     return numberOfCells;
     
@@ -103,7 +77,7 @@ static NSString * const reuseIdentifier = @"Cell";
     ApartmentCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"apartmentCell" forIndexPath:indexPath];
     
     // Configure the cell
-    Apartment *info = [_fetchedResultsController objectAtIndexPath:indexPath];
+    Apartment *info = [stateMan.fetchedResultsController objectAtIndexPath:indexPath];
     
     cell.imageViewImage.image = [UIImage imageWithData:info.image];
     cell.labelApartmentType.text = info.apartmentType;
@@ -142,7 +116,11 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.navigationController presentViewController:nc animated:YES completion:nil];
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+-(void)searchButtonClicked{
+    [self dataDidChanged];
+}
+
+-(void)dataDidChanged{
     [self.collectionView reloadData];
 }
 

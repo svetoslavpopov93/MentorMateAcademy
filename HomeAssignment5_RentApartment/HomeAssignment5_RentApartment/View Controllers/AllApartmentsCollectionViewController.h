@@ -11,7 +11,8 @@
 #import "AppDelegate.h"
 #import "ApartmentCollectionViewCell.h"
 #import "Apartment.h"
+#import "SearchPopoverViewController.h"
 
-@interface AllApartmentsCollectionViewController : UICollectionViewController<NSFetchedResultsControllerDelegate>
+@interface AllApartmentsCollectionViewController : UICollectionViewController<NSFetchedResultsControllerDelegate, FetchedResultsDataDelegate, SearchControllerDelegate>
 
 @end

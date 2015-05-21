@@ -11,13 +11,27 @@
 #include <stdlib.h>
 #import "AppDelegate.h"
 #import "Apartment.h"
+#import "SearchPopoverViewController.h"
 
-@interface StateManager : NSObject
+@protocol FetchedResultsDataDelegate
+
+@required
+-(void)dataDidChanged;
+
+@end
+
+@interface StateManager : NSObject <NSFetchedResultsControllerDelegate>
 
 @property(nonatomic, strong) User *currentUser; // Represents the logged user
 @property(nonatomic, strong) Apartment *currentApartment; // Represents the selected apartment
+@property (nonatomic, strong) NSFetchedResultsController* fetchedResultsController;
+@property (nonatomic) NSString *predicateText;
+
+@property (nonatomic, assign) id  delegate;
 
 +(id)sharedStateManager;
 -(void)activateRandomFunctionalityGenerator;
+-(void)dataDidChange;
+-(void)fetchObjectsWithPredicate:(NSString*)str;
 
 @end

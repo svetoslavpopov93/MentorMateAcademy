@@ -85,6 +85,7 @@
         [invalidInputAlert show];
     }
 }
+
 #pragma mark Input management
 
 //Checks if the data of all text fields is valid and it is not an empty string

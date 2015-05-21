@@ -43,22 +43,24 @@ static StateManager *sharedManager;
     });
 }
 
+#pragma mark Random generation actions
+
 -(void)generateRandomAction{
     int number = 0 + rand() % (4 - 0);
     
-    switch (number) {
-        case 1:
-            [self addRandomApartment];
-            break;
-        case 2:
-            [self addRandomApartment];
-            break;
-        case 3:
-            [self deleteRandomApartment];
-        default:
-            [self editRandomApartment];
-            break;
-    }
+//    switch (number) {
+//        case 1:
+//            [self addRandomApartment];
+//            break;
+//        case 2:
+//            [self addRandomApartment];
+//            break;
+//        case 3:
+//            [self deleteRandomApartment];
+//        default:
+//            [self editRandomApartment];
+//            break;
+//    }
     
 }
 
@@ -149,4 +151,45 @@ static StateManager *sharedManager;
     }
 }
 
+#pragma mark CoreData interactions
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [delegate managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Apartment"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    
+    [fetchRequest setFetchBatchSize:20];
+    
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context
+                                                                      sectionNameKeyPath:nil
+                                                                               cacheName:nil];
+    
+    _fetchedResultsController.delegate = self;
+    return _fetchedResultsController;
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    [self.delegate dataDidChanged];
+}
+
+-(void)dataDidChange{
+    [[self fetchedResultsController] performFetch:nil];
+}
+
+-(void)fetchObjectsWithPredicate:(NSPredicate *)predicate{
+    if (predicate != nil) {
+        [[StateManager sharedStateManager] setPredicate:predicate];
+        [self.delegate searchButtonClicked];
+    }
+}
 @end
