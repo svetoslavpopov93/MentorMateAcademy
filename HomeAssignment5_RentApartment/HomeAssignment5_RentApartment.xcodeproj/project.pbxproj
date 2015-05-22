@@ -24,6 +24,7 @@
 		AE0E72C71B0661430081801B /* ApartmentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E72C61B0661430081801B /* ApartmentCollectionViewCell.m */; };
 		AE0E72CA1B06673E0081801B /* AddNewOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E72C91B06673E0081801B /* AddNewOfferViewController.m */; };
 		AE0E72CD1B09FD8E0081801B /* Apartment.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E72CC1B09FD8E0081801B /* Apartment.m */; };
+		AE1288671B0F697600C5DD38 /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE1288661B0F697600C5DD38 /* noimage.jpg */; };
 		AE24D64E1B0B7FD200D259B8 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24D64D1B0B7FD200D259B8 /* CommentsViewController.m */; };
 		AE24D6511B0C762E00D259B8 /* CommentCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24D6501B0C762E00D259B8 /* CommentCellTableViewCell.m */; };
 		AEC2C88A1B0DD46B008000C5 /* SearchPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC2C8891B0DD46B008000C5 /* SearchPopoverViewController.m */; };
@@ -73,6 +74,7 @@
 		AE0E72C91B06673E0081801B /* AddNewOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddNewOfferViewController.m; path = "View Controllers/AddNewOfferViewController.m"; sourceTree = "<group>"; };
 		AE0E72CB1B09FD8E0081801B /* Apartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Apartment.h; path = Models/Apartment.h; sourceTree = "<group>"; };
 		AE0E72CC1B09FD8E0081801B /* Apartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Apartment.m; path = Models/Apartment.m; sourceTree = "<group>"; };
+		AE1288661B0F697600C5DD38 /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
 		AE24D64C1B0B7FD200D259B8 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentsViewController.h; path = "View Controllers/CommentsViewController.h"; sourceTree = "<group>"; };
 		AE24D64D1B0B7FD200D259B8 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentsViewController.m; path = "View Controllers/CommentsViewController.m"; sourceTree = "<group>"; };
 		AE24D64F1B0C762E00D259B8 /* CommentCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentCellTableViewCell.h; path = "View Controllers/CommentCellTableViewCell.h"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		AED402B91B0A044400D91919 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				AE1288661B0F697600C5DD38 /* noimage.jpg */,
 				AED402BA1B0A044400D91919 /* apartment.png */,
 			);
 			path = Assets;
@@ -289,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE1288671B0F697600C5DD38 /* noimage.jpg in Resources */,
 				AED402BB1B0A044400D91919 /* apartment.png in Resources */,
 				AE0E728B1B047C2B0081801B /* Main.storyboard in Resources */,
 				AE0E72901B047C2B0081801B /* LaunchScreen.xib in Resources */,

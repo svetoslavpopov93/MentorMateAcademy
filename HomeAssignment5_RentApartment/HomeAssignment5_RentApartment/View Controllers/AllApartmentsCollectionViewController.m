@@ -79,7 +79,13 @@ static NSString * const reuseIdentifier = @"Cell";
     // Configure the cell
     Apartment *info = [stateMan.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.imageViewImage.image = [UIImage imageWithData:info.image];
+    if (info.image == nil) {
+        cell.imageViewImage.image = [UIImage imageNamed:@"noimage.jpg"];
+    }
+    else{
+        cell.imageViewImage.image = [UIImage imageWithData:info.image];
+    }
+    
     cell.labelApartmentType.text = info.apartmentType;
     cell.labelCity.text = info.city;
     cell.labelCityQuarter.text = info.cityQuarter;

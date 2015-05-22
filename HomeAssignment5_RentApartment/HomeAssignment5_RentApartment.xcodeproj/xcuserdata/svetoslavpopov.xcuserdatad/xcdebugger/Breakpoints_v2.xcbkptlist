@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeAssignment5_RentApartment/View Controllers/AllApartmentsCollectionViewController.m"
-            timestampString = "453907434.614405"
+            timestampString = "453995454.609618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "-dataDidChanged"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeAssignment5_RentApartment/View Controllers/AllApartmentsCollectionViewController.m"
-            timestampString = "453911362.199599"
+            timestampString = "453995454.609618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-searchButtonClicked"
             landmarkType = "5">
          </BreakpointContent>
