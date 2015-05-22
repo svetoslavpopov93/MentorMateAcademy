@@ -30,30 +30,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark User iteractions
+
 - (IBAction)userDidClickSearchButton:(id)sender {
     NSMutableArray *subPredicates = [[NSMutableArray alloc] init];
         if ([self inputDidPassValidationCheckForEmptyString: self.textFieldTitle.text]){
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"apartment.title == %@", self.textFieldTitle.text]];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title == %@", self.textFieldTitle.text];
             [subPredicates addObject:predicate];
         }
     
         if ([self inputDidPassValidationCheckForEmptyString:self.textFieldCity.text]) {
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"apartment.city == %@", self.textFieldCity.text]];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"city == %@", self.textFieldCity.text];
             [subPredicates addObject:predicate];
         }
     
         if ([self inputDidPassValidationCheckForEmptyString:self.textFieldCityQuarter.text]) {
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"apartment.cityQuarter == %@", self.textFieldCityQuarter.text]];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"cityQuarter == %@", self.textFieldCityQuarter.text];
             [subPredicates addObject:predicate];
         }
     
         if ([self inputDidPassValidationCheckForEmptyString:self.textFieldPriceFrom.text]) {
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"apartment.price > %@", self.textFieldPriceFrom.text]];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"price > %f", [self.textFieldPriceFrom.text floatValue]];
             [subPredicates addObject:predicate];
         }
     
         if ([self inputDidPassValidationCheckForEmptyString:self.textFieldPriceTo.text]) {
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@" AND price < %@", self.textFieldPriceTo.text]];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"price < %f", [self.textFieldPriceTo.text floatValue]];
             [subPredicates addObject:predicate];
         }
     
@@ -66,6 +68,13 @@
         NSLog(@"No predicates selected!");
     }
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)userDidClickClearButton:(id)sender {
+    NSPredicate *andPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[[NSMutableArray alloc] init]];
+    
+    [[StateManager sharedStateManager] fetchObjectsWithPredicate:andPredicate];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"Search filter cleared!");
 }
 
 #pragma mark Input management

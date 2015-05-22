@@ -173,6 +173,7 @@ static StateManager *sharedManager;
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context
                                                                       sectionNameKeyPath:nil
                                                                                cacheName:nil];
+    [NSFetchedResultsController deleteCacheWithName:nil];
     
     _fetchedResultsController.delegate = self;
     return _fetchedResultsController;
@@ -188,8 +189,32 @@ static StateManager *sharedManager;
 
 -(void)fetchObjectsWithPredicate:(NSPredicate *)predicate{
     if (predicate != nil) {
-        [[StateManager sharedStateManager] setPredicate:predicate];
+        
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = [appDelegate managedObjectContext];
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Apartment"
+                                                  inManagedObjectContext:context];
+        [fetchRequest setEntity:entity];
+        
+        NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:NO];
+        [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+        
+        [fetchRequest setFetchBatchSize:20];
+        [fetchRequest setPredicate:predicate];
+        
+        [[StateManager sharedStateManager] initWithRequest:fetchRequest];
+        [[[StateManager sharedStateManager] fetchedResultsController] performFetch:nil];
         [self.delegate searchButtonClicked];
     }
 }
+
+-(void)initWithRequest: (NSFetchRequest *)request{
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+}
+
 @end

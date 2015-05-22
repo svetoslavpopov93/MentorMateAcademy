@@ -33,5 +33,5 @@
 -(void)activateRandomFunctionalityGenerator;
 -(void)dataDidChange;
 -(void)fetchObjectsWithPredicate:(NSString*)str;
-
+-(void)initWithRequest: (NSFetchRequest *)request;
 @end
