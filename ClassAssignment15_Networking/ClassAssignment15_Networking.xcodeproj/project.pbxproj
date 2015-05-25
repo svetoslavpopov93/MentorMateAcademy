@@ -15,6 +15,7 @@
 		FB35AAAA1B0D0A6F009F2ACB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB35AAA91B0D0A6F009F2ACB /* Images.xcassets */; };
 		FB35AAAD1B0D0A6F009F2ACB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB35AAAB1B0D0A6F009F2ACB /* LaunchScreen.xib */; };
 		FB35AAB91B0D0A6F009F2ACB /* ClassAssignment15_NetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB35AAB81B0D0A6F009F2ACB /* ClassAssignment15_NetworkingTests.m */; };
+		FBF843071B13A63400AFC7BE /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF843061B13A63400AFC7BE /* RSSParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		FB35AAB21B0D0A6F009F2ACB /* ClassAssignment15_NetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassAssignment15_NetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB35AAB71B0D0A6F009F2ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB35AAB81B0D0A6F009F2ACB /* ClassAssignment15_NetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassAssignment15_NetworkingTests.m; sourceTree = "<group>"; };
+		FBF843051B13A63400AFC7BE /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
+		FBF843061B13A63400AFC7BE /* RSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				FB35AAAB1B0D0A6F009F2ACB /* LaunchScreen.xib */,
 				FB35AAA01B0D0A6E009F2ACB /* ClassAssignment15_Networking.xcdatamodeld */,
 				FB35AA991B0D0A6E009F2ACB /* Supporting Files */,
+				FBF843051B13A63400AFC7BE /* RSSParser.h */,
+				FBF843061B13A63400AFC7BE /* RSSParser.m */,
 			);
 			path = ClassAssignment15_Networking;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 			files = (
 				FB35AA9F1B0D0A6E009F2ACB /* AppDelegate.m in Sources */,
 				FB35AA9C1B0D0A6E009F2ACB /* main.m in Sources */,
+				FBF843071B13A63400AFC7BE /* RSSParser.m in Sources */,
 				FB35AAA51B0D0A6E009F2ACB /* ViewController.m in Sources */,
 				FB35AAA21B0D0A6E009F2ACB /* ClassAssignment15_Networking.xcdatamodeld in Sources */,
 			);
@@ -418,6 +424,7 @@
 				FB35AABE1B0D0A6F009F2ACB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB35AABF1B0D0A6F009F2ACB /* Build configuration list for PBXNativeTarget "ClassAssignment15_NetworkingTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +433,7 @@
 				FB35AAC11B0D0A6F009F2ACB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

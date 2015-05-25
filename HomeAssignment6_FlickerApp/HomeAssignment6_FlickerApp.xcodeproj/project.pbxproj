@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FBF842D71B13986700AFC7BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF842D61B13986700AFC7BE /* main.m */; };
+		FBF842DA1B13986700AFC7BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF842D91B13986700AFC7BE /* AppDelegate.m */; };
+		FBF842DD1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBF842DB1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld */; };
+		FBF842E01B13986700AFC7BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF842DF1B13986700AFC7BE /* ViewController.m */; };
+		FBF842E31B13986700AFC7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF842E11B13986700AFC7BE /* Main.storyboard */; };
+		FBF842E51B13986700AFC7BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF842E41B13986700AFC7BE /* Images.xcassets */; };
+		FBF842E81B13986700AFC7BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF842E61B13986700AFC7BE /* LaunchScreen.xib */; };
+		FBF842F41B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF842F31B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.m */; };
+		FBF843011B139BA700AFC7BE /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF843001B139BA700AFC7BE /* Entry.m */; };
+		FBF843041B139C4F00AFC7BE /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF843031B139C4F00AFC7BE /* Author.m */; };
+		FBF8430D1B13AB2700AFC7BE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF8430C1B13AB2700AFC7BE /* DataManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBF842EE1B13986700AFC7BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBF842C91B13986700AFC7BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBF842D01B13986700AFC7BE;
+			remoteInfo = HomeAssignment6_FlickerApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FBF842D11B13986700AFC7BE /* HomeAssignment6_FlickerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignment6_FlickerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF842D51B13986700AFC7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBF842D61B13986700AFC7BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FBF842D81B13986700AFC7BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FBF842D91B13986700AFC7BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FBF842DC1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeAssignment6_FlickerApp.xcdatamodel; sourceTree = "<group>"; };
+		FBF842DE1B13986700AFC7BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FBF842DF1B13986700AFC7BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FBF842E21B13986700AFC7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBF842E41B13986700AFC7BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FBF842E71B13986700AFC7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FBF842ED1B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeAssignment6_FlickerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF842F21B13986700AFC7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBF842F31B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeAssignment6_FlickerAppTests.m; sourceTree = "<group>"; };
+		FBF842FF1B139BA700AFC7BE /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		FBF843001B139BA700AFC7BE /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		FBF843021B139C4F00AFC7BE /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
+		FBF843031B139C4F00AFC7BE /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
+		FBF8430B1B13AB2700AFC7BE /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		FBF8430C1B13AB2700AFC7BE /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBF842CE1B13986700AFC7BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBF842EA1B13986700AFC7BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBF842C81B13986600AFC7BE = {
+			isa = PBXGroup;
+			children = (
+				FBF842D31B13986700AFC7BE /* HomeAssignment6_FlickerApp */,
+				FBF842F01B13986700AFC7BE /* HomeAssignment6_FlickerAppTests */,
+				FBF842D21B13986700AFC7BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBF842D21B13986700AFC7BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBF842D11B13986700AFC7BE /* HomeAssignment6_FlickerApp.app */,
+				FBF842ED1B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBF842D31B13986700AFC7BE /* HomeAssignment6_FlickerApp */ = {
+			isa = PBXGroup;
+			children = (
+				FBF842FD1B139B2A00AFC7BE /* Controllers */,
+				FBF842FE1B139B2A00AFC7BE /* Models */,
+				FBF842D81B13986700AFC7BE /* AppDelegate.h */,
+				FBF842D91B13986700AFC7BE /* AppDelegate.m */,
+				FBF842DE1B13986700AFC7BE /* ViewController.h */,
+				FBF842DF1B13986700AFC7BE /* ViewController.m */,
+				FBF842E11B13986700AFC7BE /* Main.storyboard */,
+				FBF842E41B13986700AFC7BE /* Images.xcassets */,
+				FBF842E61B13986700AFC7BE /* LaunchScreen.xib */,
+				FBF842DB1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld */,
+				FBF842D41B13986700AFC7BE /* Supporting Files */,
+			);
+			path = HomeAssignment6_FlickerApp;
+			sourceTree = "<group>";
+		};
+		FBF842D41B13986700AFC7BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBF842D51B13986700AFC7BE /* Info.plist */,
+				FBF842D61B13986700AFC7BE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBF842F01B13986700AFC7BE /* HomeAssignment6_FlickerAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBF842F31B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.m */,
+				FBF842F11B13986700AFC7BE /* Supporting Files */,
+			);
+			path = HomeAssignment6_FlickerAppTests;
+			sourceTree = "<group>";
+		};
+		FBF842F11B13986700AFC7BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBF842F21B13986700AFC7BE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBF842FD1B139B2A00AFC7BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FBF8430B1B13AB2700AFC7BE /* DataManager.h */,
+				FBF8430C1B13AB2700AFC7BE /* DataManager.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FBF842FE1B139B2A00AFC7BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FBF842FF1B139BA700AFC7BE /* Entry.h */,
+				FBF843001B139BA700AFC7BE /* Entry.m */,
+				FBF843021B139C4F00AFC7BE /* Author.h */,
+				FBF843031B139C4F00AFC7BE /* Author.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBF842D01B13986700AFC7BE /* HomeAssignment6_FlickerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBF842F71B13986700AFC7BE /* Build configuration list for PBXNativeTarget "HomeAssignment6_FlickerApp" */;
+			buildPhases = (
+				FBF842CD1B13986700AFC7BE /* Sources */,
+				FBF842CE1B13986700AFC7BE /* Frameworks */,
+				FBF842CF1B13986700AFC7BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HomeAssignment6_FlickerApp;
+			productName = HomeAssignment6_FlickerApp;
+			productReference = FBF842D11B13986700AFC7BE /* HomeAssignment6_FlickerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBF842EC1B13986700AFC7BE /* HomeAssignment6_FlickerAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBF842FA1B13986700AFC7BE /* Build configuration list for PBXNativeTarget "HomeAssignment6_FlickerAppTests" */;
+			buildPhases = (
+				FBF842E91B13986700AFC7BE /* Sources */,
+				FBF842EA1B13986700AFC7BE /* Frameworks */,
+				FBF842EB1B13986700AFC7BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBF842EF1B13986700AFC7BE /* PBXTargetDependency */,
+			);
+			name = HomeAssignment6_FlickerAppTests;
+			productName = HomeAssignment6_FlickerAppTests;
+			productReference = FBF842ED1B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBF842C91B13986700AFC7BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = MentorMate;
+				TargetAttributes = {
+					FBF842D01B13986700AFC7BE = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					FBF842EC1B13986700AFC7BE = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = FBF842D01B13986700AFC7BE;
+					};
+				};
+			};
+			buildConfigurationList = FBF842CC1B13986700AFC7BE /* Build configuration list for PBXProject "HomeAssignment6_FlickerApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBF842C81B13986600AFC7BE;
+			productRefGroup = FBF842D21B13986700AFC7BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBF842D01B13986700AFC7BE /* HomeAssignment6_FlickerApp */,
+				FBF842EC1B13986700AFC7BE /* HomeAssignment6_FlickerAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBF842CF1B13986700AFC7BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF842E31B13986700AFC7BE /* Main.storyboard in Resources */,
+				FBF842E81B13986700AFC7BE /* LaunchScreen.xib in Resources */,
+				FBF842E51B13986700AFC7BE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBF842EB1B13986700AFC7BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBF842CD1B13986700AFC7BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF842DA1B13986700AFC7BE /* AppDelegate.m in Sources */,
+				FBF843011B139BA700AFC7BE /* Entry.m in Sources */,
+				FBF8430D1B13AB2700AFC7BE /* DataManager.m in Sources */,
+				FBF843041B139C4F00AFC7BE /* Author.m in Sources */,
+				FBF842D71B13986700AFC7BE /* main.m in Sources */,
+				FBF842E01B13986700AFC7BE /* ViewController.m in Sources */,
+				FBF842DD1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBF842E91B13986700AFC7BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF842F41B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBF842EF1B13986700AFC7BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBF842D01B13986700AFC7BE /* HomeAssignment6_FlickerApp */;
+			targetProxy = FBF842EE1B13986700AFC7BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FBF842E11B13986700AFC7BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBF842E21B13986700AFC7BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBF842E61B13986700AFC7BE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBF842E71B13986700AFC7BE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBF842F51B13986700AFC7BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBF842F61B13986700AFC7BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBF842F81B13986700AFC7BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HomeAssignment6_FlickerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FBF842F91B13986700AFC7BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HomeAssignment6_FlickerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FBF842FB1B13986700AFC7BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HomeAssignment6_FlickerAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeAssignment6_FlickerApp.app/HomeAssignment6_FlickerApp";
+			};
+			name = Debug;
+		};
+		FBF842FC1B13986700AFC7BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HomeAssignment6_FlickerAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeAssignment6_FlickerApp.app/HomeAssignment6_FlickerApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBF842CC1B13986700AFC7BE /* Build configuration list for PBXProject "HomeAssignment6_FlickerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBF842F51B13986700AFC7BE /* Debug */,
+				FBF842F61B13986700AFC7BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBF842F71B13986700AFC7BE /* Build configuration list for PBXNativeTarget "HomeAssignment6_FlickerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBF842F81B13986700AFC7BE /* Debug */,
+				FBF842F91B13986700AFC7BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FBF842FA1B13986700AFC7BE /* Build configuration list for PBXNativeTarget "HomeAssignment6_FlickerAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBF842FB1B13986700AFC7BE /* Debug */,
+				FBF842FC1B13986700AFC7BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FBF842DB1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FBF842DC1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodel */,
+			);
+			currentVersion = FBF842DC1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodel */;
+			path = HomeAssignment6_FlickerApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FBF842C91B13986700AFC7BE /* Project object */;
+}
