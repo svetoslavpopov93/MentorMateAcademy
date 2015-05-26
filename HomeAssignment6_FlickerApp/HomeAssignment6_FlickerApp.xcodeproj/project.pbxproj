@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0509F31B14ABED0028DF07 /* FlickrTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0509F21B14ABED0028DF07 /* FlickrTableViewCell.m */; };
+		FB0509F61B14AC580028DF07 /* FeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0509F51B14AC580028DF07 /* FeedsTableViewController.m */; };
+		FB0509FF1B14DD0E0028DF07 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0509FE1B14DD0E0028DF07 /* Entry.m */; };
 		FBF842D71B13986700AFC7BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF842D61B13986700AFC7BE /* main.m */; };
 		FBF842DA1B13986700AFC7BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF842D91B13986700AFC7BE /* AppDelegate.m */; };
 		FBF842DD1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBF842DB1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld */; };
-		FBF842E01B13986700AFC7BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF842DF1B13986700AFC7BE /* ViewController.m */; };
 		FBF842E31B13986700AFC7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF842E11B13986700AFC7BE /* Main.storyboard */; };
 		FBF842E51B13986700AFC7BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF842E41B13986700AFC7BE /* Images.xcassets */; };
 		FBF842E81B13986700AFC7BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF842E61B13986700AFC7BE /* LaunchScreen.xib */; };
 		FBF842F41B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF842F31B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.m */; };
-		FBF843011B139BA700AFC7BE /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF843001B139BA700AFC7BE /* Entry.m */; };
 		FBF843041B139C4F00AFC7BE /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF843031B139C4F00AFC7BE /* Author.m */; };
 		FBF8430D1B13AB2700AFC7BE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF8430C1B13AB2700AFC7BE /* DataManager.m */; };
 /* End PBXBuildFile section */
@@ -31,22 +32,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB0509F11B14ABED0028DF07 /* FlickrTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrTableViewCell.h; sourceTree = "<group>"; };
+		FB0509F21B14ABED0028DF07 /* FlickrTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrTableViewCell.m; sourceTree = "<group>"; };
+		FB0509F41B14AC580028DF07 /* FeedsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedsTableViewController.h; sourceTree = "<group>"; };
+		FB0509F51B14AC580028DF07 /* FeedsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedsTableViewController.m; sourceTree = "<group>"; };
+		FB0509F71B14CFEC0028DF07 /* HomeAssignment6_FlickerApp 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HomeAssignment6_FlickerApp 2.xcdatamodel"; sourceTree = "<group>"; };
+		FB0509FD1B14DD0E0028DF07 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		FB0509FE1B14DD0E0028DF07 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		FBF842D11B13986700AFC7BE /* HomeAssignment6_FlickerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignment6_FlickerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF842D51B13986700AFC7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBF842D61B13986700AFC7BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBF842D81B13986700AFC7BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBF842D91B13986700AFC7BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FBF842DC1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeAssignment6_FlickerApp.xcdatamodel; sourceTree = "<group>"; };
-		FBF842DE1B13986700AFC7BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FBF842DF1B13986700AFC7BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FBF842E21B13986700AFC7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBF842E41B13986700AFC7BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FBF842E71B13986700AFC7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FBF842ED1B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeAssignment6_FlickerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF842F21B13986700AFC7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBF842F31B13986700AFC7BE /* HomeAssignment6_FlickerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeAssignment6_FlickerAppTests.m; sourceTree = "<group>"; };
-		FBF842FF1B139BA700AFC7BE /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
-		FBF843001B139BA700AFC7BE /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		FBF843021B139C4F00AFC7BE /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
 		FBF843031B139C4F00AFC7BE /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
 		FBF8430B1B13AB2700AFC7BE /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
@@ -71,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB0509FC1B14DCF10028DF07 /* Core Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB0509FD1B14DD0E0028DF07 /* Entry.h */,
+				FB0509FE1B14DD0E0028DF07 /* Entry.m */,
+			);
+			path = "Core Data Models";
+			sourceTree = "<group>";
+		};
 		FBF842C81B13986600AFC7BE = {
 			isa = PBXGroup;
 			children = (
@@ -92,12 +105,11 @@
 		FBF842D31B13986700AFC7BE /* HomeAssignment6_FlickerApp */ = {
 			isa = PBXGroup;
 			children = (
+				FB0509FC1B14DCF10028DF07 /* Core Data Models */,
 				FBF842FD1B139B2A00AFC7BE /* Controllers */,
 				FBF842FE1B139B2A00AFC7BE /* Models */,
 				FBF842D81B13986700AFC7BE /* AppDelegate.h */,
 				FBF842D91B13986700AFC7BE /* AppDelegate.m */,
-				FBF842DE1B13986700AFC7BE /* ViewController.h */,
-				FBF842DF1B13986700AFC7BE /* ViewController.m */,
 				FBF842E11B13986700AFC7BE /* Main.storyboard */,
 				FBF842E41B13986700AFC7BE /* Images.xcassets */,
 				FBF842E61B13986700AFC7BE /* LaunchScreen.xib */,
@@ -138,6 +150,8 @@
 			children = (
 				FBF8430B1B13AB2700AFC7BE /* DataManager.h */,
 				FBF8430C1B13AB2700AFC7BE /* DataManager.m */,
+				FB0509F41B14AC580028DF07 /* FeedsTableViewController.h */,
+				FB0509F51B14AC580028DF07 /* FeedsTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -145,10 +159,10 @@
 		FBF842FE1B139B2A00AFC7BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FBF842FF1B139BA700AFC7BE /* Entry.h */,
-				FBF843001B139BA700AFC7BE /* Entry.m */,
 				FBF843021B139C4F00AFC7BE /* Author.h */,
 				FBF843031B139C4F00AFC7BE /* Author.m */,
+				FB0509F11B14ABED0028DF07 /* FlickrTableViewCell.h */,
+				FB0509F21B14ABED0028DF07 /* FlickrTableViewCell.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,11 +268,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBF842DA1B13986700AFC7BE /* AppDelegate.m in Sources */,
-				FBF843011B139BA700AFC7BE /* Entry.m in Sources */,
 				FBF8430D1B13AB2700AFC7BE /* DataManager.m in Sources */,
+				FB0509F61B14AC580028DF07 /* FeedsTableViewController.m in Sources */,
 				FBF843041B139C4F00AFC7BE /* Author.m in Sources */,
+				FB0509FF1B14DD0E0028DF07 /* Entry.m in Sources */,
 				FBF842D71B13986700AFC7BE /* main.m in Sources */,
-				FBF842E01B13986700AFC7BE /* ViewController.m in Sources */,
+				FB0509F31B14ABED0028DF07 /* FlickrTableViewCell.m in Sources */,
 				FBF842DD1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +467,7 @@
 				FBF842F91B13986700AFC7BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FBF842FA1B13986700AFC7BE /* Build configuration list for PBXNativeTarget "HomeAssignment6_FlickerAppTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +476,7 @@
 				FBF842FC1B13986700AFC7BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -467,6 +484,7 @@
 		FBF842DB1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				FB0509F71B14CFEC0028DF07 /* HomeAssignment6_FlickerApp 2.xcdatamodel */,
 				FBF842DC1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodel */,
 			);
 			currentVersion = FBF842DC1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodel */;

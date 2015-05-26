@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "Entry.h"
+#import "AppDelegate.h"
 
+@protocol DataManagerDelegate <NSObject>
+@optional
+- (void)dataDidFinishFetching;
+
+@end
 @interface DataManager : NSObject <NSXMLParserDelegate>
 
 @property(nonatomic, strong)NSMutableArray *entries;
+@property (nonatomic, weak) id <DataManagerDelegate> delegate;
 
 -(void)fetchFlickrFeed;
 
