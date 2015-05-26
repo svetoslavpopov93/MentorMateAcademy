@@ -11,13 +11,24 @@
 
 @interface Entry : NSObject
 
+@property(nonatomic)NSString*titleString;
+@property(nonatomic)NSString*linkString;
+@property(nonatomic)NSString*entryIDString;
+@property(nonatomic)NSString*publishedString;
+@property(nonatomic)NSString*updatedString;
+@property(nonatomic)NSString *authorString;
+@property(nonatomic)NSString*authorURLString;
+@property(nonatomic)NSString*iconURLString;
+
 @property(nonatomic)NSString*title;
-@property(nonatomic)NSString*link;
+@property(nonatomic)NSURL*link;
 @property(nonatomic)NSString*entryID;
-@property(nonatomic)NSString*published;
-@property(nonatomic)NSString*updated;
-@property(nonatomic)NSString *author;
+@property(nonatomic)NSDate*published;
+@property(nonatomic)NSDate*updated;
+@property(nonatomic)NSString*author;
 @property(nonatomic)NSString*authorURL;
-@property(nonatomic)NSData*icon;
+@property(nonatomic)NSURL*iconURL;
+
+-(void)initWithStrings;
 
 @end

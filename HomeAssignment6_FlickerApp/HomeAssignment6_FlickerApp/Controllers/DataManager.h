@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Entry.h"
 
-@interface DataManager : NSObject
+@interface DataManager : NSObject <NSXMLParserDelegate>
 
 @property(nonatomic, strong)NSMutableArray *entries;
+
+-(void)fetchFlickrFeed;
 
 +sharedDataManager;
 
