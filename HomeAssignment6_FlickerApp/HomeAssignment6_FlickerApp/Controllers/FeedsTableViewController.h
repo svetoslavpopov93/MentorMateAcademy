@@ -10,6 +10,6 @@
 #import "DataManager.h"
 #import "FlickrTableViewCell.h"
 
-@interface FeedsTableViewController : UITableViewController<DataManagerDelegate>
+@interface FeedsTableViewController : UITableViewController<DataManagerDelegate, NSFetchedResultsControllerDelegate>
 
 @end

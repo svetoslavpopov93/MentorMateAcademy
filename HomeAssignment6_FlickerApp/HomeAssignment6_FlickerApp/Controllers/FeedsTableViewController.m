@@ -7,9 +7,11 @@
 //
 
 #import "FeedsTableViewController.h"
+#import "CoreDataManager.h"
 
 @interface FeedsTableViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -20,16 +22,20 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.fetchedResultsController.delegate = self;
     [[DataManager sharedDataManager] setDelegate:self];
     [[DataManager sharedDataManager] fetchFlickrFeed];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
+    NSError *error;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        // Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    
+    }
 
 -(void)refresh{
     [self.tableView reloadData];
@@ -49,25 +55,108 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    long count = [[[DataManager sharedDataManager] entries] count];
+    id sectionInfo =
+    [[self.fetchedResultsController sections] objectAtIndex:section];
     
-    return count;
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FlickrTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"flickrCell" forIndexPath:indexPath];
     
-    NSArray * currentEntry = [[DataManager sharedDataManager] entries];
-    NSMutableDictionary *currentElement =[currentEntry objectAtIndex:indexPath.row];
-    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[currentElement objectForKey:@"mainImage"]]];
-    cell.imageView.image = [UIImage imageWithData:imageData];
+    Entry *info = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //TODO: Set Entry!
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     return cell;
+}
+
+#pragma mark FetchedResultsControllerDelegate
+
+-(NSFetchedResultsController *)fetchedResultsController {
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSManagedObjectContext *context = [[CoreDataManager sharedManager] managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entry"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    [fetchRequest setFetchBatchSize:20];
+    
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context
+                                                                      sectionNameKeyPath:nil
+                                                                               cacheName:nil];
+    
+    _fetchedResultsController.delegate = self;
+    return _fetchedResultsController;
 }
 
 #pragma mark DataManagerDelegate
 
 -(void)dataDidFinishFetching{
-    
     
     [self.tableView reloadData];
 }

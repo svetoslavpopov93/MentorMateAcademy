@@ -17,7 +17,7 @@
 @end
 @interface DataManager : NSObject <NSXMLParserDelegate>
 
-@property(nonatomic, strong)NSArray *entries;
+@property(nonatomic, strong) NSArray *entries;
 @property (nonatomic, weak) id <DataManagerDelegate> delegate;
 
 -(void)fetchFlickrFeed;

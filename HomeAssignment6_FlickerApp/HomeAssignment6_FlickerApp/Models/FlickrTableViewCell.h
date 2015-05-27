@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CellEntry.h"
 
 @interface FlickrTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *mainImage;
-@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
-@property (weak, nonatomic) IBOutlet UILabel *labelAuthor;
+@property (nonatomic, strong) CellEntry *cellEntry;
 
 @end

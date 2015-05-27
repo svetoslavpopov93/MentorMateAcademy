@@ -42,9 +42,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="labelAuthor" destination="UqJ-Xc-Xgc" id="IsE-Th-JsW"/>
-                                    <outlet property="labelTitle" destination="9If-Ya-7nr" id="5rt-qD-KHO"/>
-                                    <outlet property="mainImage" destination="rkm-4o-VKt" id="88t-Cg-Mk4"/>
+                                    <outlet property="imageViewMainImage" destination="rkm-4o-VKt" id="nsg-au-bZ0"/>
+                                    <outlet property="labelAuthor" destination="UqJ-Xc-Xgc" id="7Dh-iR-bJs"/>
+                                    <outlet property="labelTitle" destination="9If-Ya-7nr" id="fB8-jW-ldf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

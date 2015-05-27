@@ -7,14 +7,16 @@
 //
 
 #import "DataManager.h"
+
+#import "CoreDataManager.h"
+
 static DataManager *sharedDataManager;
 
 
 
 @implementation DataManager{
-    AppDelegate *delegate;
     NSMutableArray *downloadedEntries;
-    NSMutableDictionary *currentEntry;
+    Entry *currentEntry;
     NSString *currentVariable;
     BOOL isForParsingStaged;
     BOOL isAuthorParsingStaged;
@@ -38,9 +40,7 @@ static DataManager *sharedDataManager;
     
     if (self) {
         self.entries = [[NSMutableArray alloc] init];
-        delegate = [[UIApplication sharedApplication] delegate];
         downloadedEntries = [[NSMutableArray alloc] init];
-        managedObjectContext = [delegate managedObjectContext];
     }
     
     return self;
@@ -176,7 +176,7 @@ static DataManager *sharedDataManager;
 #pragma mark DataManager delegate
 
 -(void)downloadingDataFinished{
-    
+    [[CoreDataManager sharedManager] insertEntries:self.entries];
     [self.delegate dataDidFinishFetching];
 }
 
