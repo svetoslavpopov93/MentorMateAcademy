@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FB0509F31B14ABED0028DF07 /* FlickrTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0509F21B14ABED0028DF07 /* FlickrTableViewCell.m */; };
 		FB0509F61B14AC580028DF07 /* FeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0509F51B14AC580028DF07 /* FeedsTableViewController.m */; };
-		FB0509FF1B14DD0E0028DF07 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0509FE1B14DD0E0028DF07 /* Entry.m */; };
+		FBAF89B91B162E83004F80D4 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAF89B81B162E83004F80D4 /* Entry.m */; };
 		FBF842D71B13986700AFC7BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF842D61B13986700AFC7BE /* main.m */; };
 		FBF842DA1B13986700AFC7BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF842D91B13986700AFC7BE /* AppDelegate.m */; };
 		FBF842DD1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBF842DB1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld */; };
@@ -37,8 +37,8 @@
 		FB0509F41B14AC580028DF07 /* FeedsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedsTableViewController.h; sourceTree = "<group>"; };
 		FB0509F51B14AC580028DF07 /* FeedsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedsTableViewController.m; sourceTree = "<group>"; };
 		FB0509F71B14CFEC0028DF07 /* HomeAssignment6_FlickerApp 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HomeAssignment6_FlickerApp 2.xcdatamodel"; sourceTree = "<group>"; };
-		FB0509FD1B14DD0E0028DF07 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
-		FB0509FE1B14DD0E0028DF07 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		FBAF89B71B162E83004F80D4 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = SOURCE_ROOT; };
+		FBAF89B81B162E83004F80D4 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = SOURCE_ROOT; };
 		FBF842D11B13986700AFC7BE /* HomeAssignment6_FlickerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignment6_FlickerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF842D51B13986700AFC7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBF842D61B13986700AFC7BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -78,8 +78,8 @@
 		FB0509FC1B14DCF10028DF07 /* Core Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				FB0509FD1B14DD0E0028DF07 /* Entry.h */,
-				FB0509FE1B14DD0E0028DF07 /* Entry.m */,
+				FBAF89B71B162E83004F80D4 /* Entry.h */,
+				FBAF89B81B162E83004F80D4 /* Entry.m */,
 			);
 			path = "Core Data Models";
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 				FBF8430D1B13AB2700AFC7BE /* DataManager.m in Sources */,
 				FB0509F61B14AC580028DF07 /* FeedsTableViewController.m in Sources */,
 				FBF843041B139C4F00AFC7BE /* Author.m in Sources */,
-				FB0509FF1B14DD0E0028DF07 /* Entry.m in Sources */,
+				FBAF89B91B162E83004F80D4 /* Entry.m in Sources */,
 				FBF842D71B13986700AFC7BE /* main.m in Sources */,
 				FB0509F31B14ABED0028DF07 /* FlickrTableViewCell.m in Sources */,
 				FBF842DD1B13986700AFC7BE /* HomeAssignment6_FlickerApp.xcdatamodeld in Sources */,

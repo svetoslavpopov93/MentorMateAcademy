@@ -12,7 +12,9 @@ static DataManager *sharedDataManager;
 
 
 @implementation DataManager{
-    NSManagedObject *currentEntry;
+    AppDelegate *delegate;
+    NSMutableArray *downloadedEntries;
+    NSMutableDictionary *currentEntry;
     NSString *currentVariable;
     BOOL isForParsingStaged;
     BOOL isAuthorParsingStaged;
@@ -36,8 +38,8 @@ static DataManager *sharedDataManager;
     
     if (self) {
         self.entries = [[NSMutableArray alloc] init];
-        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-        
+        delegate = [[UIApplication sharedApplication] delegate];
+        downloadedEntries = [[NSMutableArray alloc] init];
         managedObjectContext = [delegate managedObjectContext];
     }
     
@@ -60,19 +62,20 @@ static DataManager *sharedDataManager;
 #pragma mark XMLParser delegate
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     if ([elementName isEqualToString:@"entry"]) {
-        currentEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:managedObjectContext];
-        
-        NSLog(@"");
+        currentEntry = [[NSMutableDictionary alloc] init];
     }
     else if(currentEntry != nil){
         if ([elementName isEqualToString:@"title"]) {
             currentVariable = @"title";
             isForParsingStaged = YES;
         }
-        else if ([elementName isEqualToString:@"link"] && [[attributeDict objectForKey:@"rel"] isEqualToString:@"enclosure"]){
-            currentVariable = @"link";
-            isForParsingStaged = YES;
+        else if ([elementName isEqualToString:@"link"] && [[attributeDict objectForKey:@"rel"] isEqualToString:@"alternate"]){
+            [currentEntry setValue:[attributeDict objectForKey:@"href"] forKey:@"link"];
         }
+        else if ([elementName isEqualToString:@"link"] && [[attributeDict objectForKey:@"rel"] isEqualToString:@"enclosure"]){
+            [currentEntry setValue:[attributeDict objectForKey:@"href"] forKey:@"mainImage"];
+        }
+        
         else if([elementName isEqualToString:@"id"]){
             currentVariable = @"entryID";
             isForParsingStaged = YES;
@@ -93,10 +96,10 @@ static DataManager *sharedDataManager;
             currentVariable = @"authorURL";
             isAuthorParsingStaged = YES;
         }
-//        else if([elementName isEqualToString:@"flickr:buddyicon"]){
-//            currentVariable = @"authorIconURL";
-//            isAuthorParsingStaged = YES;
-//        }
+        else if([elementName isEqualToString:@"flickr:buddyicon"]){
+            currentVariable = @"authorIcon";
+            isAuthorParsingStaged = YES;
+        }
     }
 }
 
@@ -111,25 +114,13 @@ static DataManager *sharedDataManager;
 #warning Fix parsing image, image link and dates problem when the program comes to here
         if (currentVariable != nil && isForParsingStaged) {
             
-            if ([currentVariable isEqualToString:@"link"]) {
-                NSData *downloadData = [NSData dataWithContentsOfURL: [NSURL URLWithString:string]];
-                [currentEntry setValue:string forKey:currentVariable];
-                NSLog(@"%@ added!", currentVariable);
-                isForParsingStaged = NO;
-            }
-            else if([currentVariable isEqualToString:@"publishedDate"] || [currentVariable isEqualToString:@"updatedDate"]){
+            if([currentVariable isEqualToString:@"publishedDate"] || [currentVariable isEqualToString:@"updatedDate"]){
                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                 [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
                 NSDate *currentDate = [formatter dateFromString:string];
                 [currentEntry setValue:currentDate forKey:currentVariable];
                 NSLog(@"%@ added!", currentVariable);
                 isForParsingStaged = NO;
-            }
-            else if([currentVariable isEqualToString:@"authorIconURL"]){
-                NSData *downloadData = [NSData dataWithContentsOfURL: [NSURL URLWithString:string]];
-                [currentEntry setValue:string forKey:currentVariable];
-                NSLog(@"%@ added!", currentVariable);
-                isAuthorParsingStaged = NO;
             }
             else if ([currentVariable isEqualToString:@"authorURL"] || [currentVariable isEqualToString:@"author"]) {
                 [currentEntry setValue:string forKey:currentVariable];
@@ -143,9 +134,17 @@ static DataManager *sharedDataManager;
             }
         }
         else if(currentVariable != nil && isAuthorParsingStaged){
+            if([currentVariable isEqualToString:@"authorIcon"]){
+                [currentEntry setValue:string forKey:@"authorIcon"];
+                NSLog(@"%@ added!", currentVariable);
+                
+                isAuthorParsingStaged = NO;
+            }
+            else{
             [currentEntry setValue:string forKey:currentVariable];
-            NSLog(@"%@ added!", currentVariable);
-            isAuthorParsingStaged = NO;
+                NSLog(@"%@ added!", currentVariable);
+                isAuthorParsingStaged = NO;
+            }
         }
     }
 }
@@ -156,40 +155,29 @@ static DataManager *sharedDataManager;
     
     if ([elementName isEqualToString:@"entry"]) {
         
-        NSOperationQueue *queue = [NSOperationQueue new];
-        
-        NSBlockOperation *blockOperation = [NSBlockOperation
-                                            blockOperationWithBlock:^{
-                                               
-                                                if (![managedObjectContext save:nil]) {
-                                                    NSLog(@"Saving failed!");
-                                                }
-                                                else{
-                                                    NSLog(@"Saving successful!");
-                                                }
-                                            }];
-        
-        [queue addOperation:blockOperation];
-        
+        [downloadedEntries addObject:currentEntry];
+    
     }
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser{
     
+#warning TODO: core data
+    
+    self.entries = downloadedEntries;
     [self downloadingDataFinished];
     
 }
 
 #pragma mark CoreData iteractions
 
--(void)saveCurrentEntryToCoreData{
-    
-}
+
 
 #pragma mark DataManager delegate
 
 -(void)downloadingDataFinished{
-        [self.delegate dataDidFinishFetching];
+    
+    [self.delegate dataDidFinishFetching];
 }
 
 @end

@@ -57,27 +57,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FlickrTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"flickrCell" forIndexPath:indexPath];
     
-    Entry *currentEntry = [[[DataManager sharedDataManager] entries] objectAtIndex:indexPath.row];
-    
-    dispatch_queue_t downloadQueue = dispatch_queue_create("cell initializer", NULL);
-    dispatch_async(downloadQueue, ^{
-//        NSData *downloadData = [NSData dataWithContentsOfURL: [NSURL URLWithString:currentEntry.linkString]];
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            cell.labelAuthor.text = currentEntry.authorString;
-//            cell.labelTitle.text = currentEntry.titleString;
-//            cell.mainImage.image = [UIImage imageWithData:downloadData];
-//        });
-    });
-    
-    
-    
+    NSArray * currentEntry = [[DataManager sharedDataManager] entries];
+    NSMutableDictionary *currentElement =[currentEntry objectAtIndex:indexPath.row];
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[currentElement objectForKey:@"mainImage"]]];
+    cell.imageView.image = [UIImage imageWithData:imageData];
     return cell;
 }
 
 #pragma mark DataManagerDelegate
 
 -(void)dataDidFinishFetching{
+    
+    
     [self.tableView reloadData];
 }
 
