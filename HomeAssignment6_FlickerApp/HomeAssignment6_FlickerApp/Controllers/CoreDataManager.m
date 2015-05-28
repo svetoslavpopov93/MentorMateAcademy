@@ -29,15 +29,50 @@ static CoreDataManager *sharedInstance = nil;
 }
 
 - (void)insertEntries:(NSArray *)entries {
+    
     NSManagedObjectContext *context = [self managedObjectContext];
     for ( NSDictionary *entry in entries ) {
-        Entry *coreDataEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:context];
-        [coreDataEntry setValuesForKeysWithDictionary:entry];
+        if (![self checkIfEntryExistsInCoreData:entry]) {
+            Entry *coreDataEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:context];
+            [coreDataEntry setValuesForKeysWithDictionary:entry];
+        }
+        else{
+            NSLog(@"Entry exists!");
+        }
     }
     NSError *error;
     [context save:&error];
 }
 
+-(BOOL)checkIfEntryExistsInCoreData: (NSDictionary *)entry{
+    BOOL entryExists = YES;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entry" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    // Specify criteria for filtering which objects to fetch
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"mainImage == %@ AND title == %@ AND author == %@ AND publishedDate == %@",
+                              [entry objectForKey:@"mainImage"],
+                              [entry objectForKey:@"title"],
+                              [entry objectForKey:@"author"],
+                              [entry objectForKey:@"publishedDate"]];
+    [fetchRequest setPredicate:predicate];
+    // Specify how the fetched objects should be sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title"
+                                                               ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+
+    NSError *error = nil;
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects.count == 0) {
+        entryExists = NO;
+    }
+    else{
+        NSLog(@"element exists");
+    }
+    
+    return entryExists;
+}
 
 - (NSURL *)applicationDocumentsDirectory {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "com.mentormate.HomeAssignment6_FlickerApp" in the application's documents directory.

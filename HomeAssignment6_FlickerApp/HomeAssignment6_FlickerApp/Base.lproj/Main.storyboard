@@ -8,7 +8,7 @@
         <scene sceneID="Qmf-bG-8Ry">
             <objects>
                 <tableViewController id="9mO-Yw-jPa" customClass="FeedsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="362" sectionHeaderHeight="22" sectionFooterHeight="22" id="S4V-Es-1ay">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="362" sectionHeaderHeight="22" sectionFooterHeight="22" id="S4V-Es-1ay">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,20 +30,22 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bV-9w-HJE">
                                             <rect key="frame" x="20" y="330" width="21" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" red="0.83544428661616166" green="0.13550468985105515" blue="0.082346803481813932" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.99613770644060762" green="0.97867384460544415" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="labelAuthor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqJ-Xc-Xgc">
-                                            <rect key="frame" x="49" y="331" width="194" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" red="0.83544428661616166" green="0.13550468985105515" blue="0.082346803481813932" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-7E-sT5">
+                                            <rect key="frame" x="49" y="332" width="212" height="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="urlButtonTapped:" destination="9mO-Yw-jPa" eventType="touchUpInside" id="2Nc-XR-hEI"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="authorButton" destination="cVL-7E-sT5" id="dhj-qG-gbo"/>
                                     <outlet property="imageViewMainImage" destination="rkm-4o-VKt" id="nsg-au-bZ0"/>
-                                    <outlet property="labelAuthor" destination="UqJ-Xc-Xgc" id="7Dh-iR-bJs"/>
                                     <outlet property="labelTitle" destination="9If-Ya-7nr" id="fB8-jW-ldf"/>
                                 </connections>
                             </tableViewCell>
@@ -54,10 +56,31 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="q0q-Yk-t9v"/>
+                    <connections>
+                        <segue destination="5n1-9H-mk4" kind="show" identifier="urlSegue" id="dzt-fY-kZo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfn-6d-W9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="516"/>
+            <point key="canvasLocation" x="584" y="507"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="bxS-k1-iJv">
+            <objects>
+                <viewController id="5n1-9H-mk4" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o4J-bl-Bip"/>
+                        <viewControllerLayoutGuide type="bottom" id="B5w-Iu-n5H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uDB-Ix-Pic">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aje-8r-fbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1232" y="507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l81-yU-hre">

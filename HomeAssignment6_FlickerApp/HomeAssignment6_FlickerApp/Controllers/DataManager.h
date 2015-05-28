@@ -13,15 +13,16 @@
 @protocol DataManagerDelegate <NSObject>
 @optional
 - (void)dataDidFinishFetching;
-
+- (void)userDidClickImageWithURL:(NSURL*)url;
 @end
 @interface DataManager : NSObject <NSXMLParserDelegate>
 
 @property(nonatomic, strong) NSArray *entries;
-@property (nonatomic, weak) id <DataManagerDelegate> delegate;
+@property(nonatomic, weak) id <DataManagerDelegate> delegate;
 
 -(void)fetchFlickrFeed;
-
+-(void)imageClicked: (NSURL*)url;
 +sharedDataManager;
++sharedOperationQueue;
 
 @end

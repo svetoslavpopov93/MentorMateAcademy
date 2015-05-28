@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FB0509F31B14ABED0028DF07 /* FlickrTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0509F21B14ABED0028DF07 /* FlickrTableViewCell.m */; };
 		FB0509F61B14AC580028DF07 /* FeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0509F51B14AC580028DF07 /* FeedsTableViewController.m */; };
+		FB0815E81B17509F00850108 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0815E71B17509F00850108 /* WebViewController.m */; };
 		FBAF89B91B162E83004F80D4 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAF89B81B162E83004F80D4 /* Entry.m */; };
 		FBAF89BC1B164AB0004F80D4 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAF89BB1B164AB0004F80D4 /* CoreDataManager.m */; };
 		FBAF89BF1B1650B3004F80D4 /* CellEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAF89BE1B1650B3004F80D4 /* CellEntry.m */; };
@@ -38,6 +39,8 @@
 		FB0509F41B14AC580028DF07 /* FeedsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedsTableViewController.h; sourceTree = "<group>"; };
 		FB0509F51B14AC580028DF07 /* FeedsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedsTableViewController.m; sourceTree = "<group>"; };
 		FB0509F71B14CFEC0028DF07 /* HomeAssignment6_FlickerApp 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HomeAssignment6_FlickerApp 2.xcdatamodel"; sourceTree = "<group>"; };
+		FB0815E61B17509F00850108 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		FB0815E71B17509F00850108 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		FBAF89B71B162E83004F80D4 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = SOURCE_ROOT; };
 		FBAF89B81B162E83004F80D4 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = SOURCE_ROOT; };
 		FBAF89BA1B164AB0004F80D4 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				FB0509F51B14AC580028DF07 /* FeedsTableViewController.m */,
 				FBAF89BA1B164AB0004F80D4 /* CoreDataManager.h */,
 				FBAF89BB1B164AB0004F80D4 /* CoreDataManager.m */,
+				FB0815E61B17509F00850108 /* WebViewController.h */,
+				FB0815E71B17509F00850108 /* WebViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBAF89BF1B1650B3004F80D4 /* CellEntry.m in Sources */,
+				FB0815E81B17509F00850108 /* WebViewController.m in Sources */,
 				FBF842DA1B13986700AFC7BE /* AppDelegate.m in Sources */,
 				FBF8430D1B13AB2700AFC7BE /* DataManager.m in Sources */,
 				FBAF89BC1B164AB0004F80D4 /* CoreDataManager.m in Sources */,

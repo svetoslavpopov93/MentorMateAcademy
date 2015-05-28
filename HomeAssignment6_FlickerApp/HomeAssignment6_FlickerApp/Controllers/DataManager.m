@@ -11,12 +11,11 @@
 #import "CoreDataManager.h"
 
 static DataManager *sharedDataManager;
-
-
+static NSOperationQueue *sharedQueue;
 
 @implementation DataManager{
     NSMutableArray *downloadedEntries;
-    Entry *currentEntry;
+    NSMutableDictionary *currentEntry;
     NSString *currentVariable;
     BOOL isForParsingStaged;
     BOOL isAuthorParsingStaged;
@@ -33,6 +32,15 @@ static DataManager *sharedDataManager;
             sharedDataManager = [[self alloc] init];
     }
     return sharedDataManager;
+}
+
++(NSOperationQueue*)sharedOperationQueue{
+    @synchronized(self){
+        if (sharedQueue == nil) {
+            sharedQueue = [NSOperationQueue new];
+        }
+    }
+    return sharedQueue;
 }
 
 -(instancetype)init{
@@ -105,13 +113,6 @@ static DataManager *sharedDataManager;
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     if (currentEntry != nil) {
-        //
-        //
-        // TODO: Fix parsing image, image link and dates problem when the program comes to here
-        //
-        //
-        //
-#warning Fix parsing image, image link and dates problem when the program comes to here
         if (currentVariable != nil && isForParsingStaged) {
             
             if([currentVariable isEqualToString:@"publishedDate"] || [currentVariable isEqualToString:@"updatedDate"]){
@@ -149,8 +150,6 @@ static DataManager *sharedDataManager;
     }
 }
 
-
-
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     if ([elementName isEqualToString:@"entry"]) {
@@ -162,22 +161,20 @@ static DataManager *sharedDataManager;
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser{
     
-#warning TODO: core data
-    
     self.entries = downloadedEntries;
     [self downloadingDataFinished];
     
 }
 
-#pragma mark CoreData iteractions
-
-
-
 #pragma mark DataManager delegate
 
 -(void)downloadingDataFinished{
     [[CoreDataManager sharedManager] insertEntries:self.entries];
-    [self.delegate dataDidFinishFetching];
+    //[self.delegate dataDidFinishFetching];
+}
+
+-(void)imageClicked: (NSURL*)url{
+    [self.delegate userDidClickImageWithURL:url];
 }
 
 @end

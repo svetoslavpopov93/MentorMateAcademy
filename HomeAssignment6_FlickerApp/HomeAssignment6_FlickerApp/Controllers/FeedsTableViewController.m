@@ -15,7 +15,10 @@
 
 @end
 
-@implementation FeedsTableViewController
+@implementation FeedsTableViewController{
+    NSIndexPath *cellPath;
+    NSURL *currentURL;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,15 +33,8 @@
     
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
-        // Update to handle the error appropriately.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        NSLog(@"Fetching data on first load of the application failed. Error %@, %@", error, [error userInfo]);
     }
-    
-    
-    }
-
--(void)refresh{
-    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,69 +62,32 @@
     
     Entry *info = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
+    // Initializing the entry before passing it to the cell
+    CellEntry *cellEntry = [[CellEntry alloc] init];
+    cellEntry.author = info.author;
+    cellEntry.authorIcon = info.authorIcon;
+    cellEntry.authorURL = info.authorURL;
+    cellEntry.entryID = info.entryID;
+    cellEntry.link = info.link;
+    cellEntry.mainImage = info.mainImage;
+    cellEntry.publishedDate = info.publishedDate;
+    cellEntry.updatedDate = info.updatedDate;
+    cellEntry.title = info.title;
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //TODO: Set Entry!
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // Passing the data to the cell
+    cell.cellEntry = cellEntry;
     
     return cell;
+}
+
+-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(([tableView numberOfRowsInSection: 0] - 1) == indexPath.row ){
+        //end of loading
+        //for example [activityIndicator stopAnimating];
+        
+        [[DataManager sharedDataManager] fetchFlickrFeed];
+    }
 }
 
 #pragma mark FetchedResultsControllerDelegate
@@ -142,6 +101,10 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entry"
                                               inManagedObjectContext:context];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"publishedDate" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
     [fetchRequest setEntity:entity];
     
     [fetchRequest setFetchBatchSize:20];
@@ -154,11 +117,36 @@
     return _fetchedResultsController;
 }
 
-#pragma mark DataManagerDelegate
-
--(void)dataDidFinishFetching{
-    
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
+    NSLog(@"Content changed!");
     [self.tableView reloadData];
 }
 
+- (IBAction)urlButtonTapped:(UIButton *)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender.superview.superview];
+    cellPath = indexPath;
+    
+    Entry *info = [self.fetchedResultsController objectAtIndexPath:cellPath];
+    currentURL = [NSURL URLWithString:[info authorURL]];
+    
+    [self performSegueWithIdentifier:@"urlSegue" sender:sender];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    WebViewController *vc = [segue destinationViewController];
+    [vc setCurrentURL:currentURL];
+}
+
+-(void)userDidClickOnImageWithURL:(NSURL *)url{
+    currentURL = url;
+    
+    [self performSegueWithIdentifier:@"urlSegue" sender:self];
+}
+
+#pragma mark DataManagerDelegate
+-(void)userDidClickImageWithURL:(NSURL *)url{
+    currentURL = url;
+    
+    [self performSegueWithIdentifier:@"urlSegue" sender:self];
+}
 @end

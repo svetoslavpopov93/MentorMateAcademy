@@ -12,8 +12,11 @@
 @interface FlickrTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
-@property (weak, nonatomic) IBOutlet UILabel *labelAuthor;
+@property (weak, nonatomic) IBOutlet UIButton *authorButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewMainImage;
+@property (nonatomic) NSURL *url;
+@property (nonatomic, strong) NSURL *imagePostURL;
+@property (nonatomic, weak) UIWebView *webView;
 
 @end
 
@@ -31,21 +34,53 @@
     [super prepareForReuse];
     
     self.labelTitle.text = @"";
-    self.labelAuthor.text = @"";
+    self.authorButton.titleLabel.text = @"";
     self.imageViewMainImage.image = nil;
 }
 
 - (void)setCellEntry:(CellEntry *)cellEntry {
     _cellEntry = cellEntry;
     self.labelTitle.text = self.cellEntry.title;
-    self.labelAuthor.text = self.cellEntry.author;
+    [self setUrl:[NSURL URLWithString:self.cellEntry.mainImage]];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.cellEntry.mainImage]];
-        self.imageViewMainImage.image = [UIImage imageWithData:data];
-        NSLog(@"Data is set!");
-    });
+    // Set the gesture recognition for the image to enable tap on it
+    self.imageViewMainImage.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped)];
+    [self.self.imageViewMainImage addGestureRecognizer:tap];
+    self.imagePostURL = [NSURL URLWithString:cellEntry.link];
+    
+    // Set button title and size
+    [self.authorButton setTitle: self.cellEntry.author forState: UIControlStateNormal];
+    [self.authorButton sizeToFit];
+}
 
+-(void)imageTapped{
+    [[DataManager sharedDataManager] imageClicked:self.imagePostURL];
+}
+
+- (void)fetchImageFromUrl:(NSURL *)url {
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    NSURLSession *session =  [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:nil delegateQueue:nil];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url
+                                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                self.imageViewMainImage.image = [UIImage imageWithData:data];
+                                            });
+                                        }];
+    
+    [task resume];
+}
+
+- (void)setUrl:(NSURL *)url {
+    _url = url;
+    
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(fetchImageFromUrl:) object:url];
+    
+    NSOperationQueue *queue = [DataManager sharedOperationQueue];
+    
+    [queue addOperation:operation];
 }
 
 @end

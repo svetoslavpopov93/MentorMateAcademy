@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DataManager.h"
 #import "FlickrTableViewCell.h"
+#import "WebViewController.h"
 
-@interface FeedsTableViewController : UITableViewController<DataManagerDelegate, NSFetchedResultsControllerDelegate>
+@interface FeedsTableViewController : UITableViewController<DataManagerDelegate, NSFetchedResultsControllerDelegate, FlickrTableViewCellDelegate>
 
 @end
