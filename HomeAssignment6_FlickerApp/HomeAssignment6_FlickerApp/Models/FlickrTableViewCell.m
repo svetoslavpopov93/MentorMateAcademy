@@ -30,6 +30,9 @@
     [super setSelected:selected animated:animated];
 }
 
+/**
+ *  Clears all labels, buttons and images of the cell
+ */
 - (void)prepareForReuse{
     [super prepareForReuse];
     
@@ -41,7 +44,7 @@
 - (void)setCellEntry:(CellEntry *)cellEntry {
     _cellEntry = cellEntry;
     self.labelTitle.text = self.cellEntry.title;
-    [self setUrl:[NSURL URLWithString:self.cellEntry.mainImage]];
+    [self setUrl:[NSURL URLWithString:self.cellEntry.mainImageURL]];
     
     // Set the gesture recognition for the image to enable tap on it
     self.imageViewMainImage.userInteractionEnabled = YES;
@@ -58,6 +61,26 @@
     [[DataManager sharedDataManager] imageClicked:self.imagePostURL];
 }
 
+/**
+ *  Takes the url as a parameter and sets the downloads to the operation queue
+ *
+ *  @param url - download url
+ */
+- (void)setUrl:(NSURL *)url {
+    _url = url;
+    
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(fetchImageFromUrl:) object:url];
+    
+    NSOperationQueue *queue = [DataManager sharedOperationQueue];
+    
+    [queue addOperation:operation];
+}
+
+/**
+ *  Takes the url as a parameter and performs the download of the image in background
+ *
+ *  @param url - image url
+ */
 - (void)fetchImageFromUrl:(NSURL *)url {
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     
@@ -71,16 +94,6 @@
                                         }];
     
     [task resume];
-}
-
-- (void)setUrl:(NSURL *)url {
-    _url = url;
-    
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(fetchImageFromUrl:) object:url];
-    
-    NSOperationQueue *queue = [DataManager sharedOperationQueue];
-    
-    [queue addOperation:operation];
 }
 
 @end

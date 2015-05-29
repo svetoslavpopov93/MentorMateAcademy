@@ -44,35 +44,43 @@ static CoreDataManager *sharedInstance = nil;
     [context save:&error];
 }
 
+/**
+ *  Checks if the current entry exists in the Core Data
+ *
+ *  @param entry the entry that is about to get in the Core Data
+ *
+ *  @return returns YES or NO depending on the results from the fetch request. If the Entry exists in the Core Data, the method returns YES
+ */
 -(BOOL)checkIfEntryExistsInCoreData: (NSDictionary *)entry{
-    BOOL entryExists = YES;
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entry" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
-    // Specify criteria for filtering which objects to fetch
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"mainImage == %@ AND title == %@ AND author == %@ AND publishedDate == %@",
-                              [entry objectForKey:@"mainImage"],
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"mainImageURL == %@ AND title == %@ AND author == %@ AND publishedDate == %@",
+                              [entry objectForKey:@"mainImageURL"],
                               [entry objectForKey:@"title"],
                               [entry objectForKey:@"author"],
                               [entry objectForKey:@"publishedDate"]];
     [fetchRequest setPredicate:predicate];
-    // Specify how the fetched objects should be sorted
+   
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title"
                                                                ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
 
     NSError *error = nil;
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
     if (fetchedObjects.count == 0) {
-        entryExists = NO;
+        return NO;
     }
     else{
-        NSLog(@"element exists");
+        NSLog(@"Entry exists in Core Data!");
+        return YES;
     }
-    
-    return entryExists;
 }
+
+#pragma mark Core Data
 
 - (NSURL *)applicationDocumentsDirectory {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "com.mentormate.HomeAssignment6_FlickerApp" in the application's documents directory.

@@ -13,7 +13,7 @@
 @protocol DataManagerDelegate <NSObject>
 @optional
 - (void)dataDidFinishFetching;
-- (void)userDidClickImageWithURL:(NSURL*)url;
+- (void)userDidTapOnImageWithURL:(NSURL*)url;
 @end
 @interface DataManager : NSObject <NSXMLParserDelegate>
 

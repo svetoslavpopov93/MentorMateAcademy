@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSDate * updatedDate;
 @property (nonatomic, retain) NSString * author;
 @property (nonatomic, retain) NSString * authorURL;
-@property (nonatomic, retain) NSData * authorIcon;
-@property (nonatomic, retain) NSData * mainImage;
+@property (nonatomic, retain) NSData * authorIconURL;
+@property (nonatomic, retain) NSData * mainImageURL;
 
 @end

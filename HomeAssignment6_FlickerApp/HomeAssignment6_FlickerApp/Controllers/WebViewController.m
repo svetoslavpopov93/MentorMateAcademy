@@ -23,15 +23,19 @@
     NSURL *urlforWebView = self.currentURL;
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:urlforWebView];
     [webView loadRequest:urlRequest];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = NO;
+}
 
+-(void)viewWillDisappear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = YES;
+}
 /*
 #pragma mark - Navigation
 

@@ -34,15 +34,6 @@ static NSOperationQueue *sharedQueue;
     return sharedDataManager;
 }
 
-+(NSOperationQueue*)sharedOperationQueue{
-    @synchronized(self){
-        if (sharedQueue == nil) {
-            sharedQueue = [NSOperationQueue new];
-        }
-    }
-    return sharedQueue;
-}
-
 -(instancetype)init{
     self = [super init];
     
@@ -54,8 +45,25 @@ static NSOperationQueue *sharedQueue;
     return self;
 }
 
-#pragma mark Fetching data from the Flickr api
+#pragma mark SharedOperationQueue
+/**
+ *  Shares one operation queue in the entire application, so the app will not create new Queue every time when is needed
+ *
+ *  @return NSOperationQueue
+ */
++(NSOperationQueue*)sharedOperationQueue{
+    @synchronized(self){
+        if (sharedQueue == nil) {
+            sharedQueue = [NSOperationQueue new];
+        }
+    }
+    return sharedQueue;
+}
 
+#pragma mark Fetching data from the Flickr api
+/**
+ *  Performs request to the flickr api. The data is downloaded in XML format and it is pushed to the XML parser.
+ */
 -(void)fetchFlickrFeed{
     isForParsingStaged = NO;
     isAuthorParsingStaged = NO;
@@ -64,6 +72,7 @@ static NSOperationQueue *sharedQueue;
     
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:flickrURL]];
     parser.delegate = self;
+    
     [parser parse];
 }
 
@@ -81,7 +90,7 @@ static NSOperationQueue *sharedQueue;
             [currentEntry setValue:[attributeDict objectForKey:@"href"] forKey:@"link"];
         }
         else if ([elementName isEqualToString:@"link"] && [[attributeDict objectForKey:@"rel"] isEqualToString:@"enclosure"]){
-            [currentEntry setValue:[attributeDict objectForKey:@"href"] forKey:@"mainImage"];
+            [currentEntry setValue:[attributeDict objectForKey:@"href"] forKey:@"mainImageURL"];
         }
         
         else if([elementName isEqualToString:@"id"]){
@@ -105,7 +114,7 @@ static NSOperationQueue *sharedQueue;
             isAuthorParsingStaged = YES;
         }
         else if([elementName isEqualToString:@"flickr:buddyicon"]){
-            currentVariable = @"authorIcon";
+            currentVariable = @"authorIconURL";
             isAuthorParsingStaged = YES;
         }
     }
@@ -113,8 +122,10 @@ static NSOperationQueue *sharedQueue;
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     if (currentEntry != nil) {
+        /**
+         *  Checks the child tags of Entry
+         */
         if (currentVariable != nil && isForParsingStaged) {
-            
             if([currentVariable isEqualToString:@"publishedDate"] || [currentVariable isEqualToString:@"updatedDate"]){
                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                 [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
@@ -134,9 +145,16 @@ static NSOperationQueue *sharedQueue;
                 isForParsingStaged = NO;
             }
         }
+        /**
+         *  Checks the child tags of Entry's author
+         *
+         *  @param isAuthorParsingStaged manages the
+         *
+         *  @return <#return value description#>
+         */
         else if(currentVariable != nil && isAuthorParsingStaged){
-            if([currentVariable isEqualToString:@"authorIcon"]){
-                [currentEntry setValue:string forKey:@"authorIcon"];
+            if([currentVariable isEqualToString:@"authorIconURL"]){
+                [currentEntry setValue:string forKey:@"authorIconURL"];
                 NSLog(@"%@ added!", currentVariable);
                 
                 isAuthorParsingStaged = NO;
@@ -155,7 +173,7 @@ static NSOperationQueue *sharedQueue;
     if ([elementName isEqualToString:@"entry"]) {
         
         [downloadedEntries addObject:currentEntry];
-    
+        currentEntry = nil;
     }
 }
 
@@ -174,7 +192,7 @@ static NSOperationQueue *sharedQueue;
 }
 
 -(void)imageClicked: (NSURL*)url{
-    [self.delegate userDidClickImageWithURL:url];
+    [self.delegate userDidTapOnImageWithURL:url];
 }
 
 @end

@@ -18,7 +18,7 @@
 @dynamic updatedDate;
 @dynamic author;
 @dynamic authorURL;
-@dynamic authorIcon;
-@dynamic mainImage;
+@dynamic authorIconURL;
+@dynamic mainImageURL;
 
 @end

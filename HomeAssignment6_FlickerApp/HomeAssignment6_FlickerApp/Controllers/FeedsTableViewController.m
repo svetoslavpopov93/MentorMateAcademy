@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBarHidden = YES;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.fetchedResultsController.delegate = self;
@@ -41,6 +41,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//-(void)viewDidAppear:(BOOL)animated{
+//    self.navigationController.navigationBarHidden = YES;
+//}
+//
+//-(void)viewDidDisappear:(BOOL)animated{
+//    self.navigationController.navigationBarHidden = NO;
+//}
 
 #pragma mark - Table view data source
 
@@ -65,11 +73,11 @@
     // Initializing the entry before passing it to the cell
     CellEntry *cellEntry = [[CellEntry alloc] init];
     cellEntry.author = info.author;
-    cellEntry.authorIcon = (NSString*)info.authorIcon;
+    cellEntry.authorIconURL = (NSString*)info.authorIconURL;
     cellEntry.authorURL = info.authorURL;
     cellEntry.entryID = info.entryID;
     cellEntry.link = info.link;
-    cellEntry.mainImage = (NSString*)info.mainImage;
+    cellEntry.mainImageURL = (NSString*)info.mainImageURL;
     cellEntry.publishedDate = info.publishedDate;
     cellEntry.updatedDate = info.updatedDate;
     cellEntry.title = info.title;
@@ -80,11 +88,16 @@
     return cell;
 }
 
+/**
+ *  Checks if the user has approached the end of the table and loads more feed
+ *
+ *  @param tableView current table view
+ *  @param cell      cell of the current table view
+ *  @param indexPath index path of the current cell
+ */
 -(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(([tableView numberOfRowsInSection: 0] - 1) == indexPath.row ){
-        //end of loading
-        //for example [activityIndicator stopAnimating];
+    if(([tableView numberOfRowsInSection: 0] - 1) == (indexPath.row - 2)){
         
         [[DataManager sharedDataManager] fetchFlickrFeed];
     }
@@ -122,6 +135,7 @@
     [self.tableView reloadData];
 }
 
+// The action is triggered when the user taps on the url
 - (IBAction)urlButtonTapped:(UIButton *)sender {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender.superview.superview];
     cellPath = indexPath;
@@ -137,14 +151,14 @@
     [vc setCurrentURL:currentURL];
 }
 
--(void)userDidClickOnImageWithURL:(NSURL *)url{
+-(void)userDidTapOnImageUrl:(NSURL *)url{
     currentURL = url;
     
     [self performSegueWithIdentifier:@"urlSegue" sender:self];
 }
 
 #pragma mark DataManagerDelegate
--(void)userDidClickImageWithURL:(NSURL *)url{
+-(void)userDidTapOnImageWithURL:(NSURL *)url{
     currentURL = url;
     
     [self performSegueWithIdentifier:@"urlSegue" sender:self];

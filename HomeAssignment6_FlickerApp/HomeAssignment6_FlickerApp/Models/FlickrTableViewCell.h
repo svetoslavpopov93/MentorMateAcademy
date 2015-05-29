@@ -12,7 +12,7 @@
 
 @protocol FlickrTableViewCellDelegate <NSObject>
 @optional
-- (void)userDidClickOnImageWithURL:(NSURL *)url;
+- (void)userDidTapOnImageUrl:(NSURL *)url;
 
 @end
 @interface FlickrTableViewCell : UITableViewCell
