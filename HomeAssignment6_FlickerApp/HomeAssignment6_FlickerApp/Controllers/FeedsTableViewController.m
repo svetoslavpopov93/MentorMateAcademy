@@ -65,11 +65,11 @@
     // Initializing the entry before passing it to the cell
     CellEntry *cellEntry = [[CellEntry alloc] init];
     cellEntry.author = info.author;
-    cellEntry.authorIcon = info.authorIcon;
+    cellEntry.authorIcon = (NSString*)info.authorIcon;
     cellEntry.authorURL = info.authorURL;
     cellEntry.entryID = info.entryID;
     cellEntry.link = info.link;
-    cellEntry.mainImage = info.mainImage;
+    cellEntry.mainImage = (NSString*)info.mainImage;
     cellEntry.publishedDate = info.publishedDate;
     cellEntry.updatedDate = info.updatedDate;
     cellEntry.title = info.title;
