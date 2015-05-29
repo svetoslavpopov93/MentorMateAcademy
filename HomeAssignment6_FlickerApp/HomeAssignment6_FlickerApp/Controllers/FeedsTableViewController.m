@@ -97,7 +97,7 @@
  */
 -(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(([tableView numberOfRowsInSection: 0] - 1) == (indexPath.row - 2)){
+    if(([tableView numberOfRowsInSection: 0] - 2) == indexPath.row){
         
         [[DataManager sharedDataManager] fetchFlickrFeed];
     }
