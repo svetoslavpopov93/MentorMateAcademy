@@ -24,7 +24,7 @@
 	//set up data
 	_wrap = YES;
 	self.items = [NSMutableArray array];
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 30; i++)
 	{
 		[_items addObject:@(i)];
 	}
@@ -65,7 +65,7 @@
     
     //configure carousel
     _carousel.type = iCarouselTypeCylinder;
-    
+    _carousel.autoscroll = 0.1;
     _navItem.title = @"Cylinder theme title";
 }
 
@@ -144,8 +144,8 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
-        ((UIImageView *)view).image = [UIImage imageNamed:@"page.png"];
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50.0f, 50.0f)];
+        ((UIImageView *)view).image = [UIImage imageNamed:@"images.jpeg"];
         view.contentMode = UIViewContentModeCenter;
         label = [[UILabel alloc] initWithFrame:view.bounds];
         label.backgroundColor = [UIColor clearColor];
@@ -176,13 +176,16 @@
     {
         case iCarouselOptionRadius:
         {
-            return value * 1.3;
+            return value * 0.4;
         }
         case iCarouselOptionSpacing:
         {
-            return value * 0.9;
+            return 15;
         }
-            
+        case iCarouselOptionOffsetMultiplier:
+        {
+            return 0.1;
+        }
         default:
         {
             return value;
